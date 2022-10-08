@@ -139,9 +139,25 @@ function vald(){
                             if($user->data()->groups == 1){
                                  Redirect::to('template.php');
                                 echo $user->data()->groups;
-                            }else{
-                                 Redirect::to('template.php');
+                            }else if($user->data()->groups == 2){
+                                 Redirect::to('registrar.php');
                                 echo $user->data()->groups;
+                            }else if($user->data()->groups == 3){
+                                Redirect::to('dean.php');
+                               echo $user->data()->groups;
+                            }else if($user->data()->groups == 4){
+                            Redirect::to('accounting.php');
+                           echo $user->data()->groups;
+                            }else if($user->data()->groups == 5){
+                                Redirect::to('laboratory.php');
+                               echo $user->data()->groups;
+                            }else if($user->data()->groups == 6){
+                                Redirect::to('library.php');
+                               echo $user->data()->groups;
+                            }
+                            else{
+                                Redirect::to('template.php');
+                               echo $user->data()->groups;
                             }
                         }else{
                             loginError();
@@ -158,7 +174,7 @@ function vald(){
         function isLogin(){
             $user = new user();
             if(!$user->isLoggedIn()){
-                Redirect::to('login.php');
+                Redirect::to('adminlogin.php');
             }
         }
 
@@ -265,8 +281,110 @@ function changeP(){
     }
 }
 
+
+function approveAccounting(){
+    if(!empty($_GET['edit'])){
+        $edit = new edit($_GET['edit']);
+        if($edit->approveClearanceAccounting()){
+        } else{
+            echo "Error in approving";
+        }
+    }
+}
+
+function approveDepartment(){
+    if(!empty($_GET['edit'])){
+        $edit = new edit($_GET['edit']);
+        if($edit->approveClearanceDepartment()){
+        } else{
+            echo "Error in approving";
+        }
+    }
+}
+
+function approveLibrary(){
+    if(!empty($_GET['edit'])){
+        $edit = new edit($_GET['edit']);
+        if($edit->approveClearanceLibrary()){
+        } else{
+            echo "Error in approving";
+        }
+    }
+}
+
+function approveLaboratory(){
+    if(!empty($_GET['edit'])){
+        $edit = new edit($_GET['edit']);
+        if($edit->approveClearanceLaboratory()){
+        } else{
+            echo "Error in approving";
+        }
+    }
+}
+
+function approveRegistrar(){
+    if(!empty($_GET['edit'])){
+        $edit = new edit($_GET['edit']);
+        if($edit->approveClearanceRegistrar()){
+        } else{
+            echo "Error in approving";
+        }
+    }
+}
+
+function holdRegistrar(){
+    if(!empty($_GET['hold'])){
+        $hold = new hold($_GET['hold']);
+        if($hold->holdClearanceRegistrar()){
+        } else{
+            echo "Error in holding";
+        }
+    }
+}
+
+function holdAccounting(){
+    if(!empty($_GET['hold'])){
+        $hold = new hold($_GET['hold']);
+        if($hold->holdClearanceAccounting()){
+        } else{
+            echo "Error in holding";
+        }
+    }
+}
+
+function holdDepartment(){
+    if(!empty($_GET['hold'])){
+        $hold = new hold($_GET['hold']);
+        if($hold->holdClearanceDepartment()){
+        } else{
+            echo "Error in holding";
+        }
+    }
+}
+
+function holdLibrary(){
+    if(!empty($_GET['hold'])){
+        $hold = new hold($_GET['hold']);
+        if($hold->holdClearanceLibrary()){
+        } else{
+            echo "Error in holding";
+        }
+    }
+}
+
+function holdLaboratory(){
+    if(!empty($_GET['hold'])){
+        $hold = new hold($_GET['hold']);
+        if($hold->holdClearanceLaboratory()){
+        } else{
+            echo "Error in holding";
+        }
+    }
+}
+
 function isAdmin($user){
     if($user === "1"){
+
     }
     else{
         header("HTTP/1.1 403 Forbidden");
@@ -276,6 +394,7 @@ function isAdmin($user){
 
 function isRegistrar($user){
     if($user === "2"){
+
     }
     else{
         header("HTTP/1.1 403 Forbidden");
@@ -285,6 +404,7 @@ function isRegistrar($user){
 
 function isDean($user){
     if($user === "3"){
+
     }
     else{
         header("HTTP/1.1 403 Forbidden");
@@ -294,6 +414,7 @@ function isDean($user){
 
 function isAccounting($user){
     if($user === "4"){
+
     }
     else{
         header("HTTP/1.1 403 Forbidden");
@@ -303,6 +424,7 @@ function isAccounting($user){
 
 function isLaboratory($user){
     if($user === "5"){
+
     }
     else{
         header("HTTP/1.1 403 Forbidden");
@@ -312,6 +434,7 @@ function isLaboratory($user){
 
 function isLibrary($user){
     if($user === "6"){
+
     }
     else{
         header("HTTP/1.1 403 Forbidden");

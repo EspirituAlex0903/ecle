@@ -5,92 +5,112 @@ $viewtable = new viewtable();
 $user = new user();
 isDean($user->data()->groups);
  ?>
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CEU Test Portal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css"  href="vendor/css/bootstrap.min.css">
-  <script src="vendor/js/jquery.js"></script>
-  <link href="vendor/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css"  href="resource/css/styles.css">
-  <link rel="stylesheet" type="text/css"  href="vendor/css/bootstrap-select.min.css">
-  <link rel="stylesheet" type="text/css" href="vendor/css/dataTables.css">
-  <script type="text/javascript" charset="utf8" src="vendor/js/dataTables/jquery.dataTables.js"></script>
-  <script type="text/javascript" charset="utf8" src="vendor/js/dataTables/dataTables.buttons.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="vendor/js/dataTables/jszip.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="vendor/js/dataTables/pdfmake.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="vendor/js/dataTables/vfs_fonts.js"></script>
-  <script type="text/javascript" charset="utf8" src="vendor/js/dataTables/buttons.html5.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="vendor/js/dataTables/buttons.print.min.js"></script>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="resource/css/styledash.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
-</head>
-<body>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <div class="d-flex" id="wrapper">
+        <div class="bg-white" id="sidebar-wrapper">
+          <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase">
+            <img src="resource/img/logo.jpg" class="img-fluid logo">
+          </div>
+          <form action="" method="POST">
+          <div class="list-group list-group-flush my-3">
+            <input type="submit" name="requests" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Requests"></input>
+            <!-- <a href="" class="list-group-item list-group-item-action active second-text fw-bold  border-bottom">
+              <i class="fas fa-thin fa-tag me-2"></i>Requests
+            </a>
+            <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <i class="fas fa-tachometer-alt me-2"></i>Approved
+            </a> -->
+            <input type="submit" name="approved" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Approved"></input>
 
-        <nav class="navbar navbar-dark bg-white shadow-sm slide-in-left">
-          <a class="navbar-brand" href="https://malolos.ceu.edu.ph/">
-            <img src="resource/img/logo.jpg" height="70" class="d-inline-block align-top"
-              alt="mdb logo"><h3 class="ib">
-          </a>
-             <a href="pending.php"><i class="fas fa-home ceucolor"></i></a>
-             <a href="https:/www.facebook.com/theCEUofficial/"><i class="fab fa-facebook-f ceucolor"></i></a>
-             <a href="https://www.instagram.com/ceuofficial/"><i class="fab fa-instagram ceucolor"></i></a>
-             <a href="https://twitter.com/ceumalolos"><i class="fab fa-twitter ceucolor"></i></a>
-        </nav>
+          </div>
+          </form>
+          
 
-        <div class="container mt-4 puff-in-center">
-          <?php $viewtable->viewApproveTable(); ?>
         </div>
-</body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="vendor/js/bootstrap.min.js"></script>
-<script src="vendor/js/bootstrap-select.min.js"></script>
+        <div id="page-content-wrapper">
+          <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4 border-bottom">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+              <h2 class="fs-2 m-0"> Dashboard</h2>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupporteContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle second-text fw-bold" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user me-2"></i> <?php echo $user->data()->username ?>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a href="changepassword.php" class="dropdown-item">Setting</a></li>
+                    <li><a href="logout.php" class="dropdown-item">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="container-fluid p-5">
+            <div class="row">
+              <div class="col-md p-5 content ">
+                <?php
+                if(empty($_POST)){
+                  $viewtable->viewRequestTableDepartment();
+                }
+                else if(array_key_exists('requests', $_POST)) {
+                  $viewtable->viewRequestTableDepartment();
+                }
+                else if(array_key_exists('approved', $_POST)) {
+                  $viewtable->viewApproveTableDepartment();
+                }
+              ?>
+                  <div class="col-sm-12">
+                    <nav>
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="">&laquo;</a></li>
+                        <li class="page-item active"><a class="page-link" href="">1</a></li>
+                        <li class="page-item"><a class="page-link" href="">2</a></li>
+                        <li class="page-item"><a class="page-link" href="">3</a></li>
+                        <li class="page-item"><a class="page-link" href="">4</a></li>
+                        <li class="page-item"><a class="page-link" href="">5</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="">&raquo;</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <script>
-    $(document).ready(function(){
-      window.$('#scholartable').DataTable({
-        dom: 'frtipB',
-        buttons: [
-            {
-                extend: 'excelHtml5',
-                className: 'btn btn-success',
-                text: 'Excel',
-                titleAttr: 'Export to Excel',
-                title: 'Scholarship Report',
-                exportOptions: {
-                    columns: ':not(:last-child)',
-                }
-            },
-            {
-                extend: 'csvHtml5',
-                className: 'btn btn-primary',
-                text: 'CSV',
-                titleAttr: 'CSV',
-                title: 'Scholarship Report',
-                exportOptions: {
-                    columns: ':not(:last-child)',
-                }
-            },
-            {
-                extend: 'pdfHtml5',
-                className: 'btn btn-danger',
-                text: 'PDF',
-                titleAttr: 'PDF',
-                title: 'Scholarship Report',
-                orientation: 'landscape',
-                pageSize: 'TABLOID',
-                exportOptions: {
-                    columns: ':not(:last-child)',
-                }
-            }
-        ]
-        });
-    });
-</script>
-</body>
+      var el = document.getElementById("wrapper")
+      var toggleButton = document.getElementById("menu-toggle")
+
+      toggleButton.onclick = function(){
+        el.classList.toggle("toggled")
+      }
+    </script>
+  </body>
 </html>

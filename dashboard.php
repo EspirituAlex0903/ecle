@@ -1,11 +1,3 @@
-<?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
-isLogin();
-$viewtable = new viewtable();
-$user = new user();
-isLaboratory($user->data()->groups);
- ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -24,22 +16,20 @@ isLaboratory($user->data()->groups);
       <div class="d-flex" id="wrapper">
         <div class="bg-white" id="sidebar-wrapper">
           <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase">
-            <img src="resource/img/logo.jpg" class="img-fluid logo">
+            <img src="images/logo.jpg" class="img-fluid logo">
           </div>
-          <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
-            <input type="submit" name="requests" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Requests"></input>
-            <!-- <a href="" class="list-group-item list-group-item-action active second-text fw-bold  border-bottom">
-              <i class="fas fa-thin fa-tag me-2"></i>Requests
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold  border-bottom">
+              <i class="fas fa-tachometer-alt me-2"></i>Dashboard
             </a>
-            <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-              <i class="fas fa-tachometer-alt me-2"></i>Approved
-            </a> -->
-            <input type="submit" name="approved" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Approved"></input>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <i class="fas fa-thin fa-tag me-2"></i></i>Requests
+            </a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i></i>Logout
+            </a>
 
           </div>
-          </form>
-          
 
         </div>
 
@@ -57,11 +47,10 @@ isLaboratory($user->data()->groups);
               <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle second-text fw-bold" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-user me-2"></i> <?php echo $user->data()->username ?>
+                    <i class="fas fa-user me-2"></i> Daniel Prado
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a href="changepassword.php" class="dropdown-item">Setting</a></li>
-                    <li><a href="logout.php" class="dropdown-item">Logout</a></li>
+                    <li><a href="#" class="dropdown-item">Settings</a></li>
                   </ul>
                 </li>
               </ul>
@@ -71,17 +60,74 @@ isLaboratory($user->data()->groups);
           <div class="container-fluid p-5">
             <div class="row">
               <div class="col-md p-5 content ">
-                <?php
-                if(empty($_POST)){
-                  $viewtable->viewRequestTableLaboratory();
-                }
-                else if(array_key_exists('requests', $_POST)) {
-                  $viewtable->viewRequestTableLaboratory();
-                }
-                else if(array_key_exists('approved', $_POST)) {
-                  $viewtable->viewApproveTableLaboratory();
-                }
-              ?>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                      <th>STUDENT NAME</th>
+                      <th>COURSE</th>
+                      <th>TYPE</th>
+                      <th>SCIENCE/NON-SCIENCE</th>
+                      <th>LIBRARY</th>
+                      <th>LABORATORY</th>
+                      <th>DEPARTMENT</th>
+                      <th>ACCOUNTING</th>
+                      <th>REGISTRAR</th>
+                      <th>ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>asdasda</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                    </tr>
+                    <tr>
+                      <td>asdasda</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                    </tr>
+                    <tr>
+                      <td>asdasda</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                    </tr>
+                    <tr>
+                      <td>asdasda</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                    </tr>
+                  </tbody>
+                  </table>
+                  </div>
                   <div class="col-sm-12">
                     <nav>
                       <ul class="pagination justify-content-center">

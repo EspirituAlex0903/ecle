@@ -7,20 +7,18 @@ require_once('pdfprototype/fpdi/src/autoload.php');
 
 $filename="EXIT_CLEARANCE.pdf";
 
-$lastname = "Espiritu";
-$firstname = "John Alexander";
-$middlename = "Mendoza";
-$reqDate = "10-05-2022";
+$lastname = $_POST['lname'];
+$firstname = $_POST['fname'];
+$middlename = $_POST['mname'];
+//$reqDate = $_POST['dateReq'];
 
-$school = "Malolos";
-$studentID = "2019-30621";
-$email = "espiritu0903@gmail.com";
-$contact = "0956892878";
+$school = $_POST['school'];
+$studentID = $_POST['studID'];
+$email = $_POST['email'];
+$contact = $_POST['contact'];
 
-$course = "Bachelor of Science in Information Technology";
-$year = "2022";
-
-$remarks = "failed";
+$course = $_POST['course'];
+$year = $_POST['year'];
 
 $pdf = new FPDI();
 $pdf->AddPage();
@@ -38,9 +36,9 @@ $pdf->SetXY(50, 40);
 $pdf->Write(0, $firstname);
 $pdf->SetXY(93, 40);
 $pdf->Write(0, $middlename);
-$pdf->Image('pdfprototype/signature/signature.png', "122","34", "32","10");
+//$pdf->Image('pdfprototype/signature/signature.png', "122","34", "32","10");
 $pdf->SetXY(168, 40);
-$pdf->Write(0, $reqDate);
+$pdf->Write(0, date("Y-m-d"));
 
 // Row 2
 $pdf->SetXY(20, 52);
@@ -69,14 +67,14 @@ $pdf->Image('pdfprototype/signature/signature.png', "135","84", "50","14");
 $pdf->Image('pdfprototype/signature/signature.png', "135","97", "50","14");
 
 // Remarks
-$pdf->SetXY(19, 121);
-$pdf->Write(3, $remarks);
+//$pdf->SetXY(19, 121);
+//$pdf->Write(3, $remarks);
 
 //$pdf->Image('signature/signature.png', "135","213", "40","12");
 // $pdf->Write(0, date("Y-m-d"));
 // $pdf->Output('D');
 
-$pdf->Output('I');
-header('Location: index.php');
+$pdf->Output('I', "Sample.pdf");
+//header('Location: index.php');
 
 ?>

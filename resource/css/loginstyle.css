@@ -1,0 +1,187 @@
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Montserrat', "sans-serif";
+}
+
+html{
+  background-color: white;
+  color:#555;
+  font-family: "Montserrat", "sans-serif";
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+header{
+  min-height: 100vh;
+  background: linear-gradient(rgba(36, 18, 95, .95),rgba(220, 47, 156, .8)),url("../img/ceubg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.navbar{
+  width: 100%;
+  background-image: linear-gradient(to right,#24125f,#f04e98);
+}
+
+.logo{
+  height: 50px;
+}
+
+.fab{
+  color:#24125f;
+}
+
+.navbar-nav{
+  text-align: right;
+}
+
+.container{
+  margin-top: 50px;
+}
+
+
+
+.logo3{
+  height:80px;
+}
+
+.btn{
+  margin: 0;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+.button1{
+  background-color: #24125f;
+  color: white;
+  border-radius: 35px;
+  width: 150px;
+  height: 40px;
+  font-size: 13px;
+  text-decoration: none;
+  margin-top: 23px;
+  font-weight: bold;
+}
+.button2{
+  background-color: #f04e98;
+  color: white;
+  border-radius: 35px;
+  width: 150px;
+  height: 40px;
+  font-size: 13px;
+  text-decoration: none;
+  margin-top: 23px;
+  font-weight: bold;;
+}
+
+.box2{
+  margin-top: 100px;
+}
+
+
+.button-login {
+  background-color: #2d2a63;
+  color: white;
+  border-radius: 35px;
+  border: none;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 30px;
+  font-weight: bold;
+  margin-top: 100px;
+}
+.text i {
+  color: #c96093;
+  font-weight:900;
+  font-size: 80px;
+
+}
+
+.text h2 {
+  color: white;
+  font-size: 50px;
+}
+.sample{
+  height: 700px;
+  width: 100%;
+  text-align: center;
+}
+.login-fields{
+  height: 600px;
+  width: 100%;
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 30px;
+}
+.login-fields img{
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  top: 27%;
+}
+.login-fields h2{
+  color: #2d2a63;
+  font-size: 35px;
+  font-weight: 900;
+  text-align: justify;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.login-fields h4{
+color: #f04e98;
+font-size: 15px;
+font-weight:600;
+text-align: justify;
+margin-left: 30px;
+margin-top: 10px;
+}
+.inputs .input{
+  font-size: 20px;
+  border-radius: 30px;
+  margin-top: 90px;
+  width: 350px;
+  height: 40px;
+  text-align: center;
+}
+
+
+@media(max-width:991px) {
+  .row{
+    box-shadow: none;
+  }
+  .row .grad{
+    border-radius: 35px;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px .1px #000;
+
+  }
+  .row .trans{
+    border-radius: 35px;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px .1px #000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .text{
+    display: none;
+  }
+  .login-fields h4{
+  font-size: 13px;
+  }
+  .inputs{
+  width: 350px;
+  }
+  .inputs .input{
+    width: 300px;
+  }
+
+
+}
