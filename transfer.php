@@ -14,6 +14,10 @@ $view = new view;
      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
      <link rel="stylesheet" href="resource/css/adminstyle.css">
+     <link rel="stylesheet" type="text/css"  href="vendor/css/bootstrap.min.css">
+    <link href="vendor/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"  href="resource/css/styles.css">
+    <link rel="stylesheet" type="text/css"  href="vendor/css/bootstrap-select.min.css">
 
      <title>ECLE Form</title>
  </head>
@@ -42,7 +46,16 @@ $view = new view;
         <input type="text" placeholder="First Name" name="fname" id="fname" required>
         <input type="text" placeholder="Middle Name" name="mname" id="mname" required>
 
-        <input type="text" placeholder="School CEU" name="school" id="school" required>
+        <table class="table ">
+
+        <div class="form-group col-4">
+          <label for="school" >school</label>
+          <select id="school" name="school" class="selectpicker form-control" data-live-search="true" placeholder="School" required>
+            <?php $view->collegeSP2();?>
+          </select>
+        </div>
+
+        </table>
         <input type="text" placeholder="Student Number" name="studID" id="studID" required>
         <input type="text" placeholder="Email" name="email" id="email" required>
         <input type="text" placeholder="Contact Number" name="contact" id="contact" required>
@@ -58,4 +71,8 @@ $view = new view;
   </header>
 
  </body>
+ <script src="vendor/js/jquery.js"></script>
+  <script src="vendor/js/popper.js"></script>
+  <script src="vendor/js/bootstrap.min.js"></script>
+  <script src="vendor/js/bootstrap-select.min.js"></script>
  </html>
