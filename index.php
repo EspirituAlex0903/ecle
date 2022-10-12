@@ -1,65 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registrar Portal</title>
-  <link rel="stylesheet" type="text/css"  href="vendor/css/bootstrap.min.css">
-  <link href="vendor/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css"  href="resource/css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/ee4d206cc2.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="resource/css/index.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Ecle</title>
+  </head>
+  <body>
+
     <header>
-        <nav class="navbar navbar-dark bg-white shadow-sm">
-          <a class="navbar-brand" href="https://malolos.ceu.edu.ph/">
-            <img src="resource/img/logo.jpg" height="70" class="d-inline-block align-top "
-              alt="mdb logo"><h3 class="ib">
-          </a>
-             <a href="https:/www.facebook.com/theCEUofficial/"><i class="fab fa-facebook-f ceucolor"></i></a>
-             <a href="https://www.instagram.com/ceuofficial/"><i class="fab fa-instagram ceucolor"></i></a>
-             <a href="https://twitter.com/ceumalolos"><i class="fab fa-twitter ceucolor"></i></a>
-        </nav>
-        <div class="container-fluid p-0 ">
-            <div class="cover"></div>
-            <video id="videoBG" autoplay muted loop>
-                <source src="resource/mp4/bg.mp4" type="video/mp4">
-                </video>
-            <div class="container bg">
-                <div class="jumbotron">
-                    <h1 class="display-4 text-center bottomline">Office of the University Registrar <span class="ceucolor2">Portal</span></h1>
-                    <p class="text-center">The Centro Escolar University Office of the Registrar supports the college/schools
-and the university in realizing its commitment for the total development of students by providing
-efficient and quality service in terms of registering, updating, evaluating and safekeeping of
-student records, participating in curriculum making/revision and implementing the
-University and CHED policies, rules and regulations.</p>
-                    <p class="lead">
-                    <div class="container-fluid">
-                        <div class="col col-sm-12  text-center mt-5">
-                            <a class="btn btn-outline-light w-50 " href="alumniRegister.php" role="button">I'm an Alumni</a>
-                        </div>
-                        <div class="col col-sm-12  text-center mt-4">
-                            <a class="btn btn-outline-light w-50 " href="login.php" role="button">Log-in</a>
-                        </div>
-                    </div>
-                    </p>
-                </div>
+
+        <nav class="navbar navbar-expand-md navbar-dark">
+          <img src="resource/img/ceulogo2.png" class="img-fluid logo">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="icons ml-auto">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="https:/www.facebook.com/theCEUofficial/"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/ceuofficial/"><i class="fab fa-instagram"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://twitter.com/ceumalolos"><i class="fab fa-twitter"></i></a></li>
+              </ul>
             </div>
+          </div>
+        </nav>
+
+        <div class="container-fluid pt-md-3">
+          <div class="row m-md-4">
+            <div class="col-md">
+              <div class="elogo">
+                <div class="content">
+                  <img class="eclelogo"src="resource/img/eclewhite.png">
+                  <p class="p-md-3 seo text-white text-center">
+                    Exit Clearance Portal or ECLE in short, is a web application that aims to assist students in applying and completing their exit clearance. This portal wants to lessen the time and effort of students and also the staff and department of Centro Escolar University. ECLE will provide for an easier way of checking and following up on pending clearances.
+                  </p>
+                  <div class="btn1">
+                    <a href="#sec">
+                      <button class="button3">Continue</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
     </header>
-    <footer id="sticky-footer" class="py-4 bg-dark text-white-50 fixed-bottom">
-      <div class="container text-center">
-          <div class="row">
-              <div class="col col-sm-5 text-left">
-                  <small>Copyright &copy;Centro Escolar University     Office of the Registrar 2019</small>
-              </div>
-              <div class="col text-right">
-                  <small>Created by: Reymart Bolasoc, Amelia Valencia , James Mangalile, Kenneth De Leon , Pamela Reyes , Ellen Mijares</small>
-              </div>
+
+    <section class="section1" id="sec">
+      <div class="container pt-md-5">
+        <div class="row row-1 text-white m-md-4">
+          <div class="col-md grad">
+            <img class="logo3 ml-3" src="resource/img/logo3.png" />
+            <div class="box1 mt-3">
+              <h1 class="pb-3 gradHead">Graduate</h1>
+                <p class="pl-md-5 pr-nd-5 text-left">
+                  For graduating students please use your student ID and enter the password provided to view your exit clearance.
+                </p>
+                <div class="btn">
+                  <button class="button1">Check Clearance</button>
+                </div>
+            </div>
           </div>
+          <div class="col-md trans">
+            <div class="box2">
+              <h1 class="pb-3 transHead">Transfer</h1>
+                <p class="pl-md-5 pr-md-5 text-left">
+                  For transferring students, please complete the requirements for the exit clearance form. All form requirements will be reviewd by all departments. You may check the status of your exit clearance by entering the reference number provided after initial submission of the form.
+                </p>
+              <div class="btn">
+                <button onclick="location.href='transfer.php'" class="button2">Apply Clearance</button>
+                <button onclick="location.href='#'" class="button2">Check Clearance</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
-    <script src="vendor/js/jquery.js"></script>
-    <script src="vendor/js/popper.js"></script>
-    <script src="vendor/js/bootstrap.min.js"></script>
-</body>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>

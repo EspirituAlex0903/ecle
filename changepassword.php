@@ -80,10 +80,10 @@ $user = new user();
    <div class="container text-center">
        <div class="row">
            <div class="col col-sm-5 text-left">
-               <small>Copyright &copy;Centro Escolar University     Office of the Registrar 2019</small>
+               <small>Copyright &copy;Centro Escolar University     ECLE</small>
            </div>
            <div class="col text-right">
-               <small>Created by: Reymart Bolasoc, Amelia Valencia , James Mangalile, Kenneth De Leon , Pamela Reyes , Ellen Mijares</small>
+               <small>Created by: Alex Espiritu, David Calalang, CJ Dela Cruz, Daniel Prado, Lance Pradez</small>
            </div>
        </div>
    </div>
