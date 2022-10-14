@@ -50,7 +50,7 @@ public function viewRequestTableRegistrar(){
 
   echo "<td>
             <a href='registrarApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
-            <a href='registrarApprove.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='remarksRegistrar.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
             <a href='viewRegistrar.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
@@ -163,7 +163,7 @@ public function viewRequestTableAccounting(){
 
   echo "<td>
             <a href='accountingApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
-            <a href='accountingApprove.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='remarksAccounting.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
             <a href='viewAccounting.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
@@ -385,7 +385,7 @@ public function viewRequestTableLibrary(){
 
   echo "<td>
             <a href='libraryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
-            <a href='libraryApprove.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='remarksLibrary.php?hold=$data[id].php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
             <a href='viewLibrary.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
@@ -494,7 +494,7 @@ public function viewRequestTableLaboratory(){
 
   echo "<td>
             <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
-            <a href='laboratoryApprove.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='remarksLaboratory.php?hold=$data[id].php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
             <a href='viewLaboratory.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
