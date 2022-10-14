@@ -28,14 +28,18 @@ public function viewRequestTableRegistrar(){
   foreach ($result as $data) {
     if($data['studentType'] === '1') {
       $studentType = "Transfer";
-    }if($data['studentType'] === '1'){
+    }else if($data['studentType'] === '1'){
       $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
     }
 
     if($data['schoolType'] === '1') {
       $schoolType = "Science";
-    }if($data['schoolType'] === '2'){
+    }else if($data['schoolType'] === '2'){
       $schoolType = "Science";
+    }else{
+      $schoolType = "Undefined";
     }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
@@ -363,14 +367,18 @@ public function viewRequestTableLibrary(){
   foreach ($result as $data) {
     if($data['studentType'] === '1') {
       $studentType = "Transfer";
-    }if($data['studentType'] === '2'){
+    }else if($data['studentType'] === '2'){
       $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
     }
 
     if($data['schoolType'] === '1') {
       $schoolType = "Science";
-    }if($data['schoolType'] === '2'){
+    }else if($data['schoolType'] === '2'){
       $schoolType = "Science";
+    }else{
+      $schoolType = "Undefined";
     }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
@@ -385,7 +393,7 @@ public function viewRequestTableLibrary(){
 
   echo "<td>
             <a href='libraryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
-            <a href='remarksLibrary.php?hold=$data[id].php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='remarksLibrary.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
             <a href='viewLibrary.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
@@ -472,14 +480,18 @@ public function viewRequestTableLaboratory(){
   foreach ($result as $data) {
     if($data['studentType'] === '1') {
       $studentType = "Transfer";
-    }if($data['studentType'] === '2'){
+    }else if($data['studentType'] === '2'){
       $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
     }
 
     if($data['schoolType'] === '1') {
       $schoolType = "Science";
-    }if($data['schoolType'] === '2'){
+    }else if($data['schoolType'] === '2'){
       $schoolType = "Science";
+    }else{
+      $schoolType = "Undefined";
     }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
@@ -494,7 +506,7 @@ public function viewRequestTableLaboratory(){
 
   echo "<td>
             <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
-            <a href='remarksLaboratory.php?hold=$data[id].php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='remarksLaboratory.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
             <a href='viewLaboratory.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";

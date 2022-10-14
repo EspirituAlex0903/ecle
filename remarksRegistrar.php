@@ -19,16 +19,21 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
 <body>
   <div class="form-group">
     <form action="" method="post">
-
+    <?php
+    if(!empty($_POST)){
+      holdRegistrar();;
+    }
+    ?>
         <label for="remarks">Remarks</label>
         <textarea name="remarks" id="remarks" cols="30" rows="10"></textarea>
+        <div class="bbutton">
+          <button class="btn btn-primary my-5">
+            <a href="registrar.php" class="text-light">Back</a>
+          </button>
+          <button type="submit" name="submit" value="submit" class="btn btn-primary my-5">Submit</button>
+        </div>
     </form>
   </div>
-  <div class="bbutton">
-    <button class="btn btn-primary my-5">
-      <a href="accounting.php" class="text-light">Back</a>
-    </button>
-    <button type="submit" name="submit" value="submit" class="btn btn-primary my-5">Submit</button>
-  </div>
+
 </body>
 </html>
