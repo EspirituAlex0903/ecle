@@ -4,7 +4,6 @@ require_once 'config.php';
 
 class viewtable extends config{
 
-
 public function viewRequestTableRegistrar(){
   $con = $this->con();
   $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='PENDING' AND `libraryclearance`='APPROVED' AND `laboratoryclearance`='APPROVED' AND `departmentclearance`='APPROVED' AND `accountingclearance`='APPROVED'";
@@ -27,11 +26,22 @@ public function viewRequestTableRegistrar(){
   echo "<th style='font-size: 85%;'>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }if($data['studentType'] === '1'){
+      $studentType = "Graduate";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }if($data['schoolType'] === '2'){
+      $schoolType = "Science";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
@@ -41,6 +51,7 @@ public function viewRequestTableRegistrar(){
   echo "<td>
             <a href='registrarApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
             <a href='registrarApprove.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='viewRegistrar.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
   }
@@ -69,11 +80,26 @@ public function viewApproveTableRegistrar(){
   echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }else if($data['studentType'] === '2'){
+      $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }else if($data['schoolType'] === '2'){
+      $schoolType = "Non-Science";
+    }else{
+      $schoolType = "Undefined";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
@@ -109,11 +135,26 @@ public function viewRequestTableAccounting(){
   echo "<th style='font-size: 85%;'>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }else if($data['studentType'] === '2'){
+      $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }else if($data['schoolType'] === '2'){
+      $schoolType = "Science";
+    }else{
+      $schoolType = "Undefined";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
@@ -123,6 +164,7 @@ public function viewRequestTableAccounting(){
   echo "<td>
             <a href='accountingApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
             <a href='accountingApprove.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='viewAccounting.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
   }
@@ -151,11 +193,26 @@ public function viewApproveTableAccounting(){
   echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }else if($data['studentType'] === '2'){
+      $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }else if($data['schoolType'] === '2'){
+      $schoolType = "Non-Science";
+    }else{
+      $schoolType = "Undefined";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
@@ -191,11 +248,26 @@ public function viewRequestTableDepartment(){
   echo "<th style='font-size: 85%;'>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }else if($data['studentType'] === '0'){
+      $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }else if($data['schoolType'] === '0'){
+      $schoolType = "Non-Science";
+    }else{
+      $schoolType = "Undefined";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
@@ -204,7 +276,8 @@ public function viewRequestTableDepartment(){
 
   echo "<td>
             <a href='deanApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
-            <a href='deanApprove.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='remarksDean.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='viewDean.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
   }
@@ -233,11 +306,26 @@ public function viewApproveTableDepartment(){
   echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }else if($data['studentType'] === '2'){
+      $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }else if($data['schoolType'] === '2'){
+      $schoolType = "Non-Science";
+    }else{
+      $schoolType = "Undefined";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
@@ -273,11 +361,22 @@ public function viewRequestTableLibrary(){
   echo "<th style='font-size: 85%;'>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }if($data['studentType'] === '2'){
+      $studentType = "Graduate";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }if($data['schoolType'] === '2'){
+      $schoolType = "Science";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
@@ -287,6 +386,7 @@ public function viewRequestTableLibrary(){
   echo "<td>
             <a href='libraryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
             <a href='libraryApprove.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='viewLibrary.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
   }
@@ -294,7 +394,7 @@ public function viewRequestTableLibrary(){
 
 }
 
-public function viewApproveTableLibrary(){
+public function viewApproveTableLibrary(){ 
   $con = $this->con();
   $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='APPROVED'";
   $data= $con->prepare($sql);
@@ -315,11 +415,26 @@ public function viewApproveTableLibrary(){
   echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }else if($data['studentType'] === '2'){
+      $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }else if($data['schoolType'] === '2'){
+      $schoolType = "Non-Science";
+    }else{
+      $schoolType = "Undefined";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
@@ -355,11 +470,22 @@ public function viewRequestTableLaboratory(){
   echo "<th style='font-size: 85%;'>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }if($data['studentType'] === '2'){
+      $studentType = "Graduate";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }if($data['schoolType'] === '2'){
+      $schoolType = "Science";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
@@ -369,6 +495,7 @@ public function viewRequestTableLaboratory(){
   echo "<td>
             <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-12 mt-1'>Approve</a>
             <a href='laboratoryApprove.php?hold=$data[id]' class='btn btn-warning btn-sm col-lg-12 mt-1'>On Hold</a>
+            <a href='viewLaboratory.php?id=$data[id]' class='btn btn-primary btn-sm col-lg-12 mt-1'>View Info</a>
         </td>";
   echo "</tr>";
   }
@@ -397,11 +524,26 @@ public function viewApproveTableLaboratory(){
   echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
+    if($data['studentType'] === '1') {
+      $studentType = "Transfer";
+    }else if($data['studentType'] === '2'){
+      $studentType = "Graduate";
+    }else{
+      $studentType = "Undefined";
+    }
+
+    if($data['schoolType'] === '1') {
+      $schoolType = "Science";
+    }else if($data['schoolType'] === '2'){
+      $schoolType = "Non-Science";
+    }else{
+      $schoolType = "Undefined";
+    }
   echo "<tr>";
   echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
   echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[studentType]</td>";
-  echo "<td class='d-none d-sm-table-cell' >$data[schoolType]</td>";
+  echo "<td class='d-none d-sm-table-cell' >$studentType</td>";
+  echo "<td class='d-none d-sm-table-cell' >$schoolType</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
   echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";

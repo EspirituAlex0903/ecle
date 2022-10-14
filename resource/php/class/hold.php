@@ -1,15 +1,16 @@
 <?php
 
 class hold extends config{
-    public $id;
+    public $id, $remarks;
 
-    public function __construct($id){
+    public function __construct($id=null, $remarks=null){
         $this->id = $id;
+        $this->remarks = $remarks;
     }
 
     public function holdClearanceAccounting(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `accountingclearance` = 'ON HOLD' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `accountingclearance` = 'ON HOLD', `accountingremarks` = '$this->remarks' WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;
@@ -20,7 +21,7 @@ class hold extends config{
 
     public function holdClearanceDepartment(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `departmentclearance` = 'ON HOLD' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `departmentclearance` = 'ON HOLD', `departmentremarks` = '$this->remarks' WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;
@@ -31,7 +32,7 @@ class hold extends config{
 
     public function holdClearanceLibrary(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `libraryclearance` = 'ON HOLD' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `libraryclearance` = 'ON HOLD', `libraryremarks` = '$this->remarks' WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;
@@ -42,7 +43,7 @@ class hold extends config{
 
     public function holdClearanceLaboratory(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `laboratoryclearance` = 'ON HOLD' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `laboratoryclearance` = 'ON HOLD', `laboratoryremarks` = '$this->remarks' WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;
@@ -53,7 +54,7 @@ class hold extends config{
 
     public function holdClearanceRegistrar(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `registrarclearance` = 'ON HOLD' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `registrarclearance` = 'ON HOLD', `registrarremarks` = '$this->remarks' WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;

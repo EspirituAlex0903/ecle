@@ -63,7 +63,7 @@ isAccounting($user->data()->groups);
                     <li><a href="changepassword.php" class="dropdown-item">Setting</a></li>
                     <li><a href="logout.php" class="dropdown-item">Logout</a></li>
                   </ul>
-                </li>
+                </li> 
               </ul>
             </div>
           </nav>

@@ -9,7 +9,7 @@ class edit extends config{
 
     public function approveClearanceAccounting(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `accountingclearance` = 'APPROVED' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `accountingclearance` = 'APPROVED', `accountingdate` = CURRENT_TIMESTAMP WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;
@@ -20,7 +20,7 @@ class edit extends config{
 
     public function approveClearanceDepartment(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `departmentclearance` = 'APPROVED' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `departmentclearance` = 'APPROVED', `departmentdate` = CURRENT_TIMESTAMP WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;
@@ -31,7 +31,7 @@ class edit extends config{
 
     public function approveClearanceLibrary(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `libraryclearance` = 'APPROVED' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `libraryclearance` = 'APPROVED', `librarydate` = CURRENT_TIMESTAMP WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;
@@ -42,7 +42,7 @@ class edit extends config{
 
     public function approveClearanceLaboratory(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `laboratoryclearance` = 'APPROVED' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `laboratoryclearance` = 'APPROVED', `laboratorydate` = CURRENT_TIMESTAMP WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;
@@ -53,7 +53,7 @@ class edit extends config{
 
     public function approveClearanceRegistrar(){
         $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `registrarclearance` = 'APPROVED' WHERE `id` = '$this->id'";
+        $sql = "UPDATE `ecle_forms` SET `registrarclearance` = 'APPROVED', `registrardate` = CURRENT_TIMESTAMP WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){
             return true;

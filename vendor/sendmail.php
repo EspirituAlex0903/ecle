@@ -12,20 +12,20 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 require 'autoload.php';
-$mail = new PHPMailer(true);
-
-$body ="<p>Dear Mr. Bolasoc ,</p>
-<p>Greetings of peace!</p>
-<p>You have successfully applied for the exit clearance.</p>
-<p>Please take note of your exit clearance reference number <b></b>.</p>
-<p>You may check the status of your clearance using our exit clearance status checker at the CEU ECLE Portal.</p>
-<p><b>This is an auto generated email please do not reply.</b></p>
-<p>Thank you and stay safe.</p>";
 
 
+function sendReferenceMail($lname, $fname, $mname, $transnumber, $email){
 
+  $mail = new PHPMailer(true);
 
-try {
+  $body ="<p>Dear $lname, $fname $mname,</p>
+  <p>Greetings of Peace!</p>
+  <p>You have successfully applied for the Exit Clearance.</p>
+  <p>Please take note of your Exit Clearance reference number <b>$transnumber</b>.</p>
+  <p>You may check the status of your clearance using our exit clearance status checker at the CEU ECLE Portal.</p>
+  <p><b>This is an auto generated email please do not reply.</b></p>
+  <p>Thank you and stay safe.</p>";
+  try {
     //Server settings
     //Server settings
      $mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -39,16 +39,19 @@ try {
 
      //Recipients
      $mail->setFrom('ceumlsecle@gmail.com');       //sender
-     $mail->addAddress('reymart.bolasoc@gmail.com');
+     $mail->addAddress($email);
 
      //Content
      $mail->isHTML(true);
-     $mail->Subject = 'Testing from ECLE';
+     $mail->Subject = 'Exit Clearance Reference Number';
      $mail->Body    = $body;             //content
 
+     $mail->SMTPDebug  = SMTP::DEBUG_OFF;
      $mail->send();
-     echo "message has been sent";
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+  } catch (Exception $e) {
+      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+  }
+
 }
-    //header
+
+

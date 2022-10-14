@@ -333,9 +333,10 @@ function approveRegistrar(){
 }
 
 function holdRegistrar(){
-    if(!empty($_GET['hold'])){
-        $hold = new hold($_GET['hold']);
+    if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
+        $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceRegistrar()){
+            header('Location:registrar.php');
         } else{
             echo "Error in holding";
         }
@@ -343,9 +344,10 @@ function holdRegistrar(){
 }
 
 function holdAccounting(){
-    if(!empty($_GET['hold'])){
-        $hold = new hold($_GET['hold']);
+    if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
+        $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceAccounting()){
+            header('Location:accounting.php');
         } else{
             echo "Error in holding";
         }
@@ -353,9 +355,10 @@ function holdAccounting(){
 }
 
 function holdDepartment(){
-    if(!empty($_GET['hold'])){
-        $hold = new hold($_GET['hold']);
+    if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
+        $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceDepartment()){
+            header('Location:dean.php');
         } else{
             echo "Error in holding";
         }
@@ -363,9 +366,10 @@ function holdDepartment(){
 }
 
 function holdLibrary(){
-    if(!empty($_GET['hold'])){
-        $hold = new hold($_GET['hold']);
+    if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
+        $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceLibrary()){
+            header('Location:library.php');
         } else{
             echo "Error in holding";
         }
@@ -373,9 +377,10 @@ function holdLibrary(){
 }
 
 function holdLaboratory(){
-    if(!empty($_GET['hold'])){
-        $hold = new hold($_GET['hold']);
+    if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
+        $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceLaboratory()){
+            header('Location:laboratory.php');
         } else{
             echo "Error in holding";
         }
@@ -439,6 +444,42 @@ function isLibrary($user){
     else{
         header("HTTP/1.1 403 Forbidden");
         exit;
+    }
+}
+
+function viewAccounting(){
+    if(!empty($_GET['id'])){
+        $info = new info($_GET['id']);
+        if($info->infoAccounting()){
+        }
+    }
+}
+function viewLibrary(){
+    if(!empty($_GET['id'])){
+        $info = new info($_GET['id']);
+        if($info->infoLibrary()){
+        }
+    }
+}
+function viewLaboratory(){
+    if(!empty($_GET['id'])){
+        $info = new info($_GET['id']);
+        if($info->infoLaboratory()){
+        }
+    }
+}
+function viewRegistrar(){
+    if(!empty($_GET['id'])){
+        $info = new info($_GET['id']);
+        if($info->infoRegistrar()){
+        }
+    }
+}
+function viewDean(){
+    if(!empty($_GET['id'])){
+        $info = new info($_GET['id']);
+        if($info->infoDean()){
+        }
     }
 }
  ?>

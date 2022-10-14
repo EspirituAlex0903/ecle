@@ -7,12 +7,25 @@ class view extends config{
         public function collegeSP2(){
             $config = new config;
             $con = $config->con();
-            $sql = "SELECT * FROM `collegeschool`";
+            $sql = "SELECT * FROM `collegeschool` WHERE `state` = 'active'";
             $data = $con-> prepare($sql);
             $data ->execute();
             $rows =$data-> fetchAll(PDO::FETCH_OBJ);
                 foreach ($rows as $row) {
                   echo '<option data-tokens=".'.$row->college_school.'." value="'.$row->college_school.'">'.$row->college_school.'</option>';
+                  echo 'success';
+                }
+        }
+
+        public function courseSP2(){
+            $config = new config;
+            $con = $config->con();
+            $sql = "SELECT * FROM `courseschool` WHERE `status` = 'active'";
+            $data = $con-> prepare($sql);
+            $data ->execute();
+            $rows =$data-> fetchAll(PDO::FETCH_OBJ);
+                foreach ($rows as $row) {
+                  echo '<option data-tokens=".'.$row->course.'." value="'.$row->course.'">'.$row->course.'</option>';
                   echo 'success';
                 }
         }

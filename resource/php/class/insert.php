@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
-require_once 'config.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/vendor/sendmail.php';
 
 class insert extends config{
 
@@ -23,9 +23,13 @@ class insert extends config{
         $transnumber = uniqid('ceuTrans');
         $config = new config;
         $con = $config->con();
-        $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$this->school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$transnumber')";
+        $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$this->school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', 1, '$transnumber')";
         $data1 = $con->prepare($sql1);
         $data1 ->execute();
+
+        //sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
+        header('Location:transfer.php');
+
     }
 
     
