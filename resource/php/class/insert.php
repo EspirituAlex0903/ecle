@@ -27,7 +27,7 @@ class insert extends config{
         $data1 = $con->prepare($sql1);
         $data1 ->execute();
 
-        //sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
+        sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
         header('Location:transfer.php');
 
     }

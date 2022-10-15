@@ -25,7 +25,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
     }
     ?>
         <label for="remarks">Remarks</label>
-        <input name="remarks" id="remarks"></textarea>
+        <input name="remarks" id="remarks" cols="30" rows="10"></textarea>
 
         <div class="bbutton">
           <button class="btn btn-primary my-5">

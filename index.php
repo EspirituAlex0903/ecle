@@ -74,7 +74,7 @@
                 </p>
               <div class="btn">
                 <button onclick="location.href='transfer.php'" class="button2">Apply Clearance</button>
-                <button onclick="location.href='#'" class="button2">Check Clearance</button>
+                <button onclick="location.href='transferCheck.php'" class="button2">Check Clearance</button>
               </div>
             </div>
           </div>
