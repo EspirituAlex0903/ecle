@@ -16,7 +16,11 @@ $reference = new reference();
     <title>Ecle Status</title>
 </div>
     <div>
-        <div class="content">
+        <div class="content mt-5 pt-4">
+            <?php 
+            $reference = new reference($_POST['transnumber']);
+            $reference->referenceCheck();
+            ?>
         </div>
         <div class="col-md-12">
         <button class="btn btn-dark" onClick="location.href='transferCheck.php'">Back</button>

@@ -30,10 +30,8 @@ $view = new view;
 </div>
   <div>
     <?php 
-    if($_POST){
+    if(!empty($_POST)){
         require 'transferResult.php';
-        $reference = new reference($_POST['transnumber']);
-        $reference->referenceCheck();
     }else{
         require 'checkForm.php';
     }

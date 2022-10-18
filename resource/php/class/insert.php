@@ -20,15 +20,21 @@ class insert extends config{
     }
 
     public function insertApplication(){
-        $transnumber = uniqid('ceuTrans');
-        $studentType
+        $transnumber = uniqid('Transfer');
+        $studentType = "Transfer";
         $config = new config;
+
         $con = $config->con();
-        $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$this->school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', $studentType, '$transnumber')";
+        $sql2 = "SELECT type FROM `courseschool` WHERE `course` = '$this->course'";
+        $data2 = $con->prepare($sql2);
+        $data2 ->execute();
+        $schoolType = $data2->fetchColumn();
+
+        $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$this->school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber')";
         $data1 = $con->prepare($sql1);
         $data1 ->execute();
 
-        sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
+        //sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
         header('Location:transfer.php');
 
     }
