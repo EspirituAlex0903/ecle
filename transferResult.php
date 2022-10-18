@@ -14,33 +14,14 @@ $reference = new reference();
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <title>Ecle Status</title>
-  </head>
-  <body>
-
-    <div class="container mt-5">
-<div class="row">
-
-  <img class="logo1" src="resource/img/CEU-logo.png">
-
-  <div class="col">
-  <h1>Ecle Status Checker</h1>
-  </div>
-  <div class="col">
-  <img class="logo2" src="resource/img/logo6.png">
-  </div>
 </div>
     <div>
         <div class="content">
-            <h2>Current Status of Student</h2>
-            <?php $reference->referenceCheck();
-            ?>
         </div>
         <div class="col-md-12">
         <button class="btn btn-dark" onClick="location.href='transferCheck.php'">Back</button>
         </div>
     </div>
-        
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 

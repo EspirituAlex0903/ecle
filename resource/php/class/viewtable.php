@@ -569,5 +569,39 @@ public function viewApproveTableLaboratory(){
 
 }
 
+public function viewTotalTransfers(){
+  $con = $this->con();
+  $sql = "SELECT COUNT(studentType) FROM `ecle_forms` WHERE studentType = 1";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchColumn();
+  return $result;
+}
 
+public function viewTotalGraduates(){
+  $con = $this->con();
+  $sql = "SELECT COUNT(studentType) FROM `ecle_forms` WHERE studentType = 2";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchColumn();
+  return $result;
+}
+
+public function viewTotalScience(){
+  $con = $this->con();
+  $sql = "SELECT COUNT(studentType) FROM `ecle_forms` WHERE schoolType = 1";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchColumn();
+  return $result;
+}
+
+public function viewTotalNonScience(){
+  $con = $this->con();
+  $sql = "SELECT COUNT(studentType) FROM `ecle_forms` WHERE schoolType = 2";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchColumn();
+  return $result;
+}
 }

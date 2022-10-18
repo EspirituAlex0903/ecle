@@ -62,14 +62,15 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
                         <input type="text" class="input" placeholder="Username" name="username">
                         <input type="password" class="input" placeholder="Password" name="password">
                         <input type =hidden name="token" value="<?php echo Token::generate(); ?>">
-                        <input  type="submit"  class="button-login"value="Login"/>
+                        
                       </div>
+                      <input  type="submit"  class="button-login"value="Login"/>
                     </form>
-       </div>
-      </div>
-    </div>
-  </div>
-</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
     </header>

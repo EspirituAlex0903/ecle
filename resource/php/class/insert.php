@@ -21,9 +21,10 @@ class insert extends config{
 
     public function insertApplication(){
         $transnumber = uniqid('ceuTrans');
+        $studentType
         $config = new config;
         $con = $config->con();
-        $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$this->school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', 1, '$transnumber')";
+        $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$this->school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', $studentType, '$transnumber')";
         $data1 = $con->prepare($sql1);
         $data1 ->execute();
 
