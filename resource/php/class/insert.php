@@ -30,9 +30,15 @@ class insert extends config{
         $data2 ->execute();
         $schoolType = $data2->fetchColumn();
 
-        $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$this->school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber')";
-        $data1 = $con->prepare($sql1);
-        $data1 ->execute();
+        if ($schoolType === "Science"){
+            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$this->school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber')";
+            $data1 = $con->prepare($sql1);
+            $data1 ->execute();
+        } else {
+            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$this->school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber', 'APPROVED', CURRENT_TIMESTAMP)";
+            $data1 = $con->prepare($sql1);
+            $data1 ->execute();
+        }
 
         //sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
         header('Location:transfer.php');

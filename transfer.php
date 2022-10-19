@@ -103,6 +103,7 @@ $view = new view;
           </div>
 
           <div class="col-md-12">
+            <button onclick="location.href='index.php'" class="btn btn-dark">Back</button>
             <button type="submit" class="btn btn-dark">Submit</button>
           </div>
         </form>

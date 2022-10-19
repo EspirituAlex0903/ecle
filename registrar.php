@@ -4,6 +4,7 @@ isLogin();
 $viewtable = new viewtable();
 $user = new user();
 isRegistrar($user->data()->groups);
+$import = new import();
  ?>
 
 <!DOCTYPE html>
@@ -29,13 +30,19 @@ isRegistrar($user->data()->groups);
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
             <input type="submit" name="requests" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Requests"></input>
-            <!-- <a href="" class="list-group-item list-group-item-action active second-text fw-bold  border-bottom">
-              <i class="fas fa-thin fa-tag me-2"></i>Requests
-            </a>
-            <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-              <i class="fas fa-tachometer-alt me-2"></i>Approved
-            </a> -->
             <input type="submit" name="approved" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Approved"></input>
+            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo "(".$viewtable->viewTotalTransfers().")" ?>
+            </a>
+            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo "(".$viewtable->viewTotalGraduates().")" ?>
+            </a>
+            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fa-solid fa-flask me-2"></i>Science <?php echo "(".$viewtable->viewTotalScience().")" ?>
+            </a>
+            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo "(".$viewtable->viewTotalNonScience().")" ?>
+            </a>
 
           </div>
           </form>
@@ -69,6 +76,33 @@ isRegistrar($user->data()->groups);
           </nav>
 
           <div class="container-fluid p-5">
+            <div class="row">
+              <div class="cold-md-12 head">
+                <div class="float-right">
+                  <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm')"><i class="fa-solid fa-plus"></i>Import</a>
+                </div>
+              </div>
+
+              <div class="cold-md-12" id="importFrm" style="display: none;">
+              <?php $import->insertGraduate(); ?>
+                <form action="" method="post" enctype="multipart/form-data">
+                  <input type="file" name="file">
+                  <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+                </form>
+              </div>
+
+              <script>
+                function formToggle(ID){
+                  var element = document.getElementById(ID);
+                  if(element.style.display === "none"){
+                    element.style.display = "block";
+                  }else{
+                    element.style.display = "none";
+                  }
+                }
+              </script>
+
+            </div>
             <div class="row">
               <div class="col-md p-5 content ">
                 <?php

@@ -36,6 +36,7 @@ $view = new view;
         require 'checkForm.php';
     }
     ?>
+    
   </div>
         
 

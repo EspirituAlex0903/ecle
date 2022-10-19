@@ -62,7 +62,7 @@
                   For graduating students please use your student ID and enter the password provided to view your exit clearance.
                 </p>
                 <div class="btn">
-                  <button class="button1">Check Clearance</button>
+                  <button onclick="location.href='graduateLogin.php'" class="button1">Check Clearance</button>
                 </div>
             </div>
           </div>
