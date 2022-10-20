@@ -76,16 +76,16 @@ isLaboratory($user->data()->groups);
 
           <div class="container-fluid p-5">
             <div class="row">
-              <div class="col-md p-5 content ">
+              <div class="col-md p-5 content">
                 <?php
                 if(empty($_POST)){
-                  $viewtable->viewRequestTableLaboratory();
+                  $viewtable->viewRequestTableLaboratoryTransfer();
                 }
                 else if(array_key_exists('requests', $_POST)) {
-                  $viewtable->viewRequestTableLaboratory();
+                  $viewtable->viewRequestTableLaboratoryTransfer();
                 }
                 else if(array_key_exists('approved', $_POST)) {
-                  $viewtable->viewApproveTableLaboratory();
+                  $viewtable->viewApproveTableLaboratoryTransfer();
                 }
               ?>
                   <div class="col-sm-12">
@@ -104,6 +104,35 @@ isLaboratory($user->data()->groups);
               </div>
             </div>
           </div>
+            <div class="row">
+              <div class="col-md p-5 mt-3 content">
+                  <?php
+                  if(empty($_POST)){
+                    $viewtable->viewRequestTableLaboratoryGraduate();
+                  }
+                  else if(array_key_exists('requests', $_POST)) {
+                    $viewtable->viewRequestTableLaboratoryGraduate();
+                  }
+                  else if(array_key_exists('approved', $_POST)) {
+                    $viewtable->viewApproveTableLaboratoryGraduate();
+                  }
+                ?>
+                  <div class="col-sm-12">
+                    <nav>
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="">&laquo;</a></li>
+                        <li class="page-item active"><a class="page-link" href="">1</a></li>
+                        <li class="page-item"><a class="page-link" href="">2</a></li>
+                        <li class="page-item"><a class="page-link" href="">3</a></li>
+                        <li class="page-item"><a class="page-link" href="">4</a></li>
+                        <li class="page-item"><a class="page-link" href="">5</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="">&raquo;</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+              </div>
+            </div>
+          
         </div>
       </div>
     </header>

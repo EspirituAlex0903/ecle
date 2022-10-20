@@ -3,7 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
 isLogin();
 $viewtable = new viewtable();
 $user = new user();
-isAccounting($user->data()->groups);
+isLibrary($user->data()->groups);
  ?>
 
 <!DOCTYPE html>

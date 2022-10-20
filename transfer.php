@@ -31,7 +31,7 @@ $view = new view;
   <div>
   <?php
   if(!empty($_POST)){
-    $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['school'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['year']);
+    $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['year']);
     $insert->insertApplication();
   }
   ?>
@@ -72,20 +72,8 @@ $view = new view;
             <input type="text" name="contact" class="form-control" id="contactNumber">
           </div>
 
-          <!---Department--->
-          <div class="col-md-4">
-            <label form="school" class="form-label">Department</label>
-
-            <div class="col-md">
-            <select id="school" name="school" class="form-select form-control" data-live-search="true" >
-            <?php $view->collegeSP2();?>
-            </select>
-
-            </div>
-          </div>
-
           <!---Course/Degree--->
-          <div class="col-md-4">
+          <div class="col-md-8 justify-content-center">
             <label form="course" class="form-label">Course/Degree</label>
 
             <div class="col-md">

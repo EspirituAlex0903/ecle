@@ -25,7 +25,7 @@ class user{
         }
     }
     public function create($fields){
-        if($this->_db->insert('ecle_forms',$fields)){
+        if($this->_db->insert('tbl_accounts',$fields)){
             return true;
         }else{
             return false;
