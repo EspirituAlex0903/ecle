@@ -482,4 +482,12 @@ function viewDean(){
         }
     }
 }
+
+function downloadPDF(){
+    if(!empty($_GET['referenceID'])){
+        $form = new form($_GET['referenceID']);
+        if($form->downloadClearance()){
+        }
+    }
+}
  ?>

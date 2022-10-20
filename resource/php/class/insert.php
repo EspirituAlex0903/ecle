@@ -35,12 +35,24 @@ class insert extends config{
         $data3 ->execute();
         $school = $data3->fetchColumn();
 
+        $con = $config->con();
+        $sql4 = "SELECT `semester` FROM `config`";
+        $data4 = $con->prepare($sql4);
+        $data4 ->execute();
+        $semester = $data4->fetchColumn();
+
+        $con = $config->con();
+        $sql5 = "SELECT `schoolYear` FROM `config`";
+        $data5 = $con->prepare($sql5);
+        $data5 ->execute();
+        $schoolYear = $data5->fetchColumn();
+
         if ($schoolType === "Science"){
-            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber')";
+            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber')";
             $data1 = $con->prepare($sql1);
             $data1 ->execute();
         } else {
-            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber', 'APPROVED', CURRENT_TIMESTAMP)";
+            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber', 'APPROVED', CURRENT_TIMESTAMP)";
             $data1 = $con->prepare($sql1);
             $data1 ->execute();
         }

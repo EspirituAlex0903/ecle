@@ -29,8 +29,6 @@ $import = new import();
           </div>
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
-            <input type="submit" name="requests" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Requests"></input>
-            <input type="submit" name="approved" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Approved"></input>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fa-solid fa-share me-2"></i>Transfers <?php echo "(".$viewtable->viewTotalTransfers().")" ?>
             </a>
@@ -54,7 +52,7 @@ $import = new import();
           <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4 border-bottom">
             <div class="d-flex align-items-center">
               <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-              <h2 class="fs-2 m-0"> Dashboard</h2>
+              <a href="registrar.php" class="list-group list-group-item-action bg-transparent"><h2 class="fs-2 m-0 fw-bold"> Dashboard</h2></a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupporteContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -76,62 +74,59 @@ $import = new import();
             </div>
           </nav>
 
+          <div class="container p-5">
+            <div class="row">
+              <div class="cold-md-12 head">
+                <div class="float-right">
+                  <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm')"><i class="fa-solid fa-plus mr-2"></i>Import</a>
+                </div>
+              </div>
+
+              <div class="cold-md-12" id="importFrm" style="display: none;">
+              <?php $import->insertGraduate(); ?>
+                <form action="" method="post" enctype="multipart/form-data">
+                  <input type="file" name="file">
+                  <input type="submit" class="btn btn-primary" name="importSubmit" value="Import ">
+                  <a href="ecle.csv" download="ecle template" class="btn btn-primary">Download Template</a>
+                </form>
+              </div>
+
+              <script>
+                function formToggle(ID){
+                  var element = document.getElementById(ID);
+                  if(element.style.display === "none"){
+                    element.style.display = "block";
+                  }else{
+                    element.style.display = "none";
+                  }
+                }
+              </script>
+            </div>
+          </div>
           <div class="container-fluid p-5">
             <div class="row">
-              <div class="col-md p-5 content">
-                <?php
-                if(empty($_POST)){
-                  $viewtable->viewRequestTableRegistrarTransfer();
-                }
-                else if(array_key_exists('requests', $_POST)) {
-                  $viewtable->viewRequestTableRegistrarTransfer();
-                }
-                else if(array_key_exists('approved', $_POST)) {
-                  $viewtable->viewApproveTableRegistrarTransfer();
-                }
-              ?>
-                  <div class="col-sm-12">
-                    <nav>
-                      <ul class="pagination justify-content-center">
-                        <li class="page-item disabled"><a class="page-link" href="">&laquo;</a></li>
-                        <li class="page-item active"><a class="page-link" href="">1</a></li>
-                        <li class="page-item"><a class="page-link" href="">2</a></li>
-                        <li class="page-item"><a class="page-link" href="">3</a></li>
-                        <li class="page-item"><a class="page-link" href="">4</a></li>
-                        <li class="page-item"><a class="page-link" href="">5</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="">&raquo;</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md p-5 mt-3 content">
-                  <?php
-                  if(empty($_POST)){
-                    $viewtable->viewRequestTableRegistrarGraduate();
-                  }
-                  else if(array_key_exists('requests', $_POST)) {
-                    $viewtable->viewRequestTableRegistrarGraduate();
-                  }
-                  else if(array_key_exists('approved', $_POST)) {
-                    $viewtable->viewApproveTableRegistrarGraduate();
-                  }
-                ?>
-                  <div class="col-sm-12">
-                    <nav>
-                      <ul class="pagination justify-content-center">
-                        <li class="page-item disabled"><a class="page-link" href="">&laquo;</a></li>
-                        <li class="page-item active"><a class="page-link" href="">1</a></li>
-                        <li class="page-item"><a class="page-link" href="">2</a></li>
-                        <li class="page-item"><a class="page-link" href="">3</a></li>
-                        <li class="page-item"><a class="page-link" href="">4</a></li>
-                        <li class="page-item"><a class="page-link" href="">5</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="">&raquo;</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-              </div>
+            <?php
+              if(!empty($_POST)){
+                $update = new update($_POST['semester'], $_POST['sy']);
+                $update->updateSemester();
+                $update->updateSchoolyear();
+              }
+            ?>
+              <form method="post">
+
+                <div class="col-md-3">
+                  <label for="firstName" class="form-label">Semester</label>
+                  <input type="text" name="semester" class="form-control">
+                </div>
+
+                <div class="col-md-3 pt-5">
+                  <label for="firstName" class="form-label">School Year</label>
+                  <input type="text" name="sy" class="form-control">
+                </div>
+
+                <div class="col-md-3 pt-5">
+                  <button type="submit" class="btn btn-dark">Submit</button>
+                </div>
             </div>
           </div>
         </div>

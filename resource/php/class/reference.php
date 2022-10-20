@@ -21,7 +21,7 @@ class reference extends config{
             if($data['libraryclearance'] === 'PENDING' || $data['laboratoryclearance'] === 'PENDING' || $data['departmentclearance'] === 'PENDING' || $data['accountingclearance'] === 'PENDING' || $data['registrarclearance'] === 'PENDING'){
                 echo "<h4 >The current status for $data[fname] $data[mname] $data[lname] with transaction number $data[referenceID], is still being reviewed.</h4>";
             }else if($data['libraryclearance'] === 'APPROVED' && $data['laboratoryclearance'] === 'APPROVED' && $data['departmentclearance'] === 'APPROVED' && $data['accountingclearance'] === 'APPROVED' && $data['registrarclearance'] === 'APPROVED'){
-                echo "<h4>The current status for $data[fname] $data[mname] $data[lname] with transaction number $data[referenceID], has been finished reviewing and will be supplied soon.</h4>";
+                echo "<h4>The current status for $data[fname] $data[mname] $data[lname] with transaction number $data[referenceID], has been finished reviewing, <a href='formDownload.php?referenceID=$data[referenceID]'>download your copy here.</a></h4>";
             }
         }
     }
