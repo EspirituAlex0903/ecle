@@ -40,18 +40,19 @@ header{
   text-align: right;
 }
 .elogo{
-  height: 640px;
+  height: 670px;
   text-align: center;
   margin: auto;
 }
 .content{
+  height: 70%;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 25%;
   width: 50%;
 }
 .eclelogo{
-  width: 70%;
+  width: 100%;
   animation: logo-load 2s;
 }
 .content .seo{

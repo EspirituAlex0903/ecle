@@ -36,7 +36,7 @@
               <div class="elogo">
                 <div class="content">
                   <img class="eclelogo"src="resource/img/eclewhite.png">
-                  <p class="p-md-3 seo text-white text-center">
+                  <p class="p-md-5 seo text-white text-center">
                     Exit Clearance Portal or ECLE in short, is a web application that aims to assist students in applying and completing their exit clearance. This portal wants to lessen the time and effort of students and also the staff and department of Centro Escolar University. ECLE will provide for an easier way of checking and following up on pending clearances.
                   </p>
                   <div class="btn1">

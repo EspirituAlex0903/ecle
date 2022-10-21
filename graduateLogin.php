@@ -43,7 +43,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
             <h1><i>Cienca y Virtud</i></h1>
             <h2>CEU Empowers. CEU Inspires.</h2>
           </div>
-          <div class="img-logo">
+          <div class="img-logo pt-5">
             <img class="logo3" src="resource/img/eclewhite.png" />
           </div>
         </div>
