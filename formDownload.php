@@ -36,7 +36,8 @@ while($data = $result->fetch_assoc()) {
     $pdf->Write(0, $data['fname']);
     $pdf->SetXY(93, 40);
     $pdf->Write(0, $data['mname']);
-    //$pdf->Image('pdfprototype/signature/signature.png', "122","34", "32","10");
+    $pdf->SetXY(132, 40);
+    $pdf->Write(0, substr($data['lname'],0,1).substr($data['fname'],0,1).substr($data['mname'],0,1)."(SGD)");
     $pdf->SetXY(168, 40);
     $pdf->Write(0, $data['dateReq']);
 
@@ -61,8 +62,7 @@ while($data = $result->fetch_assoc()) {
 
     // Signature Registrar
     $pdf->Image('pdfprototype/signature/signature.png', "135","97", "50","14");
-    $pdf->Output('I', "Sample.pdf
-    ");
+    $pdf->Output('D', "EXIT_CLEARANCE_$data[lname] $data[fname].pdf");
     header('Location: transferCheck.php');
 }
 
