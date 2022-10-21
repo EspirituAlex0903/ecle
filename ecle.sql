@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 12, 2022 at 05:37 PM
+-- Generation Time: Oct 21, 2022 at 02:01 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.1.33
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `collegeschool` (
   `college_school` varchar(100) NOT NULL,
   `state` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `collegeschool`
@@ -41,11 +41,11 @@ CREATE TABLE IF NOT EXISTS `collegeschool` (
 
 INSERT INTO `collegeschool` (`id`, `college_school`, `state`) VALUES
 (1, 'Department of Dentistry', 'active'),
-(2, 'College of Medical Technology', 'active'),
+(2, 'College of Medical Technology', 'inactive'),
 (3, 'School of Accountancy and Management', 'inactive'),
 (4, 'School of Science and Technology', 'inactive'),
 (5, 'School of Education,Liberal Arts,Music and Scirnce', 'inactive'),
-(6, 'Department of Pharmacy and Medical Technology', 'active'),
+(6, 'Department of Pharmacy and Medical Technology', 'inactive'),
 (7, 'NHM', 'inactive'),
 (8, 'Department of Nursing', 'active'),
 (9, 'College of Optometry', 'inactive'),
@@ -53,7 +53,75 @@ INSERT INTO `collegeschool` (`id`, `college_school`, `state`) VALUES
 (11, 'College of Accountancy Management and Technology', 'active'),
 (12, 'College of Education, Liberal Arts and Science', 'active'),
 (13, 'Pharmacy Dentistry Nursing', 'inactive'),
-(14, 'College of Hospitality and Management', 'active');
+(14, 'College of Hospitality and Management', 'active'),
+(15, 'Department of Optometry', 'active'),
+(16, 'Department of Pharmacy', 'active'),
+(17, 'Department of Medical Technology', 'active'),
+(18, 'Graduate School', 'active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `config`
+--
+
+DROP TABLE IF EXISTS `config`;
+CREATE TABLE IF NOT EXISTS `config` (
+  `semester` varchar(255) COLLATE utf8_bin NOT NULL,
+  `schoolYear` varchar(255) COLLATE utf8_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `config`
+--
+
+INSERT INTO `config` (`semester`, `schoolYear`) VALUES
+('2', '2022-2023');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courseschool`
+--
+
+DROP TABLE IF EXISTS `courseschool`;
+CREATE TABLE IF NOT EXISTS `courseschool` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `course` varchar(255) COLLATE utf8_bin NOT NULL,
+  `department` varchar(255) COLLATE utf8_bin NOT NULL,
+  `type` varchar(255) COLLATE utf8_bin NOT NULL,
+  `status` varchar(255) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `courseschool`
+--
+
+INSERT INTO `courseschool` (`id`, `course`, `department`, `type`, `status`) VALUES
+(1, 'Bachelor of Science in Accountancy\r\n', 'College of Accountancy Management and Technology', 'Non-Science', 'active'),
+(2, 'Bachelor of Science in Management Accounting', 'College of Accountancy Management and Technology', 'Non-Science', 'active'),
+(3, 'Bachelor of Science in Business Administration Major in Financial Management', 'College of Accountancy Management and Technology', 'Non-Science', 'active'),
+(4, 'Bachelor of Science in Business Administration Major in Marketing Management', 'College of Accountancy Management and Technology', 'Non-Science', 'active'),
+(5, 'Bachelor of Science in Business Administration Major in Management', 'College of Accountancy Management and Technology', 'Non-Science', 'active'),
+(6, 'Bachelor of Science in Business Administration Major in Management with Specialization Track in Service Management for BPO', 'College of Accountancy Management and Technology', 'Non-Science', 'active'),
+(7, 'Bachelor of Science in Information Technology', 'College of Accountancy Management and Technology', 'Non-Science', 'active'),
+(8, 'Bachelor of Special Needs Education with Specialization in Early Childhood Education', 'College of Education, Liberal Arts and Science', 'Non-Science', 'active'),
+(9, 'Bachelor of Arts in Communication and Media', 'College of Education, Liberal Arts and Science', 'Non-Science', 'active'),
+(10, 'Bachelor of Science in Psychology', 'College of Education, Liberal Arts and Science', 'Non-Science', 'active'),
+(11, 'Bachelor of Science in International Tourism and Travel Management', 'College of Hospitality and Management', 'Non-Science', 'active'),
+(12, 'Bachelor of Science in International Hospitality Management with Specialization in Hotel, Restaurant, and Culinary Operations', 'College of Hospitality and Management', 'Non-Science', 'active'),
+(13, 'Bachelor of Science in International Hospitality Management with Specialization in Cruise and Integrated Resort Operations', 'College of Hospitality and Management', 'Non-Science', 'active'),
+(14, 'Doctor of Dental Medicine', 'Department of Dentistry', 'Science', 'active'),
+(15, 'Bachelor of Science in Nursing', 'Department of Nursing', 'Science', 'active'),
+(16, 'Doctor of Optometry', 'Department of Optometry', 'Science', 'active'),
+(17, 'Bachelor of Science in Pharmacy', 'Department of Pharmacy', 'Science', 'active'),
+(18, 'Bachelor of Science in Clinical Pharmacy', 'Department of Pharmacy', 'Science', 'active'),
+(19, 'Bachelor of Science in Medical Technology', 'Department of Medical Technology', 'Science', 'active'),
+(20, 'Master in Business Administration (Thesis)', 'Graduate School', 'Non-Science', 'active'),
+(21, 'Master in Business Administration (Non-Thesis)', 'Graduate School', 'Non-Science', 'active'),
+(22, 'Master in Business Administration (Total Quality Management)', 'Graduate School', 'Non-Science', 'active'),
+(23, 'Master of Science in Psychology', 'Graduate School', 'Non-Science', 'active');
 
 -- --------------------------------------------------------
 
@@ -65,17 +133,19 @@ DROP TABLE IF EXISTS `ecle_forms`;
 CREATE TABLE IF NOT EXISTS `ecle_forms` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `lname` varchar(255) COLLATE utf8_bin NOT NULL,
-  `fname` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `fname` varchar(255) COLLATE utf8_bin NOT NULL,
   `mname` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `dateReq` datetime DEFAULT CURRENT_TIMESTAMP,
-  `school` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `studentID` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `contact` int(255) DEFAULT NULL,
-  `course` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `year` int(255) DEFAULT NULL,
-  `studentType` int(255) DEFAULT NULL,
-  `schoolType` int(255) DEFAULT NULL,
+  `semester` varchar(255) COLLATE utf8_bin NOT NULL,
+  `sy` varchar(255) COLLATE utf8_bin NOT NULL,
+  `dateReq` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `school` varchar(255) COLLATE utf8_bin NOT NULL,
+  `studentID` varchar(255) COLLATE utf8_bin NOT NULL,
+  `email` varchar(255) COLLATE utf8_bin NOT NULL,
+  `contact` varchar(255) COLLATE utf8_bin NOT NULL,
+  `course` varchar(255) COLLATE utf8_bin NOT NULL,
+  `year` int(255) NOT NULL,
+  `studentType` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `schoolType` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `referenceID` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `libraryclearance` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT 'PENDING',
   `libraryremarks` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -93,22 +163,22 @@ CREATE TABLE IF NOT EXISTS `ecle_forms` (
   `registrarremarks` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `registrardate` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `ecle_forms`
 --
 
-INSERT INTO `ecle_forms` (`id`, `lname`, `fname`, `mname`, `dateReq`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`, `libraryclearance`, `libraryremarks`, `librarydate`, `laboratoryclearance`, `laboratoryremarks`, `laboratorydate`, `departmentclearance`, `departmentremarks`, `departmentdate`, `accountingclearance`, `accountingremarks`, `accountingdate`, `registrarclearance`, `registrarremarks`, `registrardate`) VALUES
-(1, 'Espiritu', 'John Alexander', 'Mendoza', '2022-10-08 00:00:00', 'CAMT', '2019-30621', 'espiritu0903@gmail.com', 956892873, 'BSIT', 2022, 1, 1, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL),
-(2, 'Calalang', 'David Christian', 'Y', '2022-10-08 00:00:00', 'CAMT', '2019-11111', 'calalang@gmail.com', 955872314, 'BSIT', 2022, 1, 1, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL),
-(3, 'Dela Cruz', 'Carl Josepc', 'C', '2022-10-08 00:00:00', 'CAMT', '2019-22222', 'delacruz@gmail.com', 956871125, 'BSIT', 2022, 1, 1, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'PENDING', NULL, NULL),
-(4, 'Prado', 'Daniel', 'Faustino', '2022-10-08 00:00:00', 'CAMT', '2019-33333', 'prado@gmail.com', 956874124, 'BSIT', 2022, 1, 1, NULL, 'APPROVED', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'APPROVED', NULL, NULL, 'PENDING', NULL, NULL),
-(5, 'Pradez', 'Lance Chester', 'A', '2022-10-08 00:00:00', 'CAMT', '2019-44444', 'pradez@gmail.com', 942145575, 'BSIT', 2022, 1, 1, NULL, 'APPROVED', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'APPROVED', NULL, NULL, 'PENDING', NULL, NULL),
-(6, 'Delos Santos', 'Christian', 'Marco', '2022-10-08 09:46:24', 'BSIT', '2019-55555', 'delosantos@gmail.com', 99999, 'BSIT', 2022, NULL, NULL, 'ceuTrans6340d670456b6', 'APPROVED', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'ON HOLD', NULL, NULL, 'PENDING', NULL, NULL),
-(7, 'Del Rosario', 'Jemiah Kim', 'Bantigue', '2022-10-12 12:42:01', '', '2019-30541', 'delrosario1930541@mls.ceu.edu.ph', 926027626, 'BSIT', 2023, NULL, NULL, 'ceuTrans634645994a389', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
-(8, 'Del Rosario', 'Jemiah Kim', 'Bantigue', '2022-10-12 12:42:55', '', '2019-30541', 'delrosario1930541@mls.ceu.edu.ph', 926027626, 'BSIT', 2023, NULL, NULL, 'ceuTrans634645cf31abe', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
-(9, 'DEL ROSARIO', 'JEMIAH KIM', 'BANTIGUE', '2022-10-12 12:44:08', 'College of Accountancy Management and Technology', '2019-30541', 'delrosario1930541@mls.ceu.edu.ph', 923610503, 'BSIT', 2023, NULL, NULL, 'ceuTrans63464618e556e', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL);
+INSERT INTO `ecle_forms` (`id`, `lname`, `fname`, `mname`, `semester`, `sy`, `dateReq`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`, `libraryclearance`, `libraryremarks`, `librarydate`, `laboratoryclearance`, `laboratoryremarks`, `laboratorydate`, `departmentclearance`, `departmentremarks`, `departmentdate`, `accountingclearance`, `accountingremarks`, `accountingdate`, `registrarclearance`, `registrarremarks`, `registrardate`) VALUES
+(30, 'Park', 'Monique', 'San Jose', '1', '2022-2023', '2022-10-20 11:21:35', 'College of Education, Liberal Arts and Science', '2019-55555', 'park@gmail.com', '09568889999', 'Bachelor of Arts in Communication and Media', 2022, 'Transfer', 'Non-Science', 'Transfer6350bebfdfe10', 'PENDING', NULL, NULL, 'APPROVED', NULL, '2022-10-20', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
+(34, 'Dela Cruz', 'Juan', 'Luna', '2', '2024-2025', '2022-10-20 12:35:49', 'College of Accountancy Management and Technology', '2019-11111', 'delacruz@gmail.com', '9151112222', 'Bachelor of Science in Information Technology', 2022, 'Graduate', 'Non-Science', 'Graduate6350d024ee3fa', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
+(25, 'Del', 'Jem', 'Kim', '1', '2022-2023', '2022-10-19 10:45:41', 'College of Accountancy Management and Technology', '2019-30541', 'djkim@gmail.com', '09227778888', 'Bachelor of Science in Information Technology', 2022, 'Transfer', 'Non-Science', 'Transfer634f64d58c41f', 'APPROVED', NULL, '2022-10-21', 'APPROVED', NULL, '2022-10-19', 'APPROVED', NULL, '2022-10-21', 'APPROVED', NULL, '2022-10-20', 'APPROVED', NULL, '2022-10-21'),
+(33, 'Dela Cruz', 'Juan', 'Luna', '2', '2024-2025', '2022-10-20 12:34:40', 'College of Accountancy Management and Technology', '2019-11111', 'delacruz@gmail.com', '9151112222', 'Bachelor of Science in Information Technology', 2022, 'Graduate', 'Non-Science', 'Graduate6350cfe05910b', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
+(31, 'Sansano', 'Rafael', 'Dokkii', '1', '2022-2023', '2022-10-20 11:41:54', 'Department of Pharmacy', '2019-00000', 'raf@gmail.com', '09564446666', 'Bachelor of Science in Pharmacy', 2022, 'Transfer', 'Science', 'Transfer6350c3827df0e', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
+(32, 'Ngo hoi', 'Kevin', 'Nguyen', '2', '2024-2025', '2022-10-20 11:44:34', 'College of Education, Liberal Arts and Science', '2019-88777', 'nguyen@gmail.com', '09221113333', 'Bachelor of Special Needs Education with Specialization in Early Childhood Education', 2025, 'Transfer', 'Non-Science', 'Transfer6350c422b4a2d', 'PENDING', NULL, NULL, 'APPROVED', NULL, '2022-10-20', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
+(55, 'Maria', 'Jose', 'Carlito', '2', '2024-2025', '2022-10-20 14:53:49', 'College of Accountancy Management and Technology', '2020-01234', 'carlito@gmail.com', '9123456789', 'Bachelor of Science in Information Technology', 2022, 'Graduate', 'Non-Science', 'Graduate6350f07d935bd', 'PENDING', NULL, NULL, 'APPROVED', NULL, '2022-10-20', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
+(53, 'Santos', 'Hiro', 'Mendoza', '2', '2024-2025', '2022-10-20 14:39:53', 'Department of Dentistry', '2019-30621', 'hiro@gmail.com', '9116668888', 'Doctor of Dental Medicine', 2022, 'Graduate', 'Science', 'Graduate6350ed39327ca', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
+(52, 'Dela Cruz', 'Juan', 'Luna', '2', '2024-2025', '2022-10-20 12:43:52', 'College of Accountancy Management and Technology', '2019-11111', 'delacruz@gmail.com', '9151112222', 'Bachelor of Science in Information Technology', 2022, 'Graduate', 'Non-Science', 'Graduate6350d208297c3', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -133,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `tbl_accounts` (
   `email` varchar(120) COLLATE armscii8_bin DEFAULT NULL,
   `diploma` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=armscii8 COLLATE=armscii8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=armscii8 COLLATE=armscii8_bin;
 
 --
 -- Dumping data for table `tbl_accounts`
@@ -154,7 +224,16 @@ INSERT INTO `tbl_accounts` (`id`, `username`, `password`, `salt`, `name`, `joine
 (17, 'LABORATORY', '474fcba113924056840bc917d5700babd9a7aa5728e03a6f2b423f3246496189', ' .ïÿëÊ¼e]¨M%¶f2P$±æßYœ„Æ¯Óë', 'LABORATORY', '2022-10-03 10:24:19', 5, 'School of Science and Technology', NULL, NULL, NULL, NULL, 'laboratory@ceu.edu.ph', 0),
 (16, 'ACCOUNTING', '715fc62e1fa84e6cc44d9c28e5880d8831b54bed0351d0f5efc029c116767ce4', '„M­¾›9®é¢Æ}(N£ãoß«ö:õÖ‡E\ZUÜ', 'ACCOUNTING', '2022-10-03 10:23:30', 4, 'Department of Dentistry', NULL, NULL, NULL, NULL, 'accounting@ceu.edu.ph', 0),
 (15, 'DEAN', '1da87cd1fd6a04049624bb2e394797f8752ce966c88ca06aef748bfe630090ee', 'û5»Ý¾ã2YÒÙ›YK¶zDåt	\Z÷ìw1»l‰6a“', 'DEAN', '2022-10-03 10:22:37', 3, 'Department of Dentistry', NULL, NULL, NULL, NULL, 'dean@ceu.edu.ph', 0),
-(14, 'REGISTRAR', '028582925d5ea797267da9d1cfc6e6103b30aa7f3cbf32fa6c9de82c71c85f70', 'á:ºóXÉ,¶ØÞBÿ£I‘žÅgÒÀsyj×Tø^cÇ', 'Registrar', '2022-10-03 10:21:11', 2, 'College of Medical Technology', NULL, NULL, NULL, NULL, 'testemail@ceu.edu.ph', 0);
+(14, 'REGISTRAR', '028582925d5ea797267da9d1cfc6e6103b30aa7f3cbf32fa6c9de82c71c85f70', 'á:ºóXÉ,¶ØÞBÿ£I‘žÅgÒÀsyj×Tø^cÇ', 'Registrar', '2022-10-03 10:21:11', 2, 'College of Medical Technology', NULL, NULL, NULL, NULL, 'testemail@ceu.edu.ph', 0),
+(19, 'DENTISTRY', '89a349d30a6966ab5769ba9208bdcfeb490fce3efec0900624e1310708f6d47f', '5O”VŽZ~ô‹<ÓžbbG¬¶ú–°N`Ã…µ', 'DENTISTRY', '2022-10-19 15:04:37', 3, 'Department of Dentistry', NULL, NULL, NULL, NULL, 'dentistry@gmail.com', 0),
+(20, 'NURSING', '81d0e51ebf4f744ec5caee406e6318d88d757f40ea6db1413aad35b0da53d762', '¢\\_ØÊ%âÜõþ¤‚<”ª0sø‚»ù‹fæ', 'NURSING', '2022-10-19 15:05:06', 3, 'Department of Nursing', NULL, NULL, NULL, NULL, 'nursing@gmail.com', 0),
+(21, 'CAMT', '46a0a0b8a3fe98663000da5ed0f60c2238af91cbd5cb162aecce67b83763ad98', 'Î¬Æ%GVëLVµÖ—DõÉ™á/@ivj', 'CAMT', '2022-10-19 15:05:43', 3, 'College of Accountancy Management and Technology', NULL, NULL, NULL, NULL, 'camt@gmail.com', 0),
+(22, 'CELAS', 'f69189068b89053700ad7d46666d2839b3f9e7bf6e6bbb4c52698d74717a7a00', 'KÖ‡ŒORºM¿T%pâÐåI?™2‘Á|aJ@\rn', 'CELAS', '2022-10-19 15:06:14', 3, 'College of Education, Liberal Arts and Science', NULL, NULL, NULL, NULL, 'celas@gmail.com', 0),
+(23, 'HOSPITALITY', 'fbdbe9dca50103c54631890d1b561a5369298b4d8e6f6aa9aefb371cb56be2c4', 'L”ÜƒÓ­zŒû³ëzín¥§K‰ÔTñ›,î¼¬—\'', 'HOSPITALITY', '2022-10-19 15:08:51', 3, 'College of Hospitality and Management', NULL, NULL, NULL, NULL, 'chm@gmail.com', 0),
+(24, 'OPTOMETRY', '07d07684651fbba3f45023b08773c6288a29e3dcd6f4a788fd570b21890ef1d9', '\0´¢?Ûk–\0ùCäPCsV µû\Zÿ›U‹$\Zë ', 'OPTOMETRY', '2022-10-19 15:09:19', 3, 'Department of Optometry', NULL, NULL, NULL, NULL, 'optometry@gmail.com', 0),
+(25, 'PHARMACY', '35f4364b492fa935405e480a7d16ea666c937e8e43f5b6bfd05a6c83a434899d', '±¬	!z$\0!ñO¢¸|¼ÄÕñÆ‚!îï ‡iÍ1', 'PHARMACY', '2022-10-19 15:09:40', 3, 'Department of Pharmacy', NULL, NULL, NULL, NULL, 'pharmacy@gmail.com', 0),
+(26, 'MEDTECH', '43bc6837ddf35894ecacaee823732a60d3076681b489a181ea245e3ce48ebb04', 'òÿDµ›Y¡žO¶“Aß·)/›rÛÀö”Çü^xÍY', 'MEDTECH', '2022-10-19 15:10:01', 3, 'Department of Medical Technology', NULL, NULL, NULL, NULL, 'medtech@gmail.com', 0),
+(27, 'GRADUATE', '9319cb85b0152aa4997430587b57bbce4a3d64ab9ed74030034015f1d6587b32', ':0­ÀÒX?ôjëéÓ…g±¤IŽv`ÌU´:¢‘', 'GRADUATE', '2022-10-19 15:10:21', 3, 'Graduate School', NULL, NULL, NULL, NULL, 'graduate@gmail.com', 0);
 
 -- --------------------------------------------------------
 
