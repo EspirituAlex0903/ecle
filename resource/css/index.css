@@ -3,6 +3,7 @@
   padding:0;
   font-family: 'Montserrat', "sans-serif";
   scroll-behavior: smooth;
+  --nav-load-time:500ms;
 }
 
 html{
@@ -24,6 +25,7 @@ header{
 .navbar{
   width: 100%;
   background: linear-gradient(to right,#24125f,#f04e98);
+  animation: nav-load var(--nav-load-time) ease-in;
 }
 
 .logo{
@@ -44,15 +46,17 @@ header{
 }
 .content{
   position: absolute;
-  top: -10%;
+  top: 30%;
   left: 25%;
   width: 50%;
 }
 .eclelogo{
   width: 70%;
+  animation: logo-load 2s;
 }
 .content .seo{
   font-size: 15px;
+  animation: seo-load 3s;
 }
 .button3{
   background-color: #24125f;
@@ -66,6 +70,7 @@ header{
   margin-top: 23px;
   font-weight: bold;
   transition: 0.5s;
+  animation: seo-load 3s;
 }
 .button3:hover{
   width: 170px;
@@ -161,17 +166,24 @@ header{
 }
 
 .section1{
-  min-height: 100vh;
+  min-height: 90vh;
   background: linear-gradient(rgba(36, 18, 95, .95),rgba(220, 47, 156, .8)),url("../img/ceubg.jpg");
   background-position: center;
   background-size: cover;
 }
+footer{
+  min-height: 10vh;
+  background-color: #1c1c1c;
+}
+
+.ft{
+  color: #fff;
+  font-size: 60%;
+  text-align: center;
+}
 
 
-@media(max-width:991px) {
-  .container{
-    padding-top: 50px;
-  }
+@media(max-width:820px) {
   .eclelogo{
     width: 300px;
   }
@@ -206,11 +218,12 @@ header{
     border-collapse: collapse;
     box-shadow: 0 0 15px .1px #000;
     margin-top: 30px;
+    padding-top: 0;
     margin-bottom: 20px;
     height: 350px;
   }
   .box2{
-    margin-top: 60px;
+    margin-top: 0;
   }
 
   .row .pic{
@@ -220,6 +233,32 @@ header{
   .row .elogo{
     height: 400px;
   }
-
-
+}
+@keyframes nav-load {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+@keyframes logo-load {
+  from{
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to{
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+@keyframes seo-load {
+  from{
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to{
+    opacity: 1;
+    transform: rotateX(0);
+  }
 }

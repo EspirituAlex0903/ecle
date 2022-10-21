@@ -39,12 +39,16 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
     <div class="container-fluid">
             <div class="row">
               <div class="col-md-7 ml-5 text-white text">
+                <div class="headText pt-5">
                   <h1><i>Cienca y Virtud</i></h1>
                   <h2>CEU Empowers. CEU Inspires.</h2>
-                    <img class="logo3 ml-5 h-75 w-75" src="resource/img/eclewhite.png" />
+                </div>
+                <div class="img-logo">
+                  <img class="logo3" src="resource/img/eclewhite.png" />
+                </div>
               </div>
 
-                <div class="col-md mr-5">
+                <div class="col-md">
                   <div class="sample">
                   <div class="login-fields">
                     <div class="row ">
@@ -62,7 +66,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
                         <input type="text" class="input" placeholder="Username" name="username">
                         <input type="password" class="input" placeholder="Password" name="password">
                         <input type =hidden name="token" value="<?php echo Token::generate(); ?>">
-                        
+
                       </div>
                       <input  type="submit"  class="button-login"value="Login"/>
                     </form>

@@ -52,7 +52,7 @@
     </header>
 
     <section class="section1" id="sec">
-      <div class="container pt-md-5">
+      <div class="container pt-5">
         <div class="row row-1 text-white m-md-4">
           <div class="col-md grad">
             <img class="logo3 ml-3" src="resource/img/logo3.png" />
@@ -80,6 +80,20 @@
           </div>
         </div>
       </div>
+    </section>
+      <!-- footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="ft p-4">
+          Centro Escolar University || R.Bolasoc | J.Espiritu | D.Calalang | C.DelaCruz | L.Pradez | D.Prado
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- footer -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

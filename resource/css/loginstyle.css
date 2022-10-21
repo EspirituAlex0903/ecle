@@ -37,54 +37,39 @@ header{
   text-align: right;
 }
 
-.container{
-  margin-top: 50px;
+.img-logo{
+  height:400px;
 }
-
-
 
 .logo3{
-  height:80px;
+  height:auto;
+  width: 100%;
 }
 
-.btn{
-  margin: 0;
-  position: absolute;
-  top: 85%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-
-}
-
-.button1{
-  background-color: #24125f;
+.button-check {
+  background-color: #2d2a63;
   color: white;
   border-radius: 35px;
-  width: 150px;
-  height: 40px;
-  font-size: 13px;
+  border: none;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
   text-decoration: none;
-  margin-top: 23px;
   font-weight: bold;
-}
-.button2{
-  background-color: #f04e98;
-  color: white;
-  border-radius: 35px;
-  width: 150px;
-  height: 40px;
-  font-size: 13px;
-  text-decoration: none;
-  margin-top: 23px;
-  font-weight: bold;;
-}
-
-.box2{
   margin-top: 100px;
 }
-
-
+.button-back {
+  background-color: #2d2a63;
+  color: white;
+  border-radius: 35px;
+  border: none;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 50px;
+}
 .button-login {
   background-color: #2d2a63;
   color: white;
@@ -94,28 +79,30 @@ header{
   height: 50px;
   font-size: 20px;
   text-decoration: none;
-  margin-top: 30px;
   font-weight: bold;
   margin-top: 100px;
 }
+
 .text i {
   color: #c96093;
   font-weight:900;
   font-size: 80px;
-
 }
 
 .text h2 {
   color: white;
   font-size: 50px;
 }
+.text .headText{
+  text-align: center;
+}
 .sample{
   height: 700px;
-  width: 100%;
+  width: 80%;
   text-align: center;
 }
 .login-fields{
-  height: 600px;
+  height: 100%;
   width: 100%;
   background-color: white;
   margin-top: 30px;
@@ -143,11 +130,12 @@ text-align: justify;
 margin-left: 30px;
 margin-top: 10px;
 }
+
 .inputs .input{
   font-size: 20px;
   border-radius: 30px;
-  margin-top: 90px;
-  width: 350px;
+  margin-top: 80px;
+  width: 70%;
   height: 40px;
   text-align: center;
 }
@@ -157,19 +145,6 @@ margin-top: 10px;
   .row{
     box-shadow: none;
   }
-  .row .grad{
-    border-radius: 35px;
-    border-collapse: collapse;
-    box-shadow: 0 0 15px .1px #000;
-
-  }
-  .row .trans{
-    border-radius: 35px;
-    border-collapse: collapse;
-    box-shadow: 0 0 15px .1px #000;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
   .text{
     display: none;
   }
@@ -177,10 +152,13 @@ margin-top: 10px;
   font-size: 13px;
   }
   .inputs{
-  width: 350px;
+  width: 100%;
   }
   .inputs .input{
-    width: 300px;
+    width: 70%;
+  }
+  .sample{
+    width: 100%;
   }
 
 

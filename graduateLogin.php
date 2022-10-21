@@ -37,41 +37,48 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
 
 
     <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-7 ml-5 text-white text">
-                  <h1><i>Cienca y Virtud</i></h1>
-                  <h2>CEU Empowers. CEU Inspires.</h2>
-                    <img class="logo3 ml-5 h-75 w-75" src="resource/img/eclewhite.png" />
-              </div>
+      <div class="row">
+        <div class="col-md-7 ml-5 text-white text">
+          <div class="headText pt-5">
+            <h1><i>Cienca y Virtud</i></h1>
+            <h2>CEU Empowers. CEU Inspires.</h2>
+          </div>
+          <div class="img-logo">
+            <img class="logo3" src="resource/img/eclewhite.png" />
+          </div>
+        </div>
 
-                <div class="col-md mr-5">
-                  <div class="sample">
-                  <div class="login-fields">
-                    <div class="row ">
-                      <div class="col-3">
-                        <img src="resource/img/CEU-logo.png" alt="CEU Logo" class="login-logo">
-                      </div>
-                      <div class="col">
-                        <h2>Student Checker</h2>
-                        <h4>MANILA * MAKATI * MALOLOS</h4>
-                      </div>
-                    </div>
-                    <form action="" method="post">
-                      <div class="inputs">
-                      
-                        <input type="text" class="input" placeholder="Student Number" name="username">
-                        <input type="text" class="input" placeholder="Last Name" name="password">
-                        <input type =hidden name="token" value="<?php echo Token::generate(); ?>">
-                      </div>
-                      
-                    </form>
-                    <a href="index.php"><input type="submit" class="button-login"value="Back"/></a>
-                    <input type="submit" class="button-login"value="Check"/>
+          <div class="col-md">
+            <div class="sample">
+              <div class="login-fields">
+                <div class="row ">
+                  <div class="col-3">
+                    <img src="resource/img/CEU-logo.png" alt="CEU Logo" class="login-logo">
+                  </div>
+                  <div class="col">
+                    <h2>Student Checker</h2>
+                    <h4>MANILA * MAKATI * MALOLOS</h4>
+                  </div>
                 </div>
-              </div>
+                <form action="" method="post">
+                  <div class="inputs">
+
+                    <input type="text" class="input" placeholder="Student Number" name="username">
+                    <input type="text" class="input" placeholder="Last Name" name="password">
+                    <input type =hidden name="token" value="<?php echo Token::generate(); ?>">
+                  </div>
+                </form>
+            <div>
+              <input type="submit" class="button-check"value="Check"/>
+            </div>
+            <div>
+              <a href="index.php"><input type="submit" class="button-back"value="Back"/></a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
 
     </header>
