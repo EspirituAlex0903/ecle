@@ -81,62 +81,9 @@ isLibrary($user->data()->groups);
                 <a href="library.php"><i class="fa fa-angle-left fa-2x mb-3 color-primary"></i></a>
               </div>
               <div class="col-md p-5 content ">
-                <div class="table-responsive">
-                  <div class="row pb-5">
-                    <div class="col-md-4">
-                      Firsname:
-                    </div>
-                    <div class="col-md-4">
-                      Lastname:
-                    </div>
-                    <div class="col-md-4">
-                      Course:
-                    </div>
-
-                  </div>
-                  <div class="row pb-5">
-                    <div class="col-md-4">
-                      Email:
-                    </div>
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-4">
-                    </div>
-
-                  </div>
-                  <table class="table table-bordered table-striped">
-                    <thead class="thead-dark">
-                    <tr>
-                      <th>STUDENT NAME</th>
-                      <th>COURSE</th>
-                      <th>TYPE</th>
-                      <th>SCIENCE/NON-SCIENCE</th>
-                      <th>LIBRARY</th>
-                      <th>LABORATORY</th>
-                      <th>DEPARTMENT</th>
-                      <th>ACCOUNTING</th>
-                      <th>REGISTRAR</th>
-                      <th>ACTION</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>asdasda</td>
-                      <td>asdasd</td>
-                      <td>asdasd</td>
-                      <td>asdasd</td>
-                      <td>asdasd</td>
-                      <td>asdasd</td>
-                      <td>asdasd</td>
-                      <td>asdasd</td>
-                      <td>asdasd</td>
-                      <td>asdasd</td>
-                    </tr>
-                  </tbody>
-                  </table>
-                  </div>
-                </div>
-
+                <?php
+                  viewLibrary();
+                ?>
               </div>
             </div>
           </div>

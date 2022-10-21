@@ -46,7 +46,7 @@ isLaboratory($user->data()->groups);
 
           </div>
           </form>
-          
+
 
         </div>
 
@@ -77,13 +77,13 @@ isLaboratory($user->data()->groups);
 
           <div class="container-fluid p-5">
             <div class="row">
+              <div class="button">
+                <a href="laboratory.php"><i class="fa fa-angle-left fa-2x mb-3 color-primary"></i></a>
+              </div>
               <div class="col-md p-5 content ">
                 <?php
-                viewLaboratory();
+                  viewLaboratory();
                 ?>
-                <div class="button">
-                  <a href="laboratory.php"><i class="fa fa-angle-left fa-2x mb-3 color-primary"></i></a>
-                </div>
               </div>
             </div>
           </div>

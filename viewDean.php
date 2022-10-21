@@ -46,7 +46,7 @@ isDean($user->data()->groups);
 
           </div>
           </form>
-          
+
 
         </div>
 
@@ -77,13 +77,13 @@ isDean($user->data()->groups);
 
           <div class="container-fluid p-5">
             <div class="row">
+              <div class="button">
+                <a href="dean.php"><i class="fa fa-angle-left fa-2x mb-3 color-primary"></i></a>
+              </div>
               <div class="col-md p-5 content ">
                 <?php
-                viewDean();
+                  viewDean();
                 ?>
-                <div class="button">
-                  <a href="dean.php"><i class="fa fa-angle-left fa-2x mb-3 color-primary"></i></a>
-                </div>
               </div>
             </div>
           </div>

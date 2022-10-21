@@ -482,4 +482,10 @@ function viewDean(){
         }
     }
 }
+
+function gradInfo(){
+    if(Input::exists()){
+        Redirect::to('viewGraduate.php');
+    }
+}
  ?>

@@ -1,7 +1,7 @@
 <?php
 
 class info extends config{
-    public $id,$_data;
+    public $id;
 
     public function __construct($id){
         $this->id = $id;
@@ -17,19 +17,22 @@ class info extends config{
         echo "<div class='table-responsive'>";
         echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
         echo "<thead class='thead-dark'>";
-        echo "<th class='d-none d-sm-table-cell'>Student Number</th>";
-        echo "<th class='d-none d-sm-table-cell'>Student Name</th>";
-        echo "<th class='d-none d-sm-table-cell'>Course</th>";
-        echo "<th class='d-none d-sm-table-cell'>E-Mail</th>";
-        echo "<th class='d-none d-sm-table-cell'>Contact</th>";
+        echo "<th class='d-none d-sm-table-cell'>Department</th>";
+        echo "<th class='d-none d-sm-table-cell'>Library</th>";
+        echo "<th class='d-none d-sm-table-cell'>Laboratory</th>";
+        echo "<th class='d-none d-sm-table-cell'>Accounting</th>";
+        echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
         echo "</thead>";
         foreach ($result as $data) {
-        echo "<tr>";
-        echo "<td class='d-none d-sm-table-cell' >$data[studentID]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[email]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[contact]</td>";
+          echo "<br>";
+          echo "<p> <strong>First Name:</strong> $data[fname] &emsp;&emsp; <strong>Last Name:</strong> $data[lname] &emsp;&emsp; <strong>Course:</strong> $data[course]</p>";
+          echo "<p> <strong>Email:</strong> $data[email]</p>";
+          echo "<tr>";
+          echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance] </td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[accountingclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[registrarclearance]</td>";
 
         }
       }
@@ -43,19 +46,22 @@ class info extends config{
         echo "<div class='table-responsive'>";
         echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
         echo "<thead class='thead-dark'>";
-        echo "<th class='d-none d-sm-table-cell'>Student Number</th>";
-        echo "<th class='d-none d-sm-table-cell'>Student Name</th>";
-        echo "<th class='d-none d-sm-table-cell'>Course</th>";
-        echo "<th class='d-none d-sm-table-cell'>E-Mail</th>";
-        echo "<th class='d-none d-sm-table-cell'>Contact</th>";
+        echo "<th class='d-none d-sm-table-cell'>Department</th>";
+        echo "<th class='d-none d-sm-table-cell'>Library</th>";
+        echo "<th class='d-none d-sm-table-cell'>Laboratory</th>";
+        echo "<th class='d-none d-sm-table-cell'>Accounting</th>";
+        echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
         echo "</thead>";
         foreach ($result as $data) {
-        echo "<tr>";
-        echo "<td class='d-none d-sm-table-cell' >$data[studentID]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[email]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[contact]</td>";
+          echo "<br>";
+          echo "<p> <strong>First Name:</strong> $data[fname] &emsp;&emsp; <strong>Last Name:</strong> $data[lname] &emsp;&emsp; <strong>Course:</strong> $data[course]</p>";
+          echo "<p> <strong>Email:</strong> $data[email]</p>";
+          echo "<tr>";
+          echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance] </td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[accountingclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[registrarclearance]</td>";
 
         }
       }
@@ -69,19 +75,22 @@ class info extends config{
         echo "<div class='table-responsive'>";
         echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
         echo "<thead class='thead-dark'>";
-        echo "<th class='d-none d-sm-table-cell'>Student Number</th>";
-        echo "<th class='d-none d-sm-table-cell'>Student Name</th>";
-        echo "<th class='d-none d-sm-table-cell'>Course</th>";
-        echo "<th class='d-none d-sm-table-cell'>E-Mail</th>";
-        echo "<th class='d-none d-sm-table-cell'>Contact</th>";
+        echo "<th class='d-none d-sm-table-cell'>Department</th>";
+        echo "<th class='d-none d-sm-table-cell'>Library</th>";
+        echo "<th class='d-none d-sm-table-cell'>Laboratory</th>";
+        echo "<th class='d-none d-sm-table-cell'>Accounting</th>";
+        echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
         echo "</thead>";
         foreach ($result as $data) {
-        echo "<tr>";
-        echo "<td class='d-none d-sm-table-cell' >$data[studentID]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[email]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[contact]</td>";
+          echo "<br>";
+          echo "<p> <strong>First Name:</strong> $data[fname] &emsp;&emsp; <strong>Last Name:</strong> $data[lname] &emsp;&emsp; <strong>Course:</strong> $data[course]</p>";
+          echo "<p> <strong>Email:</strong> $data[email]</p>";
+          echo "<tr>";
+          echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance] </td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[accountingclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[registrarclearance]</td>";
 
         }
       }
@@ -95,19 +104,22 @@ class info extends config{
         echo "<div class='table-responsive'>";
         echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
         echo "<thead class='thead-dark'>";
-        echo "<th class='d-none d-sm-table-cell'>Student Number</th>";
-        echo "<th class='d-none d-sm-table-cell'>Student Name</th>";
-        echo "<th class='d-none d-sm-table-cell'>Course</th>";
-        echo "<th class='d-none d-sm-table-cell'>E-Mail</th>";
-        echo "<th class='d-none d-sm-table-cell'>Contact</th>";
+        echo "<th class='d-none d-sm-table-cell'>Department</th>";
+        echo "<th class='d-none d-sm-table-cell'>Library</th>";
+        echo "<th class='d-none d-sm-table-cell'>Laboratory</th>";
+        echo "<th class='d-none d-sm-table-cell'>Accounting</th>";
+        echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
         echo "</thead>";
         foreach ($result as $data) {
-        echo "<tr>";
-        echo "<td class='d-none d-sm-table-cell' >$data[studentID]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[email]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[contact]</td>";
+          echo "<br>";
+          echo "<p> <strong>First Name:</strong> $data[fname] &emsp;&emsp; <strong>Last Name:</strong> $data[lname] &emsp;&emsp; <strong>Course:</strong> $data[course]</p>";
+          echo "<p> <strong>Email:</strong> $data[email]</p>";
+          echo "<tr>";
+          echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance] </td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[accountingclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[registrarclearance]</td>";
 
         }
       }
@@ -121,19 +133,22 @@ class info extends config{
         echo "<div class='table-responsive'>";
         echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
         echo "<thead class='thead-dark'>";
-        echo "<th class='d-none d-sm-table-cell'>Student Number</th>";
-        echo "<th class='d-none d-sm-table-cell'>Student Name</th>";
-        echo "<th class='d-none d-sm-table-cell'>Course</th>";
-        echo "<th class='d-none d-sm-table-cell'>E-Mail</th>";
-        echo "<th class='d-none d-sm-table-cell'>Contact</th>";
+        echo "<th class='d-none d-sm-table-cell'>Department</th>";
+        echo "<th class='d-none d-sm-table-cell'>Library</th>";
+        echo "<th class='d-none d-sm-table-cell'>Laboratory</th>";
+        echo "<th class='d-none d-sm-table-cell'>Accounting</th>";
+        echo "<th class='d-none d-sm-table-cell'>Registrar</th>";
         echo "</thead>";
         foreach ($result as $data) {
-        echo "<tr>";
-        echo "<td class='d-none d-sm-table-cell' >$data[studentID]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[fname] $data[mname] $data[lname] </td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[course]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[email]</td>";
-        echo "<td class='d-none d-sm-table-cell' >$data[contact]</td>";
+          echo "<br>";
+          echo "<p> <strong>First Name:</strong> $data[fname] &emsp;&emsp; <strong>Last Name:</strong> $data[lname] &emsp;&emsp; <strong>Course:</strong> $data[course]</p>";
+          echo "<p> <strong>Email:</strong> $data[email]</p>";
+          echo "<tr>";
+          echo "<td class='d-none d-sm-table-cell' >$data[departmentclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[libraryclearance] </td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[laboratoryclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[accountingclearance]</td>";
+          echo "<td class='d-none d-sm-table-cell' >$data[registrarclearance]</td>";
 
         }
       }
