@@ -166,14 +166,14 @@ header{
 }
 
 .section1{
-  min-height: 90vh;
+  min-height: 93vh;
   background: linear-gradient(rgba(36, 18, 95, .95),rgba(220, 47, 156, .8)),url("../img/ceubg.jpg");
   background-position: center;
   background-size: cover;
 }
 footer{
-  min-height: 10vh;
-  background-color: #1c1c1c;
+  min-height: 7vh;
+  background-color: #1d2b34;
 }
 
 .ft{
