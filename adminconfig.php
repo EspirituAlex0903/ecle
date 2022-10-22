@@ -106,7 +106,7 @@ $import = new import();
           <div class="container-fluid p-5">
             <div class="row">
             <?php
-              if(!empty($_POST)){
+              if(!empty($_POST['semester']) && !empty($_POST['sy'])){
                 $update = new update($_POST['semester'], $_POST['sy']);
                 $update->updateSemester();
                 $update->updateSchoolyear();

@@ -336,7 +336,7 @@ function holdRegistrar(){
     if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
         $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceRegistrar()){
-            header('Location:registrar.php');
+            echo '<script>alert("Successfully updated, please click back.")</script>';
         } else{
             echo "Error in holding";
         }
@@ -347,7 +347,7 @@ function holdAccounting(){
     if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
         $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceAccounting()){
-            header('Location:accounting.php');
+            echo '<script>alert("Successfully updated, please click back.")</script>';
         } else{
             echo "Error in holding";
         }
@@ -358,7 +358,7 @@ function holdDepartment(){
     if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
         $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceDepartment()){
-            header('Location:dean.php');
+            echo '<script>alert("Successfully updated, please click back.")</script>';
         } else{
             echo "Error in holding";
         }
@@ -369,7 +369,7 @@ function holdLibrary(){
     if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
         $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceLibrary()){
-            header('Location:library.php');
+            echo '<script>alert("Successfully updated, please click back.")</script>';
         } else{
             echo "Error in holding";
         }
@@ -380,7 +380,7 @@ function holdLaboratory(){
     if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
         $hold = new hold($_GET['hold'],$_POST['remarks']);
         if($hold->holdClearanceLaboratory()){
-            header('Location:laboratory.php');
+            echo '<script>alert("Successfully updated, please click back.")</script>';
         } else{
             echo "Error in holding";
         }
@@ -485,7 +485,7 @@ function viewDean(){
 
 function gradInfo(){
     if(Input::exists()){
-        Redirect::to('viewGraduate.php');
+        Redirect::to("viewGraduate.php?studentNumber=$_POST[studentNumber]&lname=$_POST[lname]");
     }
 }
  ?>

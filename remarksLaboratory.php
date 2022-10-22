@@ -86,7 +86,7 @@ isLaboratory($user->data()->groups);
                   }
                   ?>
                     <label for="remarks">Remarks</label>
-                    <input name="remarks" id="remarks" rows="5" cols="20"></textarea>
+                    <textarea name="remarks" id="remarks" rows="5" cols="20"></textarea>
 
                     <div class="button">
                       <a href='laboratory.php' class='btn btn-primary'>Back</a>

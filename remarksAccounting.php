@@ -83,11 +83,11 @@ $info = new info($_GET['hold']);
                   <h3 class='text-center'>Remarks for Student</h3>
                   <?php
                   if(!empty($_POST)){
-                    holdAccounting();;
+                    holdAccounting();
                   }
                   ?>
                     <label for="remarks">Remarks</label>
-                    <input name="remarks" id="remarks" rows="5" cols="20"></textarea>
+                    <textarea name="remarks" id="remarks" rows="5" cols="20"></textarea>
 
                     <div class="button">
                       <a href='accounting.php' class='btn btn-primary'>Back</a>
