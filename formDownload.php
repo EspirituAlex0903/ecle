@@ -37,7 +37,7 @@ while($data = $result->fetch_assoc()) {
     $pdf->SetXY(93, 40);
     $pdf->Write(0, $data['mname']);
     $pdf->SetXY(132, 40);
-    $pdf->Write(0, mb_substr($data['fname'],0,2).substr($data['mname'],0,1).substr($data['lname'],0,1)."(SGD)");
+    $pdf->Write(0, substr($data['fname'],0,1).substr($data['mname'],0,1).substr($data['lname'],0,1)."(SGD)");
     $pdf->SetXY(168, 40);
     $pdf->Write(0, $data['dateReq']);
 
