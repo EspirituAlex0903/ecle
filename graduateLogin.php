@@ -66,25 +66,27 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
 
                     <input type="text" class="input" placeholder="Student Number" name="studentNumber">
                     <input type="text" class="input" placeholder="Last Name" name="lname">
+                  </div>
+                  <div>
                     <input type =hidden name="token" value="<?php echo Token::generate(); ?>">
                     <input type="submit" class="button-check"value="Check"/>
                   </div>
-                </form> 
+                </form>
                  <div>
                   <a href="index.php"><input type="submit" class="button-back"value="Back"/></a>
-                </div> 
-                <?php 
+                </div>
+                <?php
                   /*if(!empty($_POST)){
                       require 'viewGraduate.php';
                   }else{
                       require 'graduateForm.php';
                   }*/
                   ?>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
 
     </header>

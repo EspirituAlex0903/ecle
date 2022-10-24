@@ -15,7 +15,7 @@ $import = new import();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="resource/css/styledash.css" type="text/css">
+    <link rel="stylesheet" href="resource/css/adminConfigStyle.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <title>Dashboard</title>
@@ -44,7 +44,7 @@ $import = new import();
 
           </div>
           </form>
-          
+
 
         </div>
 
@@ -104,29 +104,32 @@ $import = new import();
             </div>
           </div>
           <div class="container-fluid p-5">
-            <div class="row">
-            <?php
-              if(!empty($_POST['semester']) && !empty($_POST['sy'])){
-                $update = new update($_POST['semester'], $_POST['sy']);
-                $update->updateSemester();
-                $update->updateSchoolyear();
-              }
-            ?>
-              <form method="post">
+            <div class="row justify-content-md-center">
+              <div class="col-md-5 py-5 content">
+              <?php
+                if(!empty($_POST['semester']) && !empty($_POST['sy'])){
+                  $update = new update($_POST['semester'], $_POST['sy']);
+                  $update->updateSemester();
+                  $update->updateSchoolyear();
+                }
+              ?>
+                <form method="post">
 
-                <div class="col-md-3">
-                  <label for="firstName" class="form-label">Semester</label>
-                  <input type="text" name="semester" class="form-control">
-                </div>
+                  <div class="col-md">
+                    <label for="firstName" class="form-label">Semester</label>
+                    <input type="text" name="semester" class="form-control">
+                  </div>
 
-                <div class="col-md-3 pt-5">
-                  <label for="firstName" class="form-label">School Year</label>
-                  <input type="text" name="sy" class="form-control">
-                </div>
+                  <div class="col-md pt-5">
+                    <label for="firstName" class="form-label">School Year</label>
+                    <input type="text" name="sy" class="form-control">
+                  </div>
 
-                <div class="col-md-3 pt-5">
-                  <button type="submit" class="btn btn-dark">Submit</button>
-                </div>
+                  <div class="col-md pt-5 text-center">
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
