@@ -16,7 +16,7 @@ class graduate extends config{
         $result = $data->fetchAll(PDO::FETCH_ASSOC);
         foreach ($result as $data) {
             if($data['studentType'] === "Transfer"){
-                echo "Please go to the transfer reference checker for transfer students.";
+                echo "Please refer to the transfer section of reference checking for transferring students.";
             } else {
             echo "<h3 class='text-center font-weight-bold'> Information of Student </h3>";
             echo "<div class='table-responsive'>";

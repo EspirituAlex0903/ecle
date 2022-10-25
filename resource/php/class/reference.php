@@ -18,10 +18,14 @@ class reference extends config{
         $result = $data->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($result as $data) {
-            if($data['libraryclearance'] === 'PENDING' || $data['laboratoryclearance'] === 'PENDING' || $data['departmentclearance'] === 'PENDING' || $data['accountingclearance'] === 'PENDING' || $data['registrarclearance'] === 'PENDING'){
-                echo "<h4 >The current status for $data[fname] $data[mname] $data[lname] with transaction number $data[referenceID], is still being reviewed.</h4>";
-            }else if($data['libraryclearance'] === 'APPROVED' && $data['laboratoryclearance'] === 'APPROVED' && $data['departmentclearance'] === 'APPROVED' && $data['accountingclearance'] === 'APPROVED' && $data['registrarclearance'] === 'APPROVED'){
-                echo "<h4>The current status for $data[fname] $data[mname] $data[lname] with transaction number $data[referenceID], has been finished reviewing, <a href='formDownload.php?referenceID=$data[referenceID]'>download your copy here.</a></h4>";
+            if($data['studentType'] === "Transfer"){
+                if($data['libraryclearance'] === 'PENDING' || $data['laboratoryclearance'] === 'PENDING' || $data['departmentclearance'] === 'PENDING' || $data['accountingclearance'] === 'PENDING' || $data['registrarclearance'] === 'PENDING'){
+                    echo "<h5>The current status for $data[fname] $data[mname] $data[lname] with transaction number $data[referenceID], is still being reviewed.</h5>";
+                }else if($data['libraryclearance'] === 'APPROVED' && $data['laboratoryclearance'] === 'APPROVED' && $data['departmentclearance'] === 'APPROVED' && $data['accountingclearance'] === 'APPROVED' && $data['registrarclearance'] === 'APPROVED'){
+                    echo "<h5>The current status for $data[fname] $data[mname] $data[lname] with transaction number $data[referenceID], has been finished reviewing, <a href='formDownload.php?referenceID=$data[referenceID]'>download your copy here.</a></h5>";
+                }
+            } else {
+                echo "<h5>Please refer to the graduate section of reference checking for graduating students.</h5>";
             }
         }
     }
