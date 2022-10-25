@@ -17,15 +17,20 @@ class reference extends config{
         $data->execute();
         $result = $data->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($result as $data) {
-            if($data['studentType'] === "Transfer"){
-                if($data['libraryclearance'] === 'PENDING' || $data['laboratoryclearance'] === 'PENDING' || $data['departmentclearance'] === 'PENDING' || $data['accountingclearance'] === 'PENDING' || $data['registrarclearance'] === 'PENDING'){
-                    echo "<h5>The current status for $data[fname] $data[mname] $data[lname] with transaction number $data[referenceID], is still being reviewed.</h5>";
-                }else if($data['libraryclearance'] === 'APPROVED' && $data['laboratoryclearance'] === 'APPROVED' && $data['departmentclearance'] === 'APPROVED' && $data['accountingclearance'] === 'APPROVED' && $data['registrarclearance'] === 'APPROVED'){
-                    echo "<h5>The current status for $data[fname] $data[mname] $data[lname] with transaction number $data[referenceID], has been finished reviewing, <a href='formDownload.php?referenceID=$data[referenceID]'>download your copy here.</a></h5>";
+        if (empty($result)) {
+            echo "<h4>Invalid reference number inputted!</h4>";
+        }
+        else {
+            foreach ($result as $data) {
+                if($data['studentType'] === "Transfer"){
+                    if($data['libraryclearance'] === 'PENDING' || $data['laboratoryclearance'] === 'PENDING' || $data['departmentclearance'] === 'PENDING' || $data['accountingclearance'] === 'PENDING' || $data['registrarclearance'] === 'PENDING'){
+                        echo "<h5>The current status for <h5 class='data'>$data[fname] $data[mname] $data[lname]</h5> <h5>with transaction number <h5 class='data'>$data[referenceID]</h5>, <h5>is still being reviewed.</h5>";
+                    }else if($data['libraryclearance'] === 'APPROVED' && $data['laboratoryclearance'] === 'APPROVED' && $data['departmentclearance'] === 'APPROVED' && $data['accountingclearance'] === 'APPROVED' && $data['registrarclearance'] === 'APPROVED'){
+                        echo "<h5>The current status for <h5 class='data'>$data[fname] $data[mname] $data[lname]</h5> <h5>with transaction number <h5 class='data'>$data[referenceID]</h5>, <h5>has been finished reviewing, <a href='formDownload.php?referenceID=$data[referenceID]'>download</a> your copy.</h5>";
+                    }
+                } else {
+                    echo "<h4>Please refer to the graduate section of reference checking for graduating students.</h4>";
                 }
-            } else {
-                echo "<h5>Please refer to the graduate section of reference checking for graduating students.</h5>";
             }
         }
     }

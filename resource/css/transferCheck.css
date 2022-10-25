@@ -55,6 +55,23 @@ select{
   width: 100%;
 }
 
+.rcontent h5{
+  display: inline;
+}
+
+.data{
+  color: #24125f;
+  display: inline;
+}
+
+.rcontent h4{
+  text-align: center;
+}
+
+.rcontent a{
+  text-decoration: none;
+}
+
 @media(max-width:820px){
   .content{
     padding: 25px;

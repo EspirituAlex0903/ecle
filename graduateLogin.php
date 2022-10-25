@@ -63,11 +63,10 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
                  <?php gradInfo(); ?>
                 <form action="" method="post">
                   <div class="inputs">
-                    <input type="text" class="input" placeholder="Student Number" name="studentNumber">
-                    <input type="text" class="input" placeholder="Last Name" name="lname">
+                    <input type="text" class="input" pattern="[0-9]{4}-[0-9]{5}" oninvalid="this.setCustomValidity('Please follow the pattern (XXXX-XXXXX)')" oninput="this.setCustomValidity('')" placeholder="Student Number" name="studentNumber" required>
+                    <input type="text" class="input" pattern="[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('Please use characters!')" oninput="this.setCustomValidity('')" placeholder="Last Name" name="lname" required>
                   </div>
                   <div>
-                    <input type =hidden name="token" value="<?php echo Token::generate(); ?>">
                     <input type="submit" class="button-check"value="Check"/>
                   </div>
                 </form>

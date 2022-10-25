@@ -3,7 +3,7 @@
     <div class="col-md">
       <div>
         <h5>Please enter your provided reference number to check the current status</h5>
-        <input type="text" name="transnumber" class="form-control">
+        <input type="text" name="transnumber" oninvalid="this.setCustomValidity('Please enter your reference number!')" oninput="this.setCustomValidity('')" class="form-control" required>
       </div>
     </div>
   </div>
@@ -13,3 +13,4 @@
     </div>
   </div>
 </form>
+<button onclick="location.href='index.php'" class="btn btn-dark mt-3">Back</button>
