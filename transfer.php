@@ -34,7 +34,7 @@ $view = new view;
         </nav>
 
     <div class="container mt-5">
-      <div class="row row-1 px-4 justify-content-center">
+      <div class="row row-1 px-4 m-auto justify-content-center">
           <div class="col-md-3 pt-3 text-center">
             <img class="logo1" src="resource/img/CEU-logo.png">
           </div>

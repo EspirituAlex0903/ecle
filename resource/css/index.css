@@ -69,7 +69,6 @@ header{
   height: 40px;
   font-size: 13px;
   text-decoration: none;
-  margin-top: 23px;
   font-weight: bold;
   transition: 0.5s;
   animation: seo-load 3s;
@@ -84,14 +83,14 @@ header{
   background: rgba(240,78,152, .7);
   border-radius: 35px 0px 0px 35px;
   border-collapse: collapse;
-  height:450px;
+  height:500px;
 
 }
 .row .trans{
   background: rgba(36, 18, 95, .7);
   border-radius: 0 35px 35px 0;
   border-collapse: collapse;
-  height:450px;
+  height:500px;
 }
 
 .row-1{
@@ -103,7 +102,6 @@ header{
 .row h1{
   font-weight:bolder;
   font-size: 70px;
-  text-align: center;
 }
 .row p{
   font-size: 15px;
@@ -114,15 +112,6 @@ header{
 
 }
 
-.btn{
-  margin: 0;
-  position: absolute;
-  top: 85%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  display: inline-flex;
-}
 
 .button1{
   background-color: #24125f;
@@ -133,9 +122,9 @@ header{
   height: 40px;
   font-size: 13px;
   text-decoration: none;
-  margin-top: 23px;
   font-weight: bold;
   transition: 0.5s;
+  margin-top: 120px;
 }
 .button1:hover{
   width: 170px;
@@ -151,12 +140,31 @@ header{
   height: 40px;
   font-size: 13px;
   text-decoration: none;
-  margin-top: 23px;
+  margin-top: 50px;
+  font-weight: bold;
+  transition: 0.5s;
+  margin-left: 20px;
+}
+.button4{
+  background-color: #f04e98;
+  color: white;
+  border: 1px solid #24125f;
+  border-radius: 35px;
+  width: 150px;
+  height: 40px;
+  font-size: 13px;
+  text-decoration: none;
+  margin-top: 50px;
   font-weight: bold;
   transition: 0.5s;
   margin-left: 20px;
 }
 .button2:hover{
+  width: 170px;
+  height: 50px;
+  font-size: 15px;
+}
+.button4:hover{
   width: 170px;
   height: 50px;
   font-size: 15px;
@@ -184,9 +192,100 @@ footer{
 }
 
 
-@media(max-width:820px) {
+@media only screen and (max-width: 1200px) {
+  .row .grad{
+    height: 550px;
+  }
+
+  .button1{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 140px;
+  }
+  .row .trans{
+    height: 550px;
+  }
+
+  .button2{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 50px;
+    margin-left: 5px
+  }
+  .button4{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 5px
+  }
+@media only screen and (max-width: 1025px) {
+  .row .grad{
+    height: 550px;
+  }
+
+  .button1{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 140px;
+  }
+  .row .trans{
+    height: 550px;
+  }
+
+  .button2{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 50px;
+    margin-left: 5px
+  }
+  .button4{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 5px
+  }
+@media only screen and (max-width: 991px) {
+  .row .grad{
+    height: 600px;
+  }
+
+  .button1{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 210px;
+  }
+  .row .trans{
+    height: 600px;
+  }
+
+  .button2{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-left: 5px
+  }
+  .button4{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 5px
+  }
+@media only screen and (max-width: 961px) {
+  .content{
+    top: 10%;
+  }
+/*under 750*/
+@media only screen and (max-width: 767px) {
   .eclelogo{
-    width: 300px;
+    width: 400px;
   }
   .content .seo{
     padding-top: 50px;
@@ -198,19 +297,33 @@ footer{
     left: 12%;
     width: 77%;
   }
-  .section1{
-    max-height: 100vh;
-  }
   .row{
     box-shadow: none;
+  }
+  .row h1{
+    font-weight:bolder;
+    font-size: 70px;
+    text-align: center;
   }
   .row .grad{
     margin: 0 20px 0 20px;
     border-radius: 35px;
     border-collapse: collapse;
     box-shadow: 0 0 15px .1px #000;
-    height: 350px;
+    height: 380px;
+  }
+  .gradText{
+    padding: 0 20px 0 20px;
+  }
+  .transText{
+    padding: 0 20px 0 20px;
+  }
 
+  .button1{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 10px;
   }
   .row .trans{
     margin: 0 20px 0 20px;
@@ -221,7 +334,268 @@ footer{
     margin-top: 30px;
     padding-top: 0;
     margin-bottom: 20px;
-    height: 350px;
+    height: 430px;
+  }
+
+  .button2{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 50px;
+    margin-left: 5px
+  }
+  .button4{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 5px
+  }
+  .box2{
+    margin-top: 0;
+  }
+
+  .row .pic{
+    margin: 50px 0;
+  }
+
+  .row .elogo{
+    height: 400px;
+  }
+}
+/*under 641*/
+@media only screen and (max-width: 641px) {
+  .eclelogo{
+    width: 400px;
+  }
+  .content .seo{
+    padding-top: 50px;
+    font-size: 12px;
+  }
+  .content{
+    position: absolute;
+    top: 55%;
+    left: 12%;
+    width: 77%;
+  }
+  .row{
+    box-shadow: none;
+  }
+  .row h1{
+    font-weight:bolder;
+    font-size: 70px;
+    text-align: center;
+  }
+  .row .grad{
+    margin: 0 20px 0 20px;
+    border-radius: 35px;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px .1px #000;
+    height: 380px;
+  }
+  .gradText{
+    padding: 0 20px 0 20px;
+  }
+  .transText{
+    padding: 0 20px 0 20px;
+  }
+
+  .button1{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .row .trans{
+    margin: 0 20px 0 20px;
+    background: rgba(36, 18, 95, .7);
+    border-radius: 35px;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px .1px #000;
+    margin-top: 30px;
+    padding-top: 0;
+    margin-bottom: 20px;
+    height: 430px;
+  }
+
+  .button2{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 50px;
+    margin-left: 5px
+  }
+  .button4{
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 5px
+  }
+  .box2{
+    margin-top: 0;
+  }
+
+  .row .pic{
+    margin: 50px 0;
+  }
+
+  .row .elogo{
+    height: 400px;
+  }
+}
+/*under 481*/
+@media only screen and (max-width: 481px) {
+  .eclelogo{
+    width: 250px;
+  }
+  .content .seo{
+    padding-top: 50px;
+    font-size: 12px;
+  }
+  .content{
+    position: absolute;
+    top: 55%;
+    left: 12%;
+    width: 77%;
+  }
+  .row{
+    box-shadow: none;
+  }
+  .row h1{
+    font-weight:bolder;
+    font-size: 50px;
+    text-align: center;
+  }
+  .row .grad{
+    margin: 0 20px 0 20px;
+    border-radius: 35px;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px .1px #000;
+    height: 380px;
+  }
+  .gradText{
+    padding: 0 20px 0 20px;
+  }
+  .transText{
+    padding: 0 20px 0 20px;
+  }
+
+  .button1{
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+    margin-top: 30px;
+  }
+  .row .trans{
+    margin: 0 20px 0 20px;
+    background: rgba(36, 18, 95, .7);
+    border-radius: 35px;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px .1px #000;
+    margin-top: 30px;
+    padding-top: 0;
+    margin-bottom: 20px;
+    height: 430px;
+  }
+
+  .button2{
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+    margin-top: 50px;
+    margin-left: 5px
+  }
+  .button4{
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-left: 5px
+  }
+  .box2{
+    margin-top: 0;
+  }
+
+  .row .pic{
+    margin: 50px 0;
+  }
+
+  .row .elogo{
+    height: 400px;
+  }
+}
+/*under 320*/
+@media only screen and (max-width: 320px) {
+  .eclelogo{
+    width: 250px;
+  }
+  .content .seo{
+    padding-top: 50px;
+    font-size: 10px;
+  }
+  .content{
+    position: absolute;
+    top: 55%;
+    left: 12%;
+    width: 77%;
+  }
+  .row{
+    box-shadow: none;
+  }
+  .row h1{
+    font-weight:bolder;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .section1{
+    min-height: 120vh;
+  }
+  .row .grad{
+    margin: 0 20px 0 20px;
+    border-radius: 35px;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px .1px #000;
+    height: 380px;
+  }
+  .gradText{
+    padding: 0 20px 0 20px;
+  }
+  .transText{
+    padding: 0 20px 0 20px;
+  }
+
+  .button1{
+    width: 120px;
+    height: 35px;
+    font-size: 10px;
+    margin-top: 30px;
+  }
+  .row .trans{
+    margin: 0 20px 0 20px;
+    background: rgba(36, 18, 95, .7);
+    border-radius: 35px;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px .1px #000;
+    margin-top: 30px;
+    padding-top: 0;
+    margin-bottom: 20px;
+    height: 520px;
+  }
+
+  .button2{
+    width: 120px;
+    height: 35px;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 5px
+  }
+  .button4{
+    width: 120px;
+    height: 35px;
+    font-size: 10px;
+    margin-top: 30px;
   }
   .box2{
     margin-top: 0;
