@@ -18,7 +18,7 @@ class graduate extends config{
             if($data['studentType'] === "Transfer"){
                 echo "Please go to the transfer reference checker for transfer students.";
             } else {
-                echo "<h3 class='text-center'> Information of Student </h3>";
+            echo "<h3 class='text-center font-weight-bold'> Information of Student </h3>";
             echo "<div class='table-responsive'>";
             echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
             echo "<thead class='thead-dark'>";
@@ -40,6 +40,6 @@ class graduate extends config{
             break;
             }
         }
-        
+
     }
 }

@@ -52,7 +52,10 @@ header{
 }
 @media(max-width:820px) {
   .content{
-    height: 400px;
+    height: 100%;
     width: 100%;
+  }
+  .text{
+    font-size: 15px;
   }
 }

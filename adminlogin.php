@@ -50,7 +50,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
 
                 <div class="col-md">
                   <div class="sample">
-                  <div class="login-fields">
+                  <div class="login-fields pb-5">
                     <div class="row ">
                       <div class="col-3">
                         <img src="resource/img/CEU-logo.png" alt="CEU Logo" class="login-logo">

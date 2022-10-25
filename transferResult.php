@@ -14,15 +14,17 @@ $reference = new reference();
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <title>Ecle Status</title>
-</div>
-    <div>
-        <div class="content mt-5 pt-4">
+
+    <div class="row">
+        <div class="rcontent">
+          <div class="col-md py-5">
             <?php
             $reference = new reference($_POST['transnumber']);
             $reference->referenceCheck();
             ?>
+          </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md px-5">
         <button class="btn btn-dark" onClick="location.href='transferCheck.php'">Back</button>
         </div>
     </div>

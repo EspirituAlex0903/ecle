@@ -1,7 +1,7 @@
 <form method="POST">
   <div class="row mt-5 g-3">
     <div class="col-md">
-      <div class="content">
+      <div>
         <h5>Please enter your provided reference number to check the current status</h5>
         <input type="text" name="transnumber" class="form-control">
       </div>

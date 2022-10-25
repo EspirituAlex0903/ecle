@@ -15,43 +15,32 @@ $view = new view;
     <title>Ecle Status</title>
   </head>
   <body>
-    <header>
       <header>
           <nav class="navbar navbar-expand-md navbar-dark">
             <img src="resource/img/ceulogo2.png" class="img-fluid logo">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="icons ml-auto">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item"><a class="nav-link" href="https:/www.facebook.com/theCEUofficial/"><i class="fab fa-facebook-f"></i></a></li>
-                  <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/ceuofficial/"><i class="fab fa-instagram"></i></a></li>
-                  <li class="nav-item"><a class="nav-link" href="https://twitter.com/ceumalolos"><i class="fab fa-twitter"></i></a></li>
-                </ul>
-              </div>
-            </div>
           </nav>
 
-      <div class="container mt-5">
-        <div class="row row-1 p-3">
-          <div class="col-3">
-            <img class="logo1" src="resource/img/CEU-logo.png">
+      <div class="container py-5">
+        <div class="content justify-content-center">
+          <div class="row">
+            <div class="col-md-3 mt-4 text-center">
+              <img class="logo1" src="resource/img/ceulogo3.png">
+            </div>
+            <div class="col-md-6 mt-4 text-center">
+              <h1>Ecle Status Checker</h1>
+            </div>
+            <div class="col-md-3 mt-4 text-center">
+              <img class="logo2" src="resource/img/eclewhite.png">
+            </div>
+          <div class="input pb-5 m-auto">
+            <?php
+              if(!empty($_POST)){
+                  require 'transferResult.php';
+              }else{
+                  require 'checkForm.php';
+              }
+              ?>
           </div>
-          <div class="col-6">
-            <h1>Ecle Status Checker</h1>
-          </div>
-          <div class="col-3">
-            <img class="logo2" src="resource/img/logo6.png">
-          </div>
-        <div class="input pb-5 m-auto">
-          <?php
-            if(!empty($_POST)){
-                require 'transferResult.php';
-            }else{
-                require 'checkForm.php';
-            }
-            ?>
         </div>
       </div>
     </div>
