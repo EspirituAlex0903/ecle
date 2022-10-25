@@ -16,7 +16,7 @@ $reference = new reference();
     <title>Ecle Status</title>
 </div>
     <div>
-        <div class="content mt-5 pt-4">
+        <div class="content">
             <?php
             $reference = new reference($_POST['transnumber']);
             $reference->referenceCheck();

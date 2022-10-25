@@ -28,7 +28,7 @@ while($data = $result->fetch_assoc()) {
     $pdf->useTemplate($template);
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Helvetica');
-    $pdf->SetFontSize(9);
+    $pdf->SetFontSize(7);
 
     $pdf->SetXY(27, 40);
     $pdf->Write(0, $data['lname']);
@@ -62,7 +62,7 @@ while($data = $result->fetch_assoc()) {
 
     // Signature Registrar
     $pdf->Image('pdfprototype/signature/signature.png', "135","97", "50","14");
-    $pdf->Output('D', "EXIT_CLEARANCE_$data[lname] $data[fname].pdf");
+    $pdf->Output('I', "EXIT_CLEARANCE_$data[lname] $data[fname].pdf");
     header('Location: transferCheck.php');
 }
 
