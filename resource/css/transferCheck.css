@@ -14,17 +14,13 @@ html{
 }
 header{
   min-height: 100vh;
-  background-image: linear-gradient(rgba(255, 255, 255, .95),rgba(255, 255, 255, .8)),url("../img/ceubg.jpg");
+  background-image: linear-gradient(rgba(36, 18, 95, .95),rgba(220, 47, 156, .8)),url("../img/ceubg.jpg");
   background-position: center;
   background-size: cover;
 }
 .navbar{
   width: 100%;
-  background-color: #fff;
-  -webkit-box-shadow:0px 0.5px 5px #000;
-  -moz-box-shadow:0px 0.5px 5px #000;
-   box-shadow:0px 0.5px 5px #000;
-  animation: nav-load var(--nav-load-time) ease-in;
+  background: linear-gradient(to right,#24125f,#f04e98);
 }
 
 .logo{

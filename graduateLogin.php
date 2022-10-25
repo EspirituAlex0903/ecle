@@ -51,7 +51,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
           <div class="col-md">
             <div class="sample">
               <div class="login-fields">
-                <div class="row ">
+                <div class="row">
                   <div class="col-3">
                     <img src="resource/img/CEU-logo.png" alt="CEU Logo" class="login-logo">
                   </div>
@@ -63,7 +63,6 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
                  <?php gradInfo(); ?>
                 <form action="" method="post">
                   <div class="inputs">
-
                     <input type="text" class="input" placeholder="Student Number" name="studentNumber">
                     <input type="text" class="input" placeholder="Last Name" name="lname">
                   </div>
@@ -75,20 +74,11 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
                  <div>
                   <a href="index.php"><input type="submit" class="button-back"value="Back"/></a>
                 </div>
-                <?php
-                  /*if(!empty($_POST)){
-                      require 'viewGraduate.php';
-                  }else{
-                      require 'graduateForm.php';
-                  }*/
-                  ?>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
     </header>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

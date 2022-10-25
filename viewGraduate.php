@@ -17,7 +17,6 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
 
 <body>
   <header>
-
       <nav class="navbar navbar-expand-md navbar-dark">
         <img src="resource/img/ceulogo2.png" class="img-fluid logo">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,34 +33,22 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
         </div>
       </nav>
 
-        <div class="container-fluid p-5">
-          <div class="button">
-              <a href="graduateLogin.php"><i class="fa fa-angle-left fa-2x mb-3 color-primary"></i></a>
-          </div>
-            <div class="row justify-content-md-center">
-              <div class="col-md-6 content">
-
-                <div class="text">
-                    <?php
-                        $grad = new graduate($_GET['studentNumber'], $_GET['lname']);
-                        $grad->viewGraduate();
-                    ?>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <footer>
-      <div class="container">
+      <div class="container-fluid p-5">
         <div class="row">
-          <div class="col">
-            <p class="ft pt-3">
-              Centro Escolar University || R.Bolasoc | J.Espiritu | D.Calalang | C.DelaCruz | L.Pradez | D.Prado
-            </p>
+          <div class="col-md-3">
+            <a href="graduateLogin.php"><i class="fa fa-angle-left fa-2x mb-3 color-primary"></i></a>
           </div>
+            <div class="col-md-6 content">
+              <div class="text">
+                  <?php
+                      $grad = new graduate($_GET['studentNumber'], $_GET['lname']);
+                      $grad->viewGraduate();
+                  ?>
+                </div>
+              </div>
         </div>
       </div>
-    </footer>
+    </header>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

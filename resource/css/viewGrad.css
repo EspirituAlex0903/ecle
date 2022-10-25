@@ -16,7 +16,7 @@ html{
 }
 
 header{
-  min-height: 93vh;
+  min-height: 100vh;
   background-image: linear-gradient(rgba(36, 18, 95, .95),rgba(220, 47, 156, .8)),url("../img/ceubg.jpg");
   background-position: center;
   background-size: cover;
@@ -24,7 +24,7 @@ header{
 .navbar{
   width: 100%;
   background: linear-gradient(to right,#24125f,#f04e98);
-  animation: nav-load var(--nav-load-time) ease-in;
+
 }
 
 .logo{
@@ -39,28 +39,16 @@ header{
 }
 
 .content{
-  width: 50%;
   background: rgba(240,78,152, .7);
-  border-radius: 35px;
+  border-radius: 20px;
   border-collapse: collapse;
   box-shadow: 0 0 15px .1px #000;
   height:100%;
 }
 .text{
-  color: #fff;
+  color: #000;
   text-align: center;
   font-size: 30px;
-}
-
-footer{
-  min-height: 7vh;
-  background-color: #1d2b34;
-}
-
-.ft{
-  color: #fff;
-  font-size: 60%;
-  text-align: center;
 }
 @media(max-width:820px) {
   .content{

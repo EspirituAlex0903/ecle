@@ -30,8 +30,8 @@
           </div>
         </nav>
 
-        <div class="container-fluid pt-md-3">
-          <div class="row m-md-4">
+        <div class="container-fluid">
+          <div class="row">
             <div class="col-md">
               <div class="elogo">
                 <div class="content">

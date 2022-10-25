@@ -47,11 +47,12 @@ header{
 .content{
   height: 70%;
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 25%;
   width: 50%;
 }
 .eclelogo{
+  height: 50%;
   width: 100%;
   animation: logo-load 2s;
 }
@@ -97,7 +98,6 @@ header{
   border-radius: 35px;
   border-collapse: collapse;
   box-shadow: 0 0 15px .1px #000;
-
 }
 
 .row h1{

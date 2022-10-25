@@ -7,113 +7,113 @@ $view = new view;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ee4d206cc2.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="resource/css/transfer.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <title>Ecle Transfer Form</title>
   </head>
   <body>
-    <div class="container mt-2">
-    <div class="row">
-   <img class="logo1" src="resource/img/CEU-logo.png">
+    <header>
 
-  <div class="col">
-  <h1>Ecle Transfer Form</h1>
-  </div>
-  <div class="col">
-  <img class="logo2" src="resource/img/logo6.png">
-  </div>
-  </div>
-  </div>
-
-  <div class="transbg">
-    <div class="container mt-5">
-
-
-<div class="container mt-4 shadow-lg">
-
-
-
-
-
-
-
-  <div>
-  <?php
-  if(!empty($_POST)){
-    $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['year']);
-    $insert->insertApplication();
-  }
-  ?>
-  <form class="row mt-5 g-3" method="POST">
-          <!---Firstname--->
-          <div class="col-md-4">
-            <label for="firstName" class="form-label">First Name</label>
-            <input type="text" name="fname" class="form-control" id="firstName" required="">
-          </div>
-
-          <!---Middlename--->
-          <div class="col-md-4">
-            <label for="middleName" class="form-label">Middle Name</label>
-            <input type="text" name="mname" class="form-control" id="middleName" required="">
-          </div>
-
-          <!---Lastname--->
-          <div class="col-md-4">
-            <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" name="lname" class="form-control" id="lastName" required="">
-          </div>
-
-          <!---Student Number--->
-          <div class="col-md-4">
-            <label for="studentNumber" class="form-label">Student Number</label>
-            <input type="text" name="studID" class="form-control" id="studentNumber" required="">
-          </div>
-
-          <!---Email--->
-          <div class="col-md-4">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="email">
-          </div>
-
-          <!---Contact Number--->
-          <div class="col-md-4">
-            <label for="contactNumber" class="form-label">Contact Number</label>
-            <input type="text" name="contact" class="form-control" id="contactNumber">
-          </div>
-
-          <!---Course/Degree--->
-          <div class="col-md-8 justify-content-center">
-            <label form="course" class="form-label">Course/Degree</label>
-
-            <div class="col-md">
-            <select id="course" name="course" class="form-select form-control" data-live-search="true">
-            <?php $view->courseSP2();?>
-            </select>
-
+        <nav class="navbar navbar-expand-md navbar-dark">
+          <img src="resource/img/logo.jpg" class="img-fluid logo">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="icons ml-auto">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="https:/www.facebook.com/theCEUofficial/"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/ceuofficial/"><i class="fab fa-instagram"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://twitter.com/ceumalolos"><i class="fab fa-twitter"></i></a></li>
+              </ul>
             </div>
           </div>
+        </nav>
 
-          <!---Year Level--->
-          <div class="col-md-4">
-            <label for="yearLevel" class="form-label">Year Level</label>
-            <input type="text" name="year" class="form-control" id="yearLevel">
+    <div class="container mt-5">
+      <div class="row row-1 px-4 justify-content-center">
+          <div class="col-md-3 pt-3 text-center">
+            <img class="logo1" src="resource/img/CEU-logo.png">
+          </div>
+          <div class="col-md-6 pt-3 text-center">
+            <h1>Ecle Transfer Form</h1>
+          </div>
+          <div class="col-md-3 pt-3 text-center">
+            <img class="logo2" src="resource/img/logo6.png">
           </div>
 
-          <div class="col-md-12 mb-4">
-            <button onclick="location.href='index.php'" class="btn btn-dark">Back</button>
-            <button type="submit" class="btn btn-dark">Submit</button>
+        <?php
+        if(!empty($_POST)){
+          $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['year']);
+          $insert->insertApplication();
+        }
+        ?>
+
+        <form method="POST">
+          <div class="row mt-5 g-3">
+            <!---Firstname--->
+            <div class="col-md-4">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" name="fname" class="form-control" id="firstName" required="">
+            </div>
+
+            <!---Middlename--->
+            <div class="col-md-4">
+              <label for="middleName" class="form-label">Middle Name</label>
+              <input type="text" name="mname" class="form-control" id="middleName" required="">
+            </div>
+
+            <!---Lastname--->
+            <div class="col-md-4">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" name="lname" class="form-control" id="lastName" required="">
+            </div>
+
+            <!---Student Number--->
+            <div class="col-md-4">
+              <label for="studentNumber" class="form-label">Student Number</label>
+              <input type="text" name="studID" class="form-control" id="studentNumber" required="">
+            </div>
+
+            <!---Email--->
+            <div class="col-md-4">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" id="email">
+            </div>
+
+            <!---Contact Number--->
+            <div class="col-md-4">
+              <label for="contactNumber" class="form-label">Contact Number</label>
+              <input type="text" name="contact" class="form-control" id="contactNumber">
+            </div>
+
+            <!---Course/Degree--->
+            <div class="col-md-8">
+              <label form="course" class="form-label">Course/Degree</label>
+              <select id="course" name="course" class="form-select form-control" data-live-search="true">
+              <?php $view->courseSP2();?>
+              </select>
+            </div>
+
+            <!---Year Level--->
+            <div class="col-md-4">
+              <label for="yearLevel" class="form-label">Year Level</label>
+              <input type="text" name="year" class="form-control" id="yearLevel">
+            </div>
+
+            <div class="col-md my-4">
+              <button onclick="location.href='index.php'" class="btn btn-dark">Back</button>
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
           </div>
         </form>
+      </div>
+    </div>
   </div>
-
-
-
-
-</div>
-</div>
+</header>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
