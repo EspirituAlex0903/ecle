@@ -13,14 +13,20 @@ html{
   scroll-behavior: smooth;
 }
 
+/* .transbg{
+    background-image: linear-gradient(rgb(255,255,255, 0.4),rgb(255,255,255, 0.4)),url(../img/transferbg.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position:center;
+} */
+
 .logo1{
   height: 80px;
   width: 105px;
-
 }
+
 .logo2{
   height: 80px;
   width: 250px;
   float: right;
-
 }

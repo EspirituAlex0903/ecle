@@ -15,11 +15,9 @@ $view = new view;
     <title>Ecle Transfer Form</title>
   </head>
   <body>
-
-    <div class="container mt-5">
-<div class="row">
-
-  <img class="logo1" src="resource/img/CEU-logo.png">
+    <div class="container mt-2">
+    <div class="row">
+   <img class="logo1" src="resource/img/CEU-logo.png">
 
   <div class="col">
   <h1>Ecle Transfer Form</h1>
@@ -27,7 +25,21 @@ $view = new view;
   <div class="col">
   <img class="logo2" src="resource/img/logo6.png">
   </div>
-</div>
+  </div>
+  </div>
+
+  <div class="transbg">
+    <div class="container mt-5">
+
+
+<div class="container mt-4 shadow-lg">
+
+
+
+
+
+
+
   <div>
   <?php
   if(!empty($_POST)){
@@ -90,14 +102,18 @@ $view = new view;
             <input type="text" name="year" class="form-control" id="yearLevel">
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-12 mb-4">
             <button onclick="location.href='index.php'" class="btn btn-dark">Back</button>
             <button type="submit" class="btn btn-dark">Submit</button>
           </div>
         </form>
   </div>
-        
 
+
+
+
+</div>
+</div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
