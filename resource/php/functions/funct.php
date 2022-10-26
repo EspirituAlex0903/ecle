@@ -271,12 +271,27 @@ function changeP(){
                     } catch (Exception $e) {
                         die($e->getMessage());
                     }
-                    Redirect::to('template.php');
+                    if($user->data()->groups == 2){
+                        Redirect::to('registrar.php');
+                        echo $user->data()->groups;
+                    }else if($user->data()->groups == 3){
+                        Redirect::to('dean.php');
+                        echo $user->data()->groups;
+                    }else if($user->data()->groups == 4){
+                        Redirect::to('accounting.php');
+                        echo $user->data()->groups;
+                    }else if($user->data()->groups == 5){
+                        Redirect::to('laboratory.php');
+                        echo $user->data()->groups;
+                    }else if($user->data()->groups == 6){
+                        Redirect::to('library.php');
+                        echo $user->data()->groups;
+                    }
                 }
             }else{
                 foreach ($validate->errors()as $error) {
                 pError($error);
-                }
+            }
         }
     }
 }

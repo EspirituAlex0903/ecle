@@ -3,6 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
 isLogin();
 $view = new view;
 $user = new user();
+isLaboratory($user->data()->groups);
  ?>
 
 
@@ -24,14 +25,6 @@ $user = new user();
              <img src="resource/img/logo.jpg" height="70" class="d-inline-block align-top"
                alt="mdb logo"><h3 class="ib">
            </a>
-           <a href="stats.php"><i class="fas fa-chart-line ceucolor"></i></a>
-              <a href="userVerification.php"><i class="fas fa-user-plus ceucolor"></i></a>
-              <a href="verification.php"><i class="fas fa-user-graduate ceucolor"></i></a>
-              <a href="ntransaction.php"><i class="fas fa-file-upload ceucolor"></i></a>
-              <a href="pending.php"><i class="fas fa-home ceucolor"></i></a>
-              <a href="https:/www.facebook.com/theCEUofficial/"><i class="fab fa-facebook-f ceucolor"></i></a>
-              <a href="https://www.instagram.com/ceuofficial/"><i class="fab fa-instagram ceucolor"></i></a>
-              <a href="https://twitter.com/ceumalolos"><i class="fab fa-twitter ceucolor"></i></a>
          </nav>
 
          <div class="container mt-5  pt-5 puff-in-center">
@@ -66,8 +59,9 @@ $user = new user();
                             <div class="row justify-content-center">
                                 <div class="form-group col-7">
                                     <label  >&nbsp;</label>
-                                <input type="hidden" name ="Token" value="<?php echo Token::generate();?>" />
-                                 <input type="submit" value="Change password" class=" form-control btn btn-primary" />
+                                    <input type="hidden" name ="Token" value="<?php echo Token::generate();?>" />
+                                    <input type="submit" value="Change password" class=" form-control btn btn-primary" />
+                                    <input type="button" value="Back" class="form-control btn btn-primary mt-2" onclick="location.href='laboratory.php'"/>
                                 </div>
                             </div>
                         </td>

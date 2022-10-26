@@ -66,7 +66,7 @@ isDean($user->data()->groups);
                     <i class="fas fa-user me-2"></i> <?php echo $user->data()->username ?>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a href="changepassword.php" class="dropdown-item">Setting</a></li>
+                    <li><a href="changepasswordDean.php" class="dropdown-item">Setting</a></li>
                     <li><a href="logout.php" class="dropdown-item">Logout</a></li>
                   </ul>
                 </li>
