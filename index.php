@@ -22,7 +22,7 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="icons ml-auto">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="https:/www.facebook.com/theCEUofficial/"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/theCEUofficial/"><i class="fab fa-facebook-f"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/ceuofficial/"><i class="fab fa-instagram"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="https://twitter.com/ceumalolos"><i class="fab fa-twitter"></i></a></li>
               </ul>
