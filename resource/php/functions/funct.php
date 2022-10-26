@@ -137,7 +137,7 @@ function vald(){
                         $login = $user->login(Input::get('username'),Input::get('password'),$remember);
                         if($login){
                             if($user->data()->groups == 1){
-                                 Redirect::to('template.php');
+                                 Redirect::to('registrar.php');
                                 echo $user->data()->groups;
                             }else if($user->data()->groups == 2){
                                  Redirect::to('registrar.php');
@@ -156,7 +156,7 @@ function vald(){
                                echo $user->data()->groups;
                             }
                             else{
-                                Redirect::to('template.php');
+                                Redirect::to('index.php');
                                echo $user->data()->groups;
                             }
                         }else{
