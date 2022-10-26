@@ -15,7 +15,7 @@ $reference = new reference();
 
     <title>Ecle Status</title>
 
-    <div class="row">
+    <div class="row m-auto">
         <div class="rcontent">
           <div class="col-md py-5">
             <?php

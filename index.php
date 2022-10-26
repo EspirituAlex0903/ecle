@@ -53,28 +53,38 @@
 
     <section class="section1" id="sec">
       <div class="container pt-5">
-        <div class="row row-1 text-white m-md-4">
+        <div class="row row-1 text-white m-lg-4">
           <div class="col-md grad">
-            <img class="logo3 ml-3" src="resource/img/logo3.png" />
-            <div class="box1 mt-3">
-              <h1 class="pb-3 gradHead">Graduate</h1>
-                <p class="pl-md-5 pr-nd-5 text-left">
+              <img class="logo3 ml-3" src="resource/img/logo3.png" />
+            <div class="row mt-3 justify-content-center">
+              <h1 class="pb-3 gradHead text-center">Graduate</h1>
+                <p class="gradText px-md-5">
                   For graduating students please use your student ID and enter the password provided to view your exit clearance.
                 </p>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md text-center">
                 <div class="btn">
                   <button onclick="location.href='graduateLogin.php'" class="button1">Check Clearance</button>
                 </div>
+              </div>
             </div>
           </div>
           <div class="col-md trans">
             <div class="box2">
-              <h1 class="pb-3 transHead">Transfer</h1>
-                <p class="pl-md-5 pr-md-5 text-left">
+              <div class="row mt-3 justify-content-center">
+                <h1 class="pb-3 transHead">Transfer</h1>
+                <p class="transText px-md-5">
                   For transferring students, please complete the requirements for the exit clearance form. All form requirements will be reviewd by all departments. You may check the status of your exit clearance by entering the reference number provided after initial submission of the form.
                 </p>
-              <div class="btn">
-                <button onclick="location.href='transfer.php'" class="button2">Apply Clearance</button>
-                <button onclick="location.href='transferCheck.php'" class="button2">Check Clearance</button>
+                <div class="row align-items-center">
+                  <div class="col-md">
+                    <div class="btn">
+                      <button onclick="location.href='transfer.php'" class="button2">Apply Clearance</button>
+                      <button onclick="location.href='transferCheck.php'" class="button4">Check Clearance</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
