@@ -35,8 +35,12 @@ header{
   text-align: right;
 }
 
-.logo1{
-  height: 80px;
+.head{
+  align-items: center;
+}
+
+.head-text{
+  float: right;
 }
 
 .logo2{

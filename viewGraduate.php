@@ -39,7 +39,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
             <a href="graduateLogin.php"><i class="fa fa-angle-left fa-2x mb-3 color-primary"></i></a>
           </div>
             <div class="col-md-6 content">
-              <div class="text">
+              <div class="text text-white mt-3 mb-3">
                   <?php
                       $grad = new graduate($_GET['studentNumber'], $_GET['lname']);
                       $grad->viewGraduate();

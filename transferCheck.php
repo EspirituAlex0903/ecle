@@ -22,14 +22,11 @@ $view = new view;
 
       <div class="container py-5">
         <div class="content justify-content-center">
-          <div class="row">
-            <div class="col-md-3 mt-4 text-center">
-              <img class="logo1" src="resource/img/ceulogo3.png">
+          <div class="row head">
+            <div class="col-md-8 mt-4 text-center">
+              <h1 class="head-text">Ecle Status Checker</h1>
             </div>
-            <div class="col-md-6 mt-4 text-center">
-              <h1>Ecle Status Checker</h1>
-            </div>
-            <div class="col-md-3 mt-4 text-center">
+            <div class="col-md-4 mt-4 text-center">
               <img class="logo2" src="resource/img/eclewhite.png">
             </div>
           <div class="input pb-5 m-auto">
