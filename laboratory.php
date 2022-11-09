@@ -32,7 +32,7 @@ isLaboratory($user->data()->groups);
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
             <!-- dashboard -->
-            <div class="item"><a href="#"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
+            <div class="item"><p><i class="fa-solid fa-gauge-high"></i>Dashboard</p>
             </div>
 
             <!-- requests -->
