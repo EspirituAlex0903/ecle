@@ -46,6 +46,7 @@ public function viewRequestTableRegistrarTransfer(){
   }
   echo "</table>";
 
+
 }
 
 public function viewRequestTableRegistrarGraduate(){
@@ -597,7 +598,7 @@ public function viewRequestTableLibraryGraduate(){
 
 }
 
-public function viewApproveTableLibraryTransfer(){ 
+public function viewApproveTableLibraryTransfer(){
   $con = $this->con();
   $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='APPROVED' AND `studentType` = 'Transfer'";
   $data= $con->prepare($sql);
@@ -636,7 +637,7 @@ public function viewApproveTableLibraryTransfer(){
 
 }
 
-public function viewApproveTableLibraryGraduate(){ 
+public function viewApproveTableLibraryGraduate(){
   $con = $this->con();
   $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='APPROVED' AND `studentType` = 'Graduate'";
   $data= $con->prepare($sql);
