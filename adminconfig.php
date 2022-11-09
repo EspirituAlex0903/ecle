@@ -17,6 +17,9 @@ $import = new import();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="resource/css/adminConfigStyle.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
 
     <title>Dashboard</title>
   </head>
@@ -29,17 +32,34 @@ $import = new import();
           </div>
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
+            <!-- dashboard -->
+            <div class="item"><a href="registrar.php"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
+            </div>
+
+            <script type="text/javascript">
+              $(document).ready(function(){
+                  $('.sub-btn').click(function(){
+                      $(this).next('.sub-menu').slideToggle();
+                      $(this).find('.dropdown').toggleClass('rotate');
+                  });
+              });
+            </script>
+
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo "(".$viewtable->viewTotalTransfers().")" ?>
+            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalTransfers().")". '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo "(".$viewtable->viewTotalGraduates().")" ?>
+            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalGraduates().")". '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-flask me-2"></i>Science <?php echo "(".$viewtable->viewTotalScience().")" ?>
+            <i class="fa-solid fa-flask me-2"></i>Science <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalScience().")". '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo "(".$viewtable->viewTotalNonScience().")" ?>
+            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalNonScience().")". '</span>';  ?>
             </a>
 
           </div>
@@ -52,7 +72,6 @@ $import = new import();
           <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4 border-bottom">
             <div class="d-flex align-items-center">
               <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-              <a href="registrar.php" class="list-group list-group-item-action bg-transparent"><h2 class="fs-2 m-0 fw-bold"> Dashboard</h2></a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupporteContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
