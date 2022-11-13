@@ -22,6 +22,7 @@ $import = new import();
     <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
 
     <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
   </head>
   <body>
     <header>
@@ -85,7 +86,7 @@ $import = new import();
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a href="adminconfig.php" class="dropdown-item">Config</a></li>
-                    <li><a href="changepassword.php" class="dropdown-item">Setting</a></li>
+                    <li><a href="changepasswordRegistrar.php" class="dropdown-item">Setting</a></li>
                     <li><a href="logout.php" class="dropdown-item">Logout</a></li>
                   </ul>
                 </li>

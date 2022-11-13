@@ -17,7 +17,8 @@ isRegistrar($user->data()->groups);
    <link href="vendor/css/all.css" rel="stylesheet">
    <link rel="stylesheet" type="text/css"  href="resource/css/styles.css">
    <link rel="stylesheet" type="text/css"  href="vendor/css/bootstrap-select.min.css">
-
+   <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
+   
  </head>
  <body>
          <nav class="navbar navbar-dark bg-white shadow-sm slide-in-left">

@@ -18,8 +18,10 @@ isLibrary($user->data()->groups);
    <link rel="stylesheet" type="text/css"  href="resource/css/styles.css">
    <link rel="stylesheet" type="text/css"  href="vendor/css/bootstrap-select.min.css">
 
+   <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
  </head>
  <body>
+
          <nav class="navbar navbar-dark bg-white shadow-sm slide-in-left">
            <a class="navbar-brand" href="https://malolos.ceu.edu.ph/">
              <img src="resource/img/logo.jpg" height="70" class="d-inline-block align-top"
