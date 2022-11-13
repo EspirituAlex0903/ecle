@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <title>Ecle</title>
+    <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
   </head>
   <body>
 

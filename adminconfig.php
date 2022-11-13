@@ -122,9 +122,9 @@ $import = new import();
               </script>
             </div>
           </div>
-          <div class="container-fluid p-5">
-            <div class="row justify-content-md-center">
-              <div class="col-md-5 py-5 content">
+          <div class="container-fluid main p-5">
+            <div class="row justify-content-md-center next">
+              <div class="col-md-5 pt-3 content">
               <?php
                 if(!empty($_POST['semester']) && !empty($_POST['sy'])){
                   $update = new update($_POST['semester'], $_POST['sy']);
@@ -144,7 +144,7 @@ $import = new import();
                     <input type="text" name="sy" class="form-control">
                   </div>
 
-                  <div class="col-md pt-5 text-center">
+                  <div class="col-md pt-3 text-center">
                     <button type="submit" class="btn btn-dark">Submit</button>
                   </div>
                 </form>

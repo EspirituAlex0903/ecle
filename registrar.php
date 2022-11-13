@@ -23,7 +23,7 @@ $import = new import();
 
 
     <title>Dashboard</title>
-    <link rel="icon" type="image/x-icon" href="resource/img/eclewhite.ico" />
+    <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
   </head>
   <body>
     <header>

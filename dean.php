@@ -21,6 +21,7 @@ isDean($user->data()->groups);
     <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
 
     <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
   </head>
   <body>
     <header>

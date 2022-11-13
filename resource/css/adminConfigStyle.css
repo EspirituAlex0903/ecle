@@ -146,6 +146,12 @@ table{
 .logo{
   height: 50px;
 }
+.main{
+  height: 63vh;
+}
+.next{
+  height: 100%;
+}
 
 
 @media(min-width: 768px){
