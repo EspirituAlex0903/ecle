@@ -16,8 +16,12 @@ isDean($user->data()->groups);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="resource/css/styledash.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
 
     <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
   </head>
   <body>
     <header>
@@ -28,24 +32,57 @@ isDean($user->data()->groups);
           </div>
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
-            <input type="submit" name="requests" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Requests"></input>
-            <input type="submit" name="approved" class="list-group-item list-group-item-action second-text fw-bold  border-bottom" value="Approved"></input>
+            <!-- dashboard -->
+            <div class="item"><p><i class="fa-solid fa-gauge-high"></i>Dashboard</p>
+            </div>
+
+            <!-- requests -->
+            <div class="item">
+              <a class="sub-btn"><i class="fa-solid fa-tag"></i>Requests<i class="fas fa-chevron-right dropdown"></i></a>
+              <div class="sub-menu">
+                <input type="submit" name="Rtransfer" class="sub-item border-bottom" value="Transfer">
+                <input type="submit" name="Rgraduate" class="sub-item" value="Graduate">
+              </div>
+            </div>
+
+            <!-- approved -->
+            <div class="item pb-3 border-bottom">
+              <a class="sub-btn"><i class="fa-solid fa-thumbs-up"></i>Approved<i class="fas fa-chevron-right dropdown"></i></a>
+              <div class="sub-menu">
+                <input type="submit" name="Atransfer" class="sub-item" value="Transfer">
+                <input type="submit" name="Agraduate" class="sub-item" value="Graduate">
+              </div>
+            </div>
+
+            <script type="text/javascript">
+              $(document).ready(function(){
+                  $('.sub-btn').click(function(){
+                      $(this).next('.sub-menu').slideToggle();
+                      $(this).find('.dropdown').toggleClass('rotate');
+                  });
+              });
+            </script>
+
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo "(".$viewtable->viewTotalTransfers().")" ?>
+            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalTransfers().")". '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo "(".$viewtable->viewTotalGraduates().")" ?>
+            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalGraduates().")". '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-flask me-2"></i>Science <?php echo "(".$viewtable->viewTotalScience().")" ?>
+            <i class="fa-solid fa-flask me-2"></i>Science <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalScience().")". '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo "(".$viewtable->viewTotalNonScience().")" ?>
+            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalNonScience().")". '</span>';  ?>
             </a>
 
           </div>
           </form>
-          
+
 
         </div>
 
@@ -53,7 +90,6 @@ isDean($user->data()->groups);
           <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4 border-bottom">
             <div class="d-flex align-items-center">
               <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-              <h2 class="fs-2 m-0"> Dashboard</h2>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupporteContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -66,7 +102,7 @@ isDean($user->data()->groups);
                     <i class="fas fa-user me-2"></i> <?php echo $user->data()->username ?>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a href="changepassword.php" class="dropdown-item">Setting</a></li>
+                    <li><a href="changepasswordDean.php" class="dropdown-item">Setting</a></li>
                     <li><a href="logout.php" class="dropdown-item">Logout</a></li>
                   </ul>
                 </li>
@@ -81,58 +117,26 @@ isDean($user->data()->groups);
                 if(empty($_POST)){
                   $viewtable->viewRequestTableDepartmentTransfer();
                 }
-                else if(array_key_exists('requests', $_POST)) {
+                else if(array_key_exists('Rtransfer', $_POST)) {
                   $viewtable->viewRequestTableDepartmentTransfer();
                 }
-                else if(array_key_exists('approved', $_POST)) {
+                else if(array_key_exists('Rgraduate', $_POST)) {
+                  $viewtable->viewRequestTableDepartmentGraduate();
+                }
+                else if(array_key_exists('Atransfer', $_POST)) {
                   $viewtable->viewApproveTableDepartmentTransfer();
                 }
+                else if(array_key_exists('Agraduate', $_POST)) {
+                  $viewtable->viewApproveTableDepartmentGraduate();
+                }
               ?>
-                  <div class="col-sm-12">
-                    <nav>
-                      <ul class="pagination justify-content-center">
-                        <li class="page-item disabled"><a class="page-link" href="">&laquo;</a></li>
-                        <li class="page-item active"><a class="page-link" href="">1</a></li>
-                        <li class="page-item"><a class="page-link" href="">2</a></li>
-                        <li class="page-item"><a class="page-link" href="">3</a></li>
-                        <li class="page-item"><a class="page-link" href="">4</a></li>
-                        <li class="page-item"><a class="page-link" href="">5</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="">&raquo;</a></li>
-                      </ul>
-                    </nav>
-                  </div>
+              <script type="text/javascript">
+                $(document).ready( function () {
+                  $('#scholartable').DataTable();
+                });
+              </script>
               </div>
             </div>
-          </div>
-            <div class="row">
-              <div class="col-md p-5 mt-3 content">
-                  <?php
-                  if(empty($_POST)){
-                    $viewtable->viewRequestTableDepartmentGraduate();
-                  }
-                  else if(array_key_exists('requests', $_POST)) {
-                    $viewtable->viewRequestTableDepartmentGraduate();
-                  }
-                  else if(array_key_exists('approved', $_POST)) {
-                    $viewtable->viewApproveTableDepartmentGraduate();
-                  }
-                ?>
-                  <div class="col-sm-12">
-                    <nav>
-                      <ul class="pagination justify-content-center">
-                        <li class="page-item disabled"><a class="page-link" href="">&laquo;</a></li>
-                        <li class="page-item active"><a class="page-link" href="">1</a></li>
-                        <li class="page-item"><a class="page-link" href="">2</a></li>
-                        <li class="page-item"><a class="page-link" href="">3</a></li>
-                        <li class="page-item"><a class="page-link" href="">4</a></li>
-                        <li class="page-item"><a class="page-link" href="">5</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="">&raquo;</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-              </div>
-            </div>
-          
         </div>
       </div>
     </header>

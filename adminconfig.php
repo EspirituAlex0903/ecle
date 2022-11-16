@@ -17,8 +17,12 @@ $import = new import();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="resource/css/adminConfigStyle.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
 
     <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
   </head>
   <body>
     <header>
@@ -29,17 +33,34 @@ $import = new import();
           </div>
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
+            <!-- dashboard -->
+            <div class="item"><a href="registrar.php"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
+            </div>
+
+            <script type="text/javascript">
+              $(document).ready(function(){
+                  $('.sub-btn').click(function(){
+                      $(this).next('.sub-menu').slideToggle();
+                      $(this).find('.dropdown').toggleClass('rotate');
+                  });
+              });
+            </script>
+
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo "(".$viewtable->viewTotalTransfers().")" ?>
+            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalTransfers().")". '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo "(".$viewtable->viewTotalGraduates().")" ?>
+            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalGraduates().")". '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-flask me-2"></i>Science <?php echo "(".$viewtable->viewTotalScience().")" ?>
+            <i class="fa-solid fa-flask me-2"></i>Science <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalScience().")". '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo "(".$viewtable->viewTotalNonScience().")" ?>
+            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo '<span style="color:red;">'
+            ."(".$viewtable->viewTotalNonScience().")". '</span>';  ?>
             </a>
 
           </div>
@@ -52,7 +73,6 @@ $import = new import();
           <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4 border-bottom">
             <div class="d-flex align-items-center">
               <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-              <a href="registrar.php" class="list-group list-group-item-action bg-transparent"><h2 class="fs-2 m-0 fw-bold"> Dashboard</h2></a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupporteContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -66,7 +86,7 @@ $import = new import();
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a href="adminconfig.php" class="dropdown-item">Config</a></li>
-                    <li><a href="changepassword.php" class="dropdown-item">Setting</a></li>
+                    <li><a href="changepasswordRegistrar.php" class="dropdown-item">Setting</a></li>
                     <li><a href="logout.php" class="dropdown-item">Logout</a></li>
                   </ul>
                 </li>
@@ -103,9 +123,9 @@ $import = new import();
               </script>
             </div>
           </div>
-          <div class="container-fluid p-5">
-            <div class="row justify-content-md-center">
-              <div class="col-md-5 py-5 content">
+          <div class="container-fluid main p-5">
+            <div class="row justify-content-md-center next">
+              <div class="col-md-5 pt-3 content">
               <?php
                 if(!empty($_POST['semester']) && !empty($_POST['sy'])){
                   $update = new update($_POST['semester'], $_POST['sy']);
@@ -125,7 +145,7 @@ $import = new import();
                     <input type="text" name="sy" class="form-control">
                   </div>
 
-                  <div class="col-md pt-5 text-center">
+                  <div class="col-md pt-3 text-center">
                     <button type="submit" class="btn btn-dark">Submit</button>
                   </div>
                 </form>
