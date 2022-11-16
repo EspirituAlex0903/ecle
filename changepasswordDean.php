@@ -78,7 +78,7 @@ isDean($user->data()->groups);
                <small>Copyright &copy;Centro Escolar University     ECLE</small>
            </div>
            <div class="col text-right">
-               <small>Created by: Alex Espiritu, David Calalang, CJ Dela Cruz, Daniel Prado, Lance Pradez</small>
+               <small>Created by: John Alexander Espiritu, David Calalang, CJ Dela Cruz, Daniel Prado, Lance Pradez</small>
            </div>
        </div>
    </div>
