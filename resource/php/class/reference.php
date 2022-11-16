@@ -7,7 +7,7 @@ class reference extends config{
     public $transnumber;
     
     function __construct($transnumber=null){
-        $this->transnumber=$transnumber;
+        $this->transnumber=ucfirst($transnumber);
     }
 
     public function referenceCheck(){

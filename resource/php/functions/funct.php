@@ -484,8 +484,20 @@ function viewDean(){
 }
 
 function gradInfo(){
-    if(Input::exists()){
-        Redirect::to("viewGraduate.php?studentNumber=$_POST[studentNumber]&lname=$_POST[lname]");
+    if (Input::exists()) {
+        if(!empty($_POST['studentNumber']) && !empty($_POST['lname'])){
+            if(strlen(trim($_POST['lname'])) != 0){
+                Redirect::to("viewGraduate.php?studentNumber=$_POST[studentNumber]&lname=$_POST[lname]");
+            }
+            else{
+                echo "<br>";
+                echo "<b><i>**Please enter an appropriate input";
+            }
+        }
+        else{
+            echo "<br>";
+            echo "<b><i>**Please enter an appropriate input";
+        }
     }
 }
  ?>

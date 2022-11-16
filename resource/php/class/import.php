@@ -20,7 +20,7 @@ class import extends config{
                         $mname = $line[2];
                         $studentID = $line[3];
                         $email = $line[4];
-                        $contact = $line[5];
+                        $contact = "0".$line[5];
                         $course = $line[6];
                         $year = $line[7];
                         $studentType = "Graduate";
