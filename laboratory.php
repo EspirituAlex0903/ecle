@@ -19,6 +19,9 @@ isLaboratory($user->data()->groups);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
     <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 
     <title>Dashboard</title>
     <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
@@ -130,6 +133,9 @@ isLaboratory($user->data()->groups);
                   $viewtable->viewApproveTableLaboratoryGraduate();
                 }
               ?>
+              <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+              <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+              <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
               <script type="text/javascript">
                 $(document).ready( function () {
                   $('#scholartable').DataTable();

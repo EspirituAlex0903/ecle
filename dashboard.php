@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="resource/css/styledash.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 
     <title>Dashboard</title>
     <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
@@ -62,7 +66,7 @@
             <div class="row">
               <div class="col-md p-5 content ">
                 <div class="table-responsive">
-                  <table class="table table-bordered table-striped">
+                  <table class="table table-bordered table-striped"  id="asd">
                     <thead class="thead-dark">
                     <tr>
                       <th>STUDENT NAME</th>
@@ -126,21 +130,65 @@
                       <td>asdasd</td>
                       <td>asdasd</td>
                     </tr>
+                    <tr>
+                      <td>asdasda</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                    </tr>
+                    <tr>
+                      <td>asdasda</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                    </tr>
+                    <tr>
+                      <td>asdasda</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                    </tr>
+                    <tr>
+                      <td>asdasda</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                      <td>asdasd</td>
+                    </tr>
                   </tbody>
                   </table>
-                  </div>
-                  <div class="col-sm-12">
-                    <nav>
-                      <ul class="pagination justify-content-center">
-                        <li class="page-item disabled"><a class="page-link" href="">&laquo;</a></li>
-                        <li class="page-item active"><a class="page-link" href="">1</a></li>
-                        <li class="page-item"><a class="page-link" href="">2</a></li>
-                        <li class="page-item"><a class="page-link" href="">3</a></li>
-                        <li class="page-item"><a class="page-link" href="">4</a></li>
-                        <li class="page-item"><a class="page-link" href="">5</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="">&raquo;</a></li>
-                      </ul>
-                    </nav>
+                  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+                  <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+                    <script type="text/javascript">
+                      $(document).ready(function () {
+                          $('#asd').DataTable();
+                      });
+                    </script>
+
                   </div>
               </div>
             </div>
