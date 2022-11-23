@@ -14,7 +14,7 @@ class update extends config{
 
     public function updateSemester() {
         $config = new config();
-        if(!empty($this->semester)) {
+        if(!empty($this->semester) && is_numeric($this->semester)) {
             $con = $config->con();
             $sql = "UPDATE `config` SET `semester` = '$this->semester'";
             $data = $con->prepare($sql);

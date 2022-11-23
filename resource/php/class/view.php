@@ -30,6 +30,12 @@ class view extends config{
                 }
         }
 
+        public function semesterChoose(){
+          echo '<option>Choose Semester</option>';
+          echo '<option data-tokens="1" value="1">1</option>';
+          echo '<option data-tokens="2" value="2">2</option>';
+        }
+
         public function getdpSRA(){
             $user = new user();
             return $user->data()->dp;

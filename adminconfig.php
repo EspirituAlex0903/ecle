@@ -5,6 +5,7 @@ $viewtable = new viewtable();
 $user = new user();
 isRegistrar($user->data()->groups);
 $import = new import();
+$view = new view();
  ?>
 
 <!DOCTYPE html>
@@ -127,7 +128,7 @@ $import = new import();
             <div class="row justify-content-md-center next">
               <div class="col-md-5 pt-3 content">
               <?php
-                if(!empty($_POST['semester']) && !empty($_POST['sy'])){
+                if(!empty($_POST['semester']) || !empty($_POST['sy'])){
                   $update = new update($_POST['semester'], $_POST['sy']);
                   $update->updateSemester();
                   $update->updateSchoolyear();
@@ -137,12 +138,14 @@ $import = new import();
 
                   <div class="col-md">
                     <label for="firstName" class="form-label">Semester</label>
-                    <input type="text" name="semester" class="form-control">
+                    <select name="semester" id="semester" class="form-select form-control" data-live-search="true">
+                    <?php $view->semesterChoose();?>
+                    </select>
                   </div>
 
                   <div class="col-md pt-5">
                     <label for="firstName" class="form-label">School Year</label>
-                    <input type="text" name="sy" class="form-control">
+                    <input type="text" name="sy" class="form-control" pattern="[0-9]{4}-[0-9]{4}" oninvalid="this.setCustomValidity('Please follow the pattern (XXXX-XXXX)')" oninput="this.setCustomValidity('')">
                   </div>
 
                   <div class="col-md pt-3 text-center">
