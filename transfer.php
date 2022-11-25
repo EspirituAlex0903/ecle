@@ -45,7 +45,7 @@ $view = new view;
 
         <?php
         if(!empty($_POST)){
-          $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['year']);
+          $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['year'], $_POST['campus'], $_POST['university'], $_POST['reason']);
           $insert->insertApplication();
         }
         ?>
@@ -89,17 +89,44 @@ $view = new view;
             </div>
 
             <!---Course/Degree--->
-            <div class="col-md-8">
+            <div class="col-md-4">
               <label form="course" class="form-label">Course/Degree</label>
               <select id="course" name="course" class="form-select form-control" data-live-search="true" required>
               <?php $view->courseSP2();?>
               </select>
             </div>
 
+            <!---Campus--->
+            <div class="col-md-4">
+              <label for="campus" class="form-label">Campus</label>
+              <select id="campus" name="campus" class="form-select form-control" data-live-search="true" required>
+              <?php $view->campusChoose();?>
+              </select>
+            </div>
+
             <!---Year Level--->
             <div class="col-md-4">
-              <label for="yearLevel" class="form-label">Year Level</label>
+              <label for="yearLevel" class="form-label">Year Last Enrolled</label>
               <input type="text" name="year" class="form-control" pattern="20[0-9]{2}" oninvalid="this.setCustomValidity('Please follow the pattern 20XX')" oninput="this.setCustomValidity('')" id="yearLevel" required>
+            </div>
+
+            <!---Transfer School--->
+            <div class="col-md-4">
+              <label for="university" class="form-label">Transferring School</label>
+              <select id="university" name="university" class="form-select form-control" data-live-search="true" required>
+              <?php $view->university();?>
+              </select>
+            </div>
+
+            <!---Reason--->
+            <div class="col-md-4">
+              <label for="reason" class="form-label">Reason</label>
+              <select id="reason" name="reason" class="form-select form-control" data-live-search="true" required>
+              <?php $view->reason();?>
+              </select>
+            </div>
+            <!---Year Level--->
+            <div class="col-md-4">
             </div>
 
             <div class="col-md my-4">

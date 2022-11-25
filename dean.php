@@ -49,11 +49,20 @@ isDean($user->data()->groups);
             </div>
 
             <!-- approved -->
-            <div class="item pb-3 border-bottom">
+            <div class="item">
               <a class="sub-btn"><i class="fa-solid fa-thumbs-up"></i>Approved<i class="fas fa-chevron-right dropdown"></i></a>
               <div class="sub-menu">
                 <input type="submit" name="Atransfer" class="sub-item" value="Transfer">
                 <input type="submit" name="Agraduate" class="sub-item" value="Graduate">
+              </div>
+            </div>
+
+            <!-- hold -->
+            <div class="item pb-3 border-bottom">
+              <a class="sub-btn"><i class="fa-sharp fa-solid fa-pause"></i>On Hold<i class="fas fa-chevron-right dropdown"></i></a>
+              <div class="sub-menu">
+                <input type="submit" name="Htransfer" class="sub-item" value="Transfer">
+                <input type="submit" name="Hgraduate" class="sub-item" value="Graduate">
               </div>
             </div>
 
@@ -131,6 +140,12 @@ isDean($user->data()->groups);
                 }
                 else if(array_key_exists('Agraduate', $_POST)) {
                   $viewtable->viewApproveTableDepartmentGraduate();
+                }
+                else if(array_key_exists('Htransfer', $_POST)) {
+                  $viewtable->viewHoldTableDepartmentTransfer();
+                }
+                else if(array_key_exists('Hgraduate', $_POST)) {
+                  $viewtable->viewHoldTableDepartmentGraduate();
                 }
               ?>
               <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

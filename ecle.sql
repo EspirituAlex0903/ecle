@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 21, 2022 at 02:01 AM
+-- Generation Time: Nov 25, 2022 at 08:45 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.1.33
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `config` (
 --
 
 INSERT INTO `config` (`semester`, `schoolYear`) VALUES
-('2', '2022-2023');
+('1', '2022-2023');
 
 -- --------------------------------------------------------
 
@@ -144,6 +144,9 @@ CREATE TABLE IF NOT EXISTS `ecle_forms` (
   `contact` varchar(255) COLLATE utf8_bin NOT NULL,
   `course` varchar(255) COLLATE utf8_bin NOT NULL,
   `year` int(255) NOT NULL,
+  `campus` varchar(255) COLLATE utf8_bin NOT NULL,
+  `transferredSchool` varchar(255) COLLATE utf8_bin NOT NULL,
+  `reason` varchar(255) COLLATE utf8_bin NOT NULL,
   `studentType` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `schoolType` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `referenceID` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -163,22 +166,22 @@ CREATE TABLE IF NOT EXISTS `ecle_forms` (
   `registrarremarks` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `registrardate` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `ecle_forms`
 --
 
-INSERT INTO `ecle_forms` (`id`, `lname`, `fname`, `mname`, `semester`, `sy`, `dateReq`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`, `libraryclearance`, `libraryremarks`, `librarydate`, `laboratoryclearance`, `laboratoryremarks`, `laboratorydate`, `departmentclearance`, `departmentremarks`, `departmentdate`, `accountingclearance`, `accountingremarks`, `accountingdate`, `registrarclearance`, `registrarremarks`, `registrardate`) VALUES
-(30, 'Park', 'Monique', 'San Jose', '1', '2022-2023', '2022-10-20 11:21:35', 'College of Education, Liberal Arts and Science', '2019-55555', 'park@gmail.com', '09568889999', 'Bachelor of Arts in Communication and Media', 2022, 'Transfer', 'Non-Science', 'Transfer6350bebfdfe10', 'PENDING', NULL, NULL, 'APPROVED', NULL, '2022-10-20', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
-(34, 'Dela Cruz', 'Juan', 'Luna', '2', '2024-2025', '2022-10-20 12:35:49', 'College of Accountancy Management and Technology', '2019-11111', 'delacruz@gmail.com', '9151112222', 'Bachelor of Science in Information Technology', 2022, 'Graduate', 'Non-Science', 'Graduate6350d024ee3fa', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
-(25, 'Del', 'Jem', 'Kim', '1', '2022-2023', '2022-10-19 10:45:41', 'College of Accountancy Management and Technology', '2019-30541', 'djkim@gmail.com', '09227778888', 'Bachelor of Science in Information Technology', 2022, 'Transfer', 'Non-Science', 'Transfer634f64d58c41f', 'APPROVED', NULL, '2022-10-21', 'APPROVED', NULL, '2022-10-19', 'APPROVED', NULL, '2022-10-21', 'APPROVED', NULL, '2022-10-20', 'APPROVED', NULL, '2022-10-21'),
-(33, 'Dela Cruz', 'Juan', 'Luna', '2', '2024-2025', '2022-10-20 12:34:40', 'College of Accountancy Management and Technology', '2019-11111', 'delacruz@gmail.com', '9151112222', 'Bachelor of Science in Information Technology', 2022, 'Graduate', 'Non-Science', 'Graduate6350cfe05910b', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
-(31, 'Sansano', 'Rafael', 'Dokkii', '1', '2022-2023', '2022-10-20 11:41:54', 'Department of Pharmacy', '2019-00000', 'raf@gmail.com', '09564446666', 'Bachelor of Science in Pharmacy', 2022, 'Transfer', 'Science', 'Transfer6350c3827df0e', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
-(32, 'Ngo hoi', 'Kevin', 'Nguyen', '2', '2024-2025', '2022-10-20 11:44:34', 'College of Education, Liberal Arts and Science', '2019-88777', 'nguyen@gmail.com', '09221113333', 'Bachelor of Special Needs Education with Specialization in Early Childhood Education', 2025, 'Transfer', 'Non-Science', 'Transfer6350c422b4a2d', 'PENDING', NULL, NULL, 'APPROVED', NULL, '2022-10-20', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
-(55, 'Maria', 'Jose', 'Carlito', '2', '2024-2025', '2022-10-20 14:53:49', 'College of Accountancy Management and Technology', '2020-01234', 'carlito@gmail.com', '9123456789', 'Bachelor of Science in Information Technology', 2022, 'Graduate', 'Non-Science', 'Graduate6350f07d935bd', 'PENDING', NULL, NULL, 'APPROVED', NULL, '2022-10-20', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
-(53, 'Santos', 'Hiro', 'Mendoza', '2', '2024-2025', '2022-10-20 14:39:53', 'Department of Dentistry', '2019-30621', 'hiro@gmail.com', '9116668888', 'Doctor of Dental Medicine', 2022, 'Graduate', 'Science', 'Graduate6350ed39327ca', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
-(52, 'Dela Cruz', 'Juan', 'Luna', '2', '2024-2025', '2022-10-20 12:43:52', 'College of Accountancy Management and Technology', '2019-11111', 'delacruz@gmail.com', '9151112222', 'Bachelor of Science in Information Technology', 2022, 'Graduate', 'Non-Science', 'Graduate6350d208297c3', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL);
+INSERT INTO `ecle_forms` (`id`, `lname`, `fname`, `mname`, `semester`, `sy`, `dateReq`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `campus`, `transferredSchool`, `reason`, `studentType`, `schoolType`, `referenceID`, `libraryclearance`, `libraryremarks`, `librarydate`, `laboratoryclearance`, `laboratoryremarks`, `laboratorydate`, `departmentclearance`, `departmentremarks`, `departmentdate`, `accountingclearance`, `accountingremarks`, `accountingdate`, `registrarclearance`, `registrarremarks`, `registrardate`) VALUES
+(30, 'Park', 'Monique', 'San Jose', '1', '2022-2023', '2022-10-20 11:21:35', 'College of Education, Liberal Arts and Science', '2019-55555', 'park@gmail.com', '09568889999', 'Bachelor of Arts in Communication and Media', 2022, '', '0', '', 'Transfer', 'Non-Science', 'Transfer6350bebfdfe10', 'PENDING', NULL, NULL, 'APPROVED', NULL, '2022-10-20', 'PENDING', NULL, NULL, 'ON HOLD', 'asdasdasd', NULL, 'PENDING', NULL, NULL),
+(25, 'Del', 'Jemiah Kim', 'Rosario', '1', '2022-2023', '2022-10-19 10:45:41', 'College of Accountancy Management and Technology', '2019-30541', 'djkim@gmail.com', '09227778888', 'Bachelor of Science in Information Technology', 2022, '', '0', '', 'Transfer', 'Non-Science', 'Transfer634f64d58c41f', 'APPROVED', NULL, '2022-10-21', 'APPROVED', NULL, '2022-10-19', 'APPROVED', NULL, '2022-10-21', 'APPROVED', NULL, '2022-10-20', 'APPROVED', NULL, '2022-10-21'),
+(60, 'Guzman', 'Juan Miguel', 'Lugue', '1', '2022-2023', '2022-10-22 10:11:57', 'Department of Nursing', '2019-30612', 'guzman1930162@mls.ceu.edu.ph', '65132162131', 'Bachelor of Science in Nursing', 2022, '', '0', '', 'Transfer', 'Science', 'Transfer6353516d91f72', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'ON HOLD', 'asd\r\n', '2022-11-25', 'PENDING', NULL, NULL),
+(31, 'Sansano', 'Rafael', 'Dokkii', '1', '2022-2023', '2022-10-20 11:41:54', 'Department of Pharmacy', '2019-00000', 'raf@gmail.com', '09564446666', 'Bachelor of Science in Pharmacy', 2022, '', '0', '', 'Transfer', 'Science', 'Transfer6350c3827df0e', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'ON HOLD', 'helloooooo', NULL, 'PENDING', NULL, NULL),
+(32, 'Ngo hoi', 'Kevin', 'Nguyen', '2', '2024-2025', '2022-10-20 11:44:34', 'College of Education, Liberal Arts and Science', '2019-88777', 'nguyen@gmail.com', '09221113333', 'Bachelor of Special Needs Education with Specialization in Early Childhood Education', 2025, '', '0', '', 'Graduate', 'Non-Science', 'Transfer6350c422b4a2d', 'PENDING', NULL, NULL, 'APPROVED', NULL, '2022-10-20', 'PENDING', NULL, NULL, 'ON HOLD', 'sji sk akjdad', NULL, 'PENDING', NULL, NULL),
+(69, 'Maria', 'Jose', 'Carlito', '1', '2022-2023', '2022-11-16 13:42:06', 'College of Accountancy Management and Technology', '2020-01234', 'carlito@gmail.com', '09123456789', 'Bachelor of Science in Information Technology', 2022, '', '0', '', 'Graduate', 'Non-Science', 'Graduate6374782e6d94c', 'PENDING', NULL, NULL, 'APPROVED', NULL, '2022-11-16', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL),
+(68, 'Santos', 'Hiro', 'Mendoza', '1', '2022-2023', '2022-11-16 13:40:35', 'Department of Dentistry', '2019-30621', 'hiro@gmail.com', '09116668888', 'Doctor of Dental Medicine', 2022, '', '0', '', 'Graduate', 'Science', 'Graduate637477d30f09d', 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL),
+(59, 'Guzman', 'JM', 'Lugue', '1', '2022-2023', '2022-10-22 10:11:08', 'Department of Nursing', '2019-30162', 'guzman1930162@mls.ceu.edu.ph', '0654321654', 'Bachelor of Science in Nursing', 2022, '', '0', '', 'Transfer', 'Science', 'Transfer6353513cb085d', 'APPROVED', NULL, '2022-10-22', 'APPROVED', NULL, '2022-10-22', 'APPROVED', NULL, '2022-10-22', 'APPROVED', NULL, '2022-10-22', 'APPROVED', NULL, '2022-10-22'),
+(73, 'asd', 'asd', 'asd', '1', '2022-2023', '2022-11-25 14:42:41', 'College of Accountancy Management and Technology', '1234-12345', 'asd@gmail.com', '09123456789', 'Bachelor of Science in Accountancy\r\n', 2022, 'Manila', '0', '', 'Transfer', 'Non-Science', 'Transfer638063e16adea', 'APPROVED', '', '2022-11-25', 'NOT REQUIRED', NULL, '2022-11-25', 'APPROVED', '', '2022-11-25', 'APPROVED', '', '2022-11-25', 'PENDING', '', '2022-11-25');
 
 -- --------------------------------------------------------
 
@@ -256,6 +259,26 @@ CREATE TABLE IF NOT EXISTS `tbl_group` (
 INSERT INTO `tbl_group` (`id`, `name`, `permission`) VALUES
 (1, 'Standard user', ''),
 (2, 'administrator', '{\"admin\": 1}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `university`
+--
+
+DROP TABLE IF EXISTS `university`;
+CREATE TABLE IF NOT EXISTS `university` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `university` varchar(255) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `university`
+--
+
+INSERT INTO `university` (`id`, `university`) VALUES
+(1, 'Abroad');
 
 -- --------------------------------------------------------
 

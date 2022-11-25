@@ -290,6 +290,156 @@ public function viewApproveTableRegistrarGraduate(){
 
 }
 
+public function viewHoldTableRegistrarTransfer(){
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='ON HOLD' AND `studentType` = 'Transfer'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by Registrar (Transfers)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='registrarApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewRegistrar.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
+public function viewHoldTableRegistrarGraduate(){
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='ON HOLD' AND `studentType` = 'Graduate'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by Registrar (Graduates)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='registrarApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewRegistrar.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
 public function viewRequestTableAccountingTransfer(){
   $con = $this->con();
   $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='PENDING' AND `studentType` = 'Transfer'";
@@ -568,6 +718,156 @@ public function viewApproveTableAccountingGraduate(){
     echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
   }
 
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
+public function viewHoldTableAccountingTransfer(){
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='ON HOLD' AND `studentType` = 'Transfer'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by Accounting (Transfers)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='accountingApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewAccounting.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
+public function viewHoldTableAccountingGraduate(){
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='ON HOLD' AND `studentType` = 'Graduate'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by Accounting (Graduates)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='accountingApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewAccounting.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
 
   echo "</tr>";
   }
@@ -869,6 +1169,160 @@ public function viewApproveTableDepartmentGraduate(){
 
 }
 
+public function viewHoldTableDepartmentTransfer(){
+  $user = new user();
+  $department = $user->data()->colleges;
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='ON HOLD' AND `school` = '$department' AND `studentType` = 'Transfer'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by $department (Transfers)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='deanApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewDean.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
+public function viewHoldTableDepartmentGraduate(){
+  $user = new user();
+  $department = $user->data()->colleges;
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='ON HOLD' AND `school` = '$department' AND `studentType` = 'Graduate'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by $department (Graduates)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='deanApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewDean.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
 public function viewRequestTableLibraryTransfer(){
   $con = $this->con();
   $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='PENDING' AND `studentType` = 'Transfer'";
@@ -1156,6 +1610,156 @@ public function viewApproveTableLibraryGraduate(){
 
 }
 
+public function viewHoldTableLibraryTransfer(){
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='ON HOLD' AND `studentType` = 'Transfer'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by Library (Transfers)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='libraryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewLibrary.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
+public function viewHoldTableLibraryGraduate(){
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='ON HOLD' AND `studentType` = 'Graduate'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by Library (Graduates)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='libraryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewLibrary.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
 public function viewRequestTableLaboratoryTransfer(){
   $con = $this->con();
   $sql = "SELECT * FROM `ecle_forms` WHERE `Laboratoryclearance`='PENDING' AND `studentType` = 'Transfer'";
@@ -1434,6 +2038,156 @@ public function viewApproveTableLaboratoryGraduate(){
   }else {
     echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
   }
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
+public function viewHoldTableLaboratoryTransfer(){
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='ON HOLD' AND `studentType` = 'Transfer'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by Laboratory (Transfers)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewLaboratory.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
+
+  echo "</tr>";
+  }
+  echo "</table>";
+
+}
+
+public function viewHoldTableLaboratoryGraduate(){
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='ON HOLD' AND `studentType` = 'Graduate'";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  echo "<h3 class='text-center'> On Hold by Laboratory (Graduates)</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='scholartable' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%'>";
+  echo "<thead class='thead-dark'>";
+  echo "<th>Student Name</th>";
+  echo "<th>Course</th>";
+  echo "<th>Student Type</th>";
+  echo "<th>School Type</th>";
+  echo "<th>Library</th>";
+  echo "<th>Laboratory</th>";
+  echo "<th>Department</th>";
+  echo "<th>Accounting</th>";
+  echo "<th>Registrar</th>";
+  echo "<th>Actions</th>";
+  echo "</thead>";
+  foreach ($result as $data) {
+  echo "<tr>";
+  echo "<td>$data[fname] $data[mname] $data[lname] </td>";
+  echo "<td>$data[course]</td>";
+  echo "<td>$data[studentType]</td>";
+  echo "<td>$data[schoolType]</td>";
+  if($data["libraryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }
+  if($data["laboratoryclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[laboratoryclearance]</p></td>";
+  }
+  if($data["departmentclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[departmentclearance]</p></td>";
+  }
+  if($data["accountingclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[accountingclearance]</p></td>";
+  }
+  if($data["registrarclearance"] === "PENDING"){
+    echo "<td><p class='bg-info rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }elseif($data["libraryclearance"] === "ON HOLD"){
+    echo "<td><p class='bg-warning rounded-pill p-1'>$data[libraryclearance]</p></td>";
+  }else {
+    echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
+  }
+
+  echo "<td>
+          <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
+          <a href='viewLaboratory.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+        </td>";
+  echo "</tr>";
 
   echo "</tr>";
   }

@@ -6,7 +6,7 @@ class insert extends config{
 
     public $fname,$lname,$mname,$studID,$email,$contact,$course,$year;
     
-    function __construct($fname=null,$lname=null,$mname=null,$studID=null,$email=null,$contact=null,$course=null,$year=null){
+    function __construct($fname=null,$lname=null,$mname=null,$studID=null,$email=null,$contact=null,$course=null,$year=null, $campus=null, $university=null, $reason){
 
     $this->fname =$fname;
     $this->lname =$lname;
@@ -16,6 +16,9 @@ class insert extends config{
     $this->contact =$contact;
     $this->course =$course;
     $this->year =$year;
+    $this->campus = $campus;
+    $this->university = $university;
+    $this->reason = $reason;
     }
 
     public function insertApplication(){
@@ -48,17 +51,17 @@ class insert extends config{
         $schoolYear = $data5->fetchColumn();
 
         if ($schoolType === "Science"){
-            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber')";
+            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`,`campus`, `transferredSchool`, `reason`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year','$this->campus', '$this->university', '$this->reason', '$studentType', '$schoolType', '$transnumber')";
             $data1 = $con->prepare($sql1);
             $data1 ->execute();
         } else {
-            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year', '$studentType', '$schoolType', '$transnumber', 'APPROVED', CURRENT_TIMESTAMP)";
+            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`,`campus`, `transferredSchool`, `reason`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year','$this->campus', '$this->university', '$this->reason', '$studentType', '$schoolType', '$transnumber', 'NOT REQUIRED', CURRENT_TIMESTAMP)";
             $data1 = $con->prepare($sql1);
             $data1 ->execute();
         }
 
-        sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
-        header('Location:transfer.php');
+        //sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
+        //header('Location:transfer.php');
 
     }
 

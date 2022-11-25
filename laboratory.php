@@ -57,6 +57,15 @@ isLaboratory($user->data()->groups);
               </div>
             </div>
 
+            <!-- hold -->
+            <div class="item">
+              <a class="sub-btn"><i class="fa-sharp fa-solid fa-pause"></i>On Hold<i class="fas fa-chevron-right dropdown"></i></a>
+              <div class="sub-menu">
+                <input type="submit" name="Htransfer" class="sub-item" value="Transfer">
+                <input type="submit" name="Hgraduate" class="sub-item" value="Graduate">
+              </div>
+            </div>
+
             <script type="text/javascript">
               $(document).ready(function(){
                   $('.sub-btn').click(function(){
@@ -131,6 +140,12 @@ isLaboratory($user->data()->groups);
                 }
                 else if(array_key_exists('Agraduate', $_POST)) {
                   $viewtable->viewApproveTableLaboratoryGraduate();
+                }
+                else if(array_key_exists('Htransfer', $_POST)) {
+                  $viewtable->viewHoldTableLaboratoryTransfer();
+                }
+                else if(array_key_exists('Hgraduate', $_POST)) {
+                  $viewtable->viewHoldTableLaboratoryGraduate();
                 }
               ?>
               <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
