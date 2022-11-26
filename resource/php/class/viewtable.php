@@ -1461,10 +1461,10 @@ public function viewRequestTableLibraryGraduate(){
     echo "<td><p class='bg-success rounded-pill p-1'>$data[registrarclearance]</p></td>";
   }
 
-  echo "<td>
-            <a href='libraryApprove.php?edit=$data[id]' class='btn btn-success btn-sm col-3.5'>Approve</a>
-            <a href='remarksLibrary.php?hold=$data[id]' class='btn btn-warning btn-sm col-3.5'>On Hold</a>
-            <a href='viewLibrary.php?id=$data[id]' class='btn btn-primary btn-sm col-3.5'>View Info</a>
+  echo "<td class='text-center'>
+            <a href='libraryApprove.php?edit=$data[id]' class='btn d-inline btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+            <a href='remarksLibrary.php?hold=$data[id]' class='btn d-inline btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+            <a href='viewLibrary.php?id=$data[id]' class='btn d-inline btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }

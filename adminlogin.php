@@ -40,37 +40,36 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
     <div class="container-fluid">
             <div class="row">
               <div class="col-md-7 ml-5 text-white text">
-                <div class="headText pt-5">
-                  <h1><i>Cienca y Virtud</i></h1>
-                  <h2>CEU Empowers. CEU Inspires.</h2>
-                </div>
-                <div class="img-logo">
-                  <img class="logo3" src="resource/img/eclewhite.png" />
-                </div>
+                <div class="content">
+                  <p class="line anim-typewriter1 font-weight-bold">CIENCA <i class="px-3">y  </i> VIRTUD</p>
+                  <p class="line anim-typewriter2">CEU<span> EMPOWERS.</span> </p>
+                  <p class="line anim-typewriter3">CEU <span>INSPIRES.</span></p>
+              </div>
               </div>
 
                 <div class="col-md">
+                  <div class="row">
                   <div class="sample">
-                  <div class="login-fields pb-5">
-                    <div class="row ">
-                      <div class="col-3">
-                        <img src="resource/img/CEU-logo.png" alt="CEU Logo" class="login-logo">
-                      </div>
-                      <div class="col">
-                        <h2>Login</h2>
-                        <h4>MANILA * MAKATI * MALOLOS</h4>
+                        <div class="col-md pt-4">
+                          <div class="login-fields">
+                            <div class="content">
+                              <h1 class="text-center">ECLE
+                              </h1>
+                              <h5 class="text-center">Exit Clearance Portal for CEU Office of the Registrar</h5>
+
+                            <form action="" method="post">
+                              <div class="inputs">
+                              <?php logd();?>
+                                <input type="text" class="input" placeholder="Username" name="username">
+                                <input type="password" class="input" placeholder="Password" name="password">
+                                <input type =hidden name="token" value="<?php echo Token::generate(); ?>">
+
+                              </div>
+                              <input  type="submit"  class="button-login"value="Login"/>
+                            </form>
                       </div>
                     </div>
-                    <form action="" method="post">
-                      <div class="inputs">
-                      <?php logd();?>
-                        <input type="text" class="input" placeholder="Username" name="username">
-                        <input type="password" class="input" placeholder="Password" name="password">
-                        <input type =hidden name="token" value="<?php echo Token::generate(); ?>">
-
-                      </div>
-                      <input  type="submit"  class="button-login"value="Login"/>
-                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -79,6 +78,18 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
 
 
     </header>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="ft pt-3">
+              Centro Escolar University || R.Bolasoc | J.Espiritu | D.Calalang | C.DelaCruz | L.Pradez | D.Prado
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
