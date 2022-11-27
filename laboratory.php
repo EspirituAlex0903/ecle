@@ -49,7 +49,7 @@ isLaboratory($user->data()->groups);
             </div>
 
             <!-- approved -->
-            <div class="item pb-3 border-bottom">
+            <div class="item">
               <a class="sub-btn"><i class="fa-solid fa-thumbs-up"></i>Approved<i class="fas fa-chevron-right dropdown"></i></a>
               <div class="sub-menu">
                 <input type="submit" name="Atransfer" class="sub-item" value="Transfer">
@@ -58,7 +58,7 @@ isLaboratory($user->data()->groups);
             </div>
 
             <!-- hold -->
-            <div class="item">
+            <div class="item pb-3 border-bottom">
               <a class="sub-btn"><i class="fa-sharp fa-solid fa-pause"></i>On Hold<i class="fas fa-chevron-right dropdown"></i></a>
               <div class="sub-menu">
                 <input type="submit" name="Htransfer" class="sub-item" value="Transfer">
@@ -153,7 +153,9 @@ isLaboratory($user->data()->groups);
               <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
               <script type="text/javascript">
                 $(document).ready( function () {
-                  $('#scholartable').DataTable();
+                  $('#scholartable').DataTable({
+                    "ordering": false
+                  });
                 });
               </script>
               </div>

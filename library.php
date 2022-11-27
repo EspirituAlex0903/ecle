@@ -160,7 +160,9 @@ isLibrary($user->data()->groups);
 
               <script type="text/javascript">
                 $(document).ready( function () {
-                  $('#scholartable').DataTable();
+                  $('#scholartable').DataTable({
+                    "ordering": false
+                  });
                 });
               </script>
               </div>

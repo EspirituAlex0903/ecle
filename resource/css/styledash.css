@@ -55,7 +55,7 @@ table{
 }
 #sidebar-wrapper{
   min-height: 100vh;
-  margin-left: -15rem;
+  margin-left: -13rem;
   transition: margin 0.25s ease-out;
 }
 #sidebar-wrapper .sidebar-heading{
@@ -71,7 +71,7 @@ table{
   cursor: pointer;
 }
 #sidebar-wrapper .list-group{
-  width: 15rem;
+  width: 13rem;
 }
 #sidebar-wrapper .list-group .item{
   position: relative;
@@ -163,7 +163,7 @@ table{
     width: 100%;
   }
   #wrapper.toggled #sidebar-wrapper{
-    margin-left: -15rem;
+    margin-left: -13rem;
   }
 }
 @media(min-width: 390px){

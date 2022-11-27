@@ -57,13 +57,13 @@ class view extends config{
       }
 
         public function reason(){
-          echo '<option data-tokens="Manila" value="Manila">Financial Problem</option>';
-          echo '<option data-tokens="Manila" value="Manila">Change of Major</option>';
-          echo '<option data-tokens="Malolos" value="Malolos">Family Issues</option>';
-          echo '<option data-tokens="Malolos" value="Malolos">Change of Residence</option>';
-          echo '<option data-tokens="Malolos" value="Malolos">University Quality Concern</option>';
-          echo '<option data-tokens="Malolos" value="Malolos">International Transfer</option>';
-          echo '<option data-tokens="Malolos" value="Malolos">Others</option>';
+          echo '<option data-tokens="Financial Problem" value="Financial Problem">Financial Problem</option>';
+          echo '<option data-tokens="Change of Major" value="Change of Major">Change of Major</option>';
+          echo '<option data-tokens="Family Issues" value="Family Issues">Family Issues</option>';
+          echo '<option data-tokens="Change of Residence" value="Change of Residence">Change of Residence</option>';
+          echo '<option data-tokens="University Quality Concern" value="University Quality Concern">University Quality Concern</option>';
+          echo '<option data-tokens="International Transfer" value="International Transfer">International Transfer</option>';
+          echo '<option data-tokens="Others" value="Others">Others</option>';
 
         }
 

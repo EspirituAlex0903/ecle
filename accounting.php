@@ -156,7 +156,9 @@ isAccounting($user->data()->groups);
               <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
               <script type="text/javascript">
                 $(document).ready( function () {
-                  $('#scholartable').DataTable();
+                  $('#scholartable').DataTable({
+                    "ordering": false
+                  });
                 });
               </script>
             </div>

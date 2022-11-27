@@ -6,7 +6,7 @@ class insert extends config{
 
     public $fname,$lname,$mname,$studID,$email,$contact,$course,$year;
     
-    function __construct($fname=null,$lname=null,$mname=null,$studID=null,$email=null,$contact=null,$course=null,$year=null, $campus=null, $university=null, $reason){
+    function __construct($fname=null,$lname=null,$mname=null,$studID=null,$email=null,$contact=null,$course=null,$year=null, $campus=null, $university=null, $reason=null){
 
     $this->fname =$fname;
     $this->lname =$lname;
