@@ -21,14 +21,11 @@ $view = new view;
             <img src="resource/img/ceulogo2.png" class="img-fluid logo">
           </nav>
 
-      <div class="container py-5">
-        <div class="content justify-content-center">
-          <div class="row head">
-            <div class="col-md-8 mt-4 text-center">
-              <h1 class="head-text">Ecle Status Checker</h1>
-            </div>
-            <div class="col-md-4 mt-4 text-center">
-              <img class="logo2" src="resource/img/eclewhite.png">
+      <div class="container py-5 text-white">
+        <div class="content text-center">
+          <div class="row">
+            <div class="col-md mt-5 pt">
+              <h1 class="head-text text-center">Ecle Status Checker</h1>
             </div>
           <div class="input pb-5 m-auto">
             <?php

@@ -9,8 +9,8 @@
   </div>
   <div class="row">
     <div class="col-md pt-3">
-      <button class="btn btn-dark">Submit</button>
+      <button class="button-submits" style="width:40%; border-radius: 4px; background-color: #f04e98; border: none; color: #fff;">Submit</button>
     </div>
   </div>
 </form>
-<button onclick="location.href='index.php'" class="btn btn-dark mt-3">Back</button>
+<button onclick="location.href='index.php'" class="button-back btn-dark mt-3">Back</button>

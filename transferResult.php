@@ -25,7 +25,7 @@ $reference = new reference();
           </div>
         </div>
         <div class="col-md px-5">
-        <button class="btn btn-dark" onClick="location.href='transferCheck.php'">Back</button>
+        <button class="button-back btn-dark" onClick="location.href='transferCheck.php'">Back</button>
         </div>
     </div>
 
