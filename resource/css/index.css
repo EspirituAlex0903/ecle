@@ -17,14 +17,14 @@ html{
 
 header{
   min-height: 100vh;
-  background-image: linear-gradient(rgba(36, 18, 95, .95),rgba(220, 47, 156, .8)),url("../img/ceubg.jpg");
+  background-image: linear-gradient(to right, rgba(36,18,95, .95),rgba(220, 47, 156, .8)),url("../img/ceubg.jpg");
   background-position: center;
   background-size: cover;
 }
 
 .navbar{
   width: 100%;
-  background: linear-gradient(to right,#24125f,#f04e98);
+  background: rgba(28, 28, 28, .6);
   animation: nav-load var(--nav-load-time) ease-in;
 }
 
@@ -33,32 +33,44 @@ header{
 }
 
 .fab{
-  color:#24125f;
+  color:#f04e98;
 }
 
 .navbar-nav{
   text-align: right;
 }
 .elogo{
-  height: 670px;
+  height: 100%;
   text-align: center;
   margin: auto;
 }
 .content{
   height: 70%;
-  position: absolute;
-  top: 15%;
-  left: 25%;
-  width: 50%;
+  position: relative;
+  top: 25%;
+  width: 100%;
 }
 .eclelogo{
-  height: 50%;
-  width: 100%;
+  height: 45%;
+  width: 50%;
   animation: logo-load 2s;
 }
-.content .seo{
+.content .seo p{
   font-size: 15px;
   animation: seo-load 3s;
+}
+.subTitle{
+  width: 80%;
+  margin: auto;
+  color: #f04e98;
+  font-weight: bolder;
+  font-size: 30px;
+}
+.content-box{
+  height: 500px;
+  width: 70%;
+  border-radius: 10px;
+  margin: auto;
 }
 .button3{
   background-color: #24125f;

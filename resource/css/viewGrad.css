@@ -17,13 +17,13 @@ html{
 
 header{
   min-height: 100vh;
-  background-image: linear-gradient(rgba(36, 18, 95, .95),rgba(220, 47, 156, .8)),url("../img/ceubg.jpg");
+  background-image: linear-gradient(to right, rgba(36, 18, 95, .95),rgba(220, 47, 156, .8)),url("../img/ceubg.jpg");
   background-position: center;
   background-size: cover;
 }
 .navbar{
   width: 100%;
-  background: linear-gradient(to right,#24125f,#f04e98);
+  background: rgba(28, 28, 28, .6);
 
 }
 
@@ -31,7 +31,7 @@ header{
   height: 50px;
 }
 .fab{
-  color:#24125f;
+  color:#f04e98;
 }
 
 .navbar-nav{
@@ -39,10 +39,8 @@ header{
 }
 
 .content{
-  background: rgba(240,78,152, .7);
+  background: rgba(33,29,41, .8);
   border-radius: 20px;
-  border-collapse: collapse;
-  box-shadow: 0 0 15px .1px #000;
   height:100%;
 }
 .text{

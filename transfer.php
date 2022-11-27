@@ -19,7 +19,7 @@ $view = new view;
     <header>
 
         <nav class="navbar navbar-expand-md navbar-dark">
-          <img src="resource/img/logo.jpg" class="img-fluid logo">
+          <img src="resource/img/ceulogo2.png" class="img-fluid logo">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -34,107 +34,110 @@ $view = new view;
           </div>
         </nav>
 
-    <div class="container mt-5">
-      <div class="row row-1 px-4 m-auto justify-content-center">
-          <div class="col-md-8 pt-3 text-center">
-            <h1 class="head-text">Ecle Transfer Form</h1>
-          </div>
-          <div class="col-md-4 pt-3 text-center">
-            <img class="logo2" src="resource/img/logo6.png">
-          </div>
-
-        <?php
-        if(!empty($_POST)){
-          $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['year'], $_POST['campus'], $_POST['university'], $_POST['reason']);
-          $insert->insertApplication();
-        }
-        ?>
-
-        <form method="POST">
-          <div class="row mt-5 g-3">
-            <!---Firstname--->
-            <div class="col-md-4">
-              <label for="firstName" class="form-label">First Name</label>
-              <input type="text" name="fname" class="form-control" pattern="[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('Please use characters!')" oninput="this.setCustomValidity('')" id="firstName" required>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="content px-4 m-auto justify-content-center">
+            <div class="col-md pt-3 text-center">
+              <h1 class="head-text">Ecle Transfer Form</h1>
             </div>
 
-            <!---Middlename--->
-            <div class="col-md-4">
-              <label for="middleName" class="form-label">Middle Name</label>
-              <input type="text" name="mname" class="form-control" pattern="[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('Please use characters!')" oninput="this.setCustomValidity('')" id="middleName">
-            </div>
+          <?php
+          if(!empty($_POST)){
+            $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['year'], $_POST['campus'], $_POST['university'], $_POST['reason']);
+            $insert->insertApplication();
+          }
+          ?>
 
-            <!---Lastname--->
-            <div class="col-md-4">
-              <label for="lastName" class="form-label">Last Name</label>
-              <input type="text" name="lname" class="form-control" pattern="[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('Please use characters!')" oninput="this.setCustomValidity('')" id="lastName" required>
-            </div>
+          <form method="POST">
+            <div class="row mt-5 g-3">
+              <!---Firstname--->
+              <div class="col-md-4">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" name="fname" class="form-control" pattern="[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('Please use characters!')" oninput="this.setCustomValidity('')" id="firstName" required>
+              </div>
 
-            <!---Student Number--->
-            <div class="col-md-4">
-              <label for="studentNumber" class="form-label">Student Number</label>
-              <input type="text" name="studID" class="form-control" pattern="[0-9]{4}-[0-9]{5}" oninvalid="this.setCustomValidity('Please follow the pattern (XXXX-XXXXX)')" oninput="this.setCustomValidity('')" id="studentNumber" required>
-            </div>
+              <!---Middlename--->
+              <div class="col-md-4">
+                <label for="middleName" class="form-label">Middle Name</label>
+                <input type="text" name="mname" class="form-control" pattern="[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('Please use characters!')" oninput="this.setCustomValidity('')" id="middleName">
+              </div>
 
-            <!---Email--->
-            <div class="col-md-4">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninvalid="this.setCustomValidity('Please follow the pattern sample@gmail.com')" oninput="this.setCustomValidity('')" id="email" required>
-            </div>
+              <!---Lastname--->
+              <div class="col-md-4">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" name="lname" class="form-control" pattern="[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('Please use characters!')" oninput="this.setCustomValidity('')" id="lastName" required>
+              </div>
 
-            <!---Contact Number--->
-            <div class="col-md-4">
-              <label for="contactNumber" class="form-label">Contact Number</label>
-              <input type="text" name="contact" class="form-control" pattern="09[0-9]{9}" oninvalid="this.setCustomValidity('Please follow the pattern 0XXXXXXXXXX')" oninput="this.setCustomValidity('')" id="contactNumber" required>
-            </div>
+              <!---Student Number--->
+              <div class="col-md-4">
+                <label for="studentNumber" class="form-label">Student Number</label>
+                <input type="text" name="studID" class="form-control" pattern="[0-9]{4}-[0-9]{5}" oninvalid="this.setCustomValidity('Please follow the pattern (XXXX-XXXXX)')" oninput="this.setCustomValidity('')" id="studentNumber" required>
+              </div>
 
-            <!---Course/Degree--->
-            <div class="col-md-4">
-              <label form="course" class="form-label">Course/Degree</label>
-              <select id="course" name="course" class="form-select form-control" data-live-search="true" required>
-              <?php $view->courseSP2();?>
-              </select>
-            </div>
+              <!---Email--->
+              <div class="col-md-4">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninvalid="this.setCustomValidity('Please follow the pattern sample@gmail.com')" oninput="this.setCustomValidity('')" id="email" required>
+              </div>
 
-            <!---Campus--->
-            <div class="col-md-4">
-              <label for="campus" class="form-label">Campus</label>
-              <select id="campus" name="campus" class="form-select form-control" data-live-search="true" required>
-              <?php $view->campusChoose();?>
-              </select>
-            </div>
+              <!---Contact Number--->
+              <div class="col-md-4">
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="text" name="contact" class="form-control" pattern="09[0-9]{9}" oninvalid="this.setCustomValidity('Please follow the pattern 0XXXXXXXXXX')" oninput="this.setCustomValidity('')" id="contactNumber" required>
+              </div>
 
-            <!---Year Level--->
-            <div class="col-md-4">
-              <label for="yearLevel" class="form-label">Year Last Enrolled</label>
-              <input type="text" name="year" class="form-control" pattern="20[0-9]{2}" oninvalid="this.setCustomValidity('Please follow the pattern 20XX')" oninput="this.setCustomValidity('')" id="yearLevel" required>
-            </div>
+              <!---Course/Degree--->
+              <div class="col-md-4">
+                <label form="course" class="form-label">Course/Degree</label>
+                <select id="course" name="course" class="form-select form-control" data-live-search="true" required>
+                <?php $view->courseSP2();?>
+                </select>
+              </div>
 
-            <!---Transfer School--->
-            <div class="col-md-4">
-              <label for="university" class="form-label">Transferring School</label>
-              <select id="university" name="university" class="form-select form-control" data-live-search="true" required>
-              <?php $view->university();?>
-              </select>
-            </div>
+              <!---Campus--->
+              <div class="col-md-4">
+                <label for="campus" class="form-label">Campus</label>
+                <select id="campus" name="campus" class="form-select form-control" data-live-search="true" required>
+                <?php $view->campusChoose();?>
+                </select>
+              </div>
 
-            <!---Reason--->
-            <div class="col-md-4">
-              <label for="reason" class="form-label">Reason</label>
-              <select id="reason" name="reason" class="form-select form-control" data-live-search="true" required>
-              <?php $view->reason();?>
-              </select>
-            </div>
-            <!---Year Level--->
-            <div class="col-md-4">
-            </div>
+              <!---Year Level--->
+              <div class="col-md-4">
+                <label for="yearLevel" class="form-label">Year Last Enrolled</label>
+                <input type="text" name="year" class="form-control" pattern="20[0-9]{2}" oninvalid="this.setCustomValidity('Please follow the pattern 20XX')" oninput="this.setCustomValidity('')" id="yearLevel" required>
+              </div>
 
-            <div class="col-md my-4">
-              <button onclick="location.href='index.php'" class="btn btn-dark">Back</button>
-              <button type="submit" class="btn btn-dark">Submit</button>
+              <!---Transfer School--->
+              <div class="col-md-4">
+                <label for="university" class="form-label">Transferring School</label>
+                <select id="university" name="university" class="form-select form-control" data-live-search="true" required>
+                <?php $view->university();?>
+                </select>
+              </div>
+
+              <!---Reason--->
+              <div class="col-md-4">
+                <label for="reason" class="form-label">Reason</label>
+                <select id="reason" name="reason" class="form-select form-control" data-live-search="true" required>
+                <?php $view->reason();?>
+                </select>
+              </div>
+              <!---Year Level--->
+              <div class="col-md-4">
+              </div>
+
+              <div class="col-md my-4 text-center">
+                <div>
+                  <button type="submit" class="button-submit btn-dark">Submit</button>
+                </div>
+                <div>
+                  <button onclick="location.href='index.php'" class="button-back">Back</button>
+                </div>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>

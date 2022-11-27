@@ -20,10 +20,7 @@ header{
 }
 .navbar{
   width: 100%;
-  background-color: #fff;
-  -webkit-box-shadow:0px 0.5px 5px #000;
-  -moz-box-shadow:0px 0.5px 5px #000;
-   box-shadow:0px 0.5px 5px #000;
+  background: rgba(28, 28, 28, .6);
   animation: nav-load var(--nav-load-time) ease-in;
 }
 
@@ -32,15 +29,11 @@ header{
 }
 
 .fab{
-  color:#24125f;
+  color:#fff;
 }
 
 .navbar-nav{
   text-align: right;
-}
-
-.head-text{
-  float: right;
 }
 
 .logo2{
@@ -50,9 +43,26 @@ header{
 select{
   width: 100%;
 }
-.row-1{
+.content{
+  height: 100%;
   border-radius: 5px;
   border-collapse: collapse;
   box-shadow: 0 0 5px .1px #000;
   background-color: #fff;
+}
+.button-submit{
+  width: 600px;
+  border-radius: 5px;
+}
+.button-back {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-size: 15px
+}
+.button-back:hover {
+  background-color: transparent;
 }

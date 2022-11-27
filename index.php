@@ -32,18 +32,27 @@
         </nav>
 
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md">
-              <div class="elogo">
-                <div class="content">
-                  <img class="eclelogo"src="resource/img/eclewhite.png">
-                  <p class="p-md-5 seo text-white text-center">
-                    Exit Clearance Portal or ECLE in short, is a web application that aims to assist students in applying and completing their exit clearance. This portal wants to lessen the time and effort of students and also the staff and department of Centro Escolar University. ECLE will provide for an easier way of checking and following up on pending clearances.
-                  </p>
-                  <div class="btn1">
-                    <a href="#sec">
-                      <button class="button3">Continue</button>
-                    </a>
+          <div class="content-box mt-5">
+            <div class="row">
+              <div class="col-md">
+                <div class="elogo">
+                  <div class="content">
+                    <div>
+                      <img class="eclelogo"src="resource/img/logo7.png">
+                    </div>
+                    <div class="subTitle mt-4">
+                      Exit Clearance Portal for CEU Office of the Registrar
+                    </div>
+                    <div class="p-md-5 seo text-white text-center">
+                      <p>
+                        Exit Clearance Portal or ECLE in short, is a web application that aims to assist students in applying and completing their exit clearance. This portal wants to lessen the time and effort of students and also the staff and department of Centro Escolar University. ECLE will provide for an easier way of checking and following up on pending clearances.
+                      </p>
+                  </div>
+                    <div class="btn1">
+                      <a href="#sec">
+                        <button class="button3">Continue</button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
