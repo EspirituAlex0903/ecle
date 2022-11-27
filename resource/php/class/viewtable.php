@@ -27,7 +27,7 @@ public function viewRequestTableRegistrarTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -103,7 +103,7 @@ public function viewRequestTableRegistrarGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -178,7 +178,7 @@ public function viewApproveTableRegistrarTransfer(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -249,7 +249,7 @@ public function viewApproveTableRegistrarGraduate(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -321,7 +321,7 @@ public function viewHoldTableRegistrarTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -398,7 +398,7 @@ public function viewHoldTableRegistrarGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -475,7 +475,7 @@ public function viewRequestTableAccountingTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -551,7 +551,7 @@ public function viewRequestTableAccountingGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -625,7 +625,7 @@ public function viewApproveTableAccountingTransfer(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -696,7 +696,7 @@ public function viewApproveTableAccountingGraduate(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -768,7 +768,7 @@ public function viewHoldTableAccountingTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -845,7 +845,7 @@ public function viewHoldTableAccountingGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -924,7 +924,7 @@ public function viewRequestTableDepartmentTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1002,7 +1002,7 @@ public function viewRequestTableDepartmentGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1079,7 +1079,7 @@ public function viewApproveTableDepartmentTransfer(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1152,7 +1152,7 @@ public function viewApproveTableDepartmentGraduate(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1226,7 +1226,7 @@ public function viewHoldTableDepartmentTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1305,7 +1305,7 @@ public function viewHoldTableDepartmentGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1382,7 +1382,7 @@ public function viewRequestTableLibraryTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1458,7 +1458,7 @@ public function viewRequestTableLibraryGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1533,7 +1533,7 @@ public function viewApproveTableLibraryTransfer(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1604,7 +1604,7 @@ public function viewApproveTableLibraryGraduate(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1676,7 +1676,7 @@ public function viewHoldTableLibraryTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1753,7 +1753,7 @@ public function viewHoldTableLibraryGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1830,7 +1830,7 @@ public function viewRequestTableLaboratoryTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1906,7 +1906,7 @@ public function viewRequestTableLaboratoryGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -1981,7 +1981,7 @@ public function viewApproveTableLaboratoryTransfer(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -2052,7 +2052,7 @@ public function viewApproveTableLaboratoryGraduate(){
   echo "<th>Registrar</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -2123,7 +2123,7 @@ public function viewHoldTableLaboratoryTransfer(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
@@ -2200,7 +2200,7 @@ public function viewHoldTableLaboratoryGraduate(){
   echo "<th>Actions</th>";
   echo "</thead>";
   foreach ($result as $data) {
-  echo "<tr>";
+  echo "<tr style='font-size: 12px'>";
   echo "<td>$data[fname] $data[mname] $data[lname] </td>";
   echo "<td>$data[course]</td>";
   echo "<td>$data[dateReq]</td>";
