@@ -1,6 +1,5 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/vendor/sendmail.php';
 
 class import extends config{
 
@@ -72,3 +71,4 @@ class import extends config{
     
 
 }
+?>

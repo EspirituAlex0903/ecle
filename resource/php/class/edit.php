@@ -1,4 +1,6 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/vendor/sendmailApproved.php';
 
 class edit extends config{
     public $id;
@@ -53,6 +55,19 @@ class edit extends config{
 
     public function approveClearanceRegistrar(){
         $con = $this->con();
+
+        $sql2 = "SELECT * FROM `ecle_forms` WHERE `id` = '$this->id'";
+        $data2 = $con->prepare($sql2);
+        $data2->execute();
+        $result = $data2->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($result as $row) {
+            $email = $row['email'];
+            $lname = $row['lname'];
+            $fname = $row['fname'];
+            $mname = $row['mname'];
+        }
+        sendmailApproved($email, $lname, $fname, $mname);
+
         $sql = "UPDATE `ecle_forms` SET `registrarclearance` = 'APPROVED', `registrarremarks` = '', `registrardate` = CURRENT_TIMESTAMP WHERE `id` = '$this->id'";
         $data = $con->prepare($sql);
         if($data->execute()){

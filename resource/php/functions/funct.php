@@ -515,4 +515,21 @@ function gradInfo(){
         }
     }
 }
+
+function sendmailLibrary(){
+    $send = new sendMail();
+    $send->sendLibrary();
+}
+function sendmailLaboratory(){
+    $send = new sendMail();
+    $send->sendLaboratory();
+}
+function sendmailDean(){
+    $send = new sendMail();
+    $send->sendDean();
+}
+function sendmailAccounting(){
+    $send = new sendMail();
+    $send->sendAccounting();
+}
  ?>

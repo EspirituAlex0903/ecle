@@ -24,9 +24,10 @@ $reference = new reference();
             ?>
           </div>
         </div>
-        <div class="col-md px-5">
-        <button class="button-back" onClick="location.href='transferCheck.php'">Back</button>
-        </div>
+        
+    </div>
+    <div class="col-md px-5">
+      <button class="button-back" onClick="location.href='transferCheck.php'">Back</button>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

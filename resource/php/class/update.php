@@ -1,6 +1,5 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/vendor/sendmail.php';
 
 class update extends config{
 
@@ -33,3 +32,4 @@ class update extends config{
     }
 
 }
+?>

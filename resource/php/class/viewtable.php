@@ -2289,4 +2289,33 @@ public function viewTotalNonScience(){
   $result = $data->fetchColumn();
   return $result;
 }
+
+public function viewTransferredSchool() {
+  $con = $this->con();
+  $sql = "SELECT 
+  COUNT(CASE WHEN transferredSchool = 'Abroad' then 1 ELSE NULL END) as 'Abroad',
+  COUNT(CASE WHEN transferredSchool = 'Undecided' then 1 ELSE NULL END) as 'Undecided',
+  COUNT(CASE WHEN transferredSchool = 'Ateneo de Manila University' then 1 ELSE NULL END) as 'Ateneo de Manila University',
+  COUNT(CASE WHEN transferredSchool = 'De La Salle University' then 1 ELSE NULL END) as 'De La Salle University',
+  COUNT(CASE WHEN transferredSchool = 'University of the Philippines' then 1 ELSE NULL END) as 'University of the Philippines',
+  COUNT(CASE WHEN transferredSchool = 'University of Santo Tomas' then 1 ELSE NULL END) as 'University of Santo Tomas',
+  COUNT(CASE WHEN transferredSchool = 'Adamson University' then 1 ELSE NULL END) as 'Adamson University',
+  COUNT(CASE WHEN transferredSchool = 'University of the East' then 1 ELSE NULL END) as 'University of the East',
+  COUNT(CASE WHEN transferredSchool = 'Far Eastern University' then 1 ELSE NULL END) as 'Far Eastern University',
+  COUNT(CASE WHEN transferredSchool = 'National University Philippines' then 1 ELSE NULL END) as 'National University Philippines',
+  COUNT(CASE WHEN transferredSchool = 'Bulacan State University' then 1 ELSE NULL END) as 'Bulacan State University',
+  COUNT(CASE WHEN transferredSchool = 'Others' then 1 ELSE NULL END) as 'Others'
+  from `ecle_forms`";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result[] = array();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  $row = json_encode($data);
+  return $row;
 }
+
+public function viewReason(){
+
+}
+}
+?>

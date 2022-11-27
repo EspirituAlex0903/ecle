@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/vendor/sendmail.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/vendor/sendmailTransfer.php';
 
 class insert extends config{
 
@@ -60,11 +60,12 @@ class insert extends config{
             $data1 ->execute();
         }
 
-        //sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
-        //header('Location:transfer.php');
+        sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
+        header('Location:transfer.php');
 
     }
 
     
 
 }
+?>

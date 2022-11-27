@@ -74,3 +74,4 @@ class graduate extends config{
 
     }
 }
+?>

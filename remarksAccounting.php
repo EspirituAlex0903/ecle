@@ -4,7 +4,6 @@ isLogin();
 $viewtable = new viewtable();
 $user = new user();
 isAccounting($user->data()->groups);
-$info = new info($_GET['hold']);
  ?>
 
 <!DOCTYPE html>
