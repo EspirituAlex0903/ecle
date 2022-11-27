@@ -62,11 +62,11 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
                       <input type="text" class="input" pattern="[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('Please use characters!')" oninput="this.setCustomValidity('')" placeholder="Last Name" name="lname" required>
                     </div>
                     <div>
-                      <input type="submit" class="button-check"value="Check"/>
+                      <input type="submit" class="button-check btn-info"value="Check"/>
                     </div>
                   </form>
                     <div>
-                      <a href="index.php"><input type="submit" class="button-back btn-light"value="Back"/></a>
+                      <a href="index.php"><input type="submit" class="button-back text-white pt-5" value="Back"/></a>
                     </div>
                   </div>
                 </div>

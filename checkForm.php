@@ -9,7 +9,7 @@
   </div>
   <div class="row">
     <div class="col-md pt-3">
-      <button class="button-submits" style="width:40%; border-radius: 4px; background-color: #f04e98; border: none; color: #fff;">Submit</button>
+      <button class="button-submit btn-info" style="width:40%; border-radius: 4px; border: none; color: #fff;">Submit</button>
     </div>
   </div>
 </form>

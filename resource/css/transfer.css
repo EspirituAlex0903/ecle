@@ -61,7 +61,8 @@ select{
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  font-size: 15px
+  font-size: 15px;
+  text-decoration: underline;
 }
 .button-back:hover {
   background-color: transparent;

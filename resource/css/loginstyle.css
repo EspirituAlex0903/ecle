@@ -43,7 +43,6 @@ header{
 }
 
 .button-login {
-  background-color: #2d2a63;
   color: white;
   border-radius: 4px;
   border: none;
@@ -69,12 +68,12 @@ header{
 }
 .login-fields .content{
   height: 100%;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 .login-fields{
-  height: 490px;
+  height: 100%;
   width: 100%;
-  background-color: white;
+  background: rgba(33,29,41, .8);
   border-radius: 30px;
   -webkit-box-shadow:0px 0.5px 15px #000;
   -moz-box-shadow:0px 0.5px 15px #000;
@@ -82,13 +81,13 @@ header{
    padding: 50px;
 }
 .login-fields h1{
-  color: #2d2a63;
+  color: #f04e98;
   font-size: 55px;
   font-weight: 900;
   text-align: justify;
 }
 .login-fields h5{
-  color: #1c1c1c;
+  color: #fff;
   font-size: 20px;
   text-align: justify;
 }
