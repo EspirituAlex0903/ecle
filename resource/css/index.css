@@ -51,13 +51,25 @@ header{
   width: 100%;
 }
 .eclelogo{
-  height: 45%;
   width: 50%;
+  animation: logo-load 2s;
+}
+.eclelogo:hover{
+  width: 52%;
+  transition: 0.5s;
   animation: logo-load 2s;
 }
 .content .seo p{
   font-size: 15px;
+  padding: 20px;
+}
+.content .seo p:hover{
+  font-size: 16px;
+  transition: 0.5s;
   animation: seo-load 3s;
+  background: rgba(33,29,41, .5);
+  padding: 20px;
+  border-radius: 10px;
 }
 .subTitle{
   width: 80%;
