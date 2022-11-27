@@ -1426,7 +1426,7 @@ public function viewRequestTableLibraryTransfer(){
 
   echo "<td>
   <a href='libraryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-  <a href='remarksLibrary.php?hold=$data[id]' class='btn btn-sm d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+  <a href='remarksLibrary.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
   <a href='viewLibrary.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
