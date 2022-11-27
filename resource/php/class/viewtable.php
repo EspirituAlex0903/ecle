@@ -69,9 +69,9 @@ public function viewRequestTableRegistrarTransfer(){
     echo "<td><p class='text-success' style='font-weight:bold'>$data[registrarclearance]</p></td>";
   }
   echo "<td>
-          <a href='registrarApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='remarksRegistrar.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-          <a href='viewRegistrar.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='registrarApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='remarksRegistrar.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+          <a href='viewRegistrar.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -146,9 +146,9 @@ public function viewRequestTableRegistrarGraduate(){
   }
 
   echo "<td>
-          <a href='registrarApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='remarksRegistrar.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-          <a href='viewRegistrar.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='registrarApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='remarksRegistrar.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+          <a href='viewRegistrar.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -364,8 +364,8 @@ public function viewHoldTableRegistrarTransfer(){
   }
 
   echo "<td>
-          <a href='registrarApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewRegistrar.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='registrarApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewRegistrar.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
@@ -441,8 +441,8 @@ public function viewHoldTableRegistrarGraduate(){
   }
 
   echo "<td>
-          <a href='registrarApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewRegistrar.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='registrarApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewRegistrar.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
@@ -518,9 +518,9 @@ public function viewRequestTableAccountingTransfer(){
   }
 
   echo "<td>
-          <a href='accountingApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='remarksAccounting.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-          <a href='viewAccounting.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='accountingApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='remarksAccounting.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+          <a href='viewAccounting.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -594,9 +594,9 @@ public function viewRequestTableAccountingGraduate(){
   }
 
   echo "<td>
-          <a href='accountingApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='remarksAccounting.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-          <a href='viewAccounting.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='accountingApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='remarksAccounting.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+          <a href='viewAccounting.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -811,8 +811,8 @@ public function viewHoldTableAccountingTransfer(){
   }
 
   echo "<td>
-          <a href='accountingApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewAccounting.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='accountingApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewAccounting.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
@@ -888,8 +888,8 @@ public function viewHoldTableAccountingGraduate(){
   }
 
   echo "<td>
-          <a href='accountingApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewAccounting.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='accountingApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewAccounting.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
@@ -967,9 +967,9 @@ public function viewRequestTableDepartmentTransfer(){
   }
 
   echo "<td>
-          <a href='deanApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='remarksDean.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-          <a href='viewDean.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='deanApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='remarksDean.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+          <a href='viewDean.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -1045,9 +1045,9 @@ public function viewRequestTableDepartmentGraduate(){
   }
 
   echo "<td>
-          <a href='deanApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='remarksDean.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-          <a href='viewDean.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='deanApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='remarksDean.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+          <a href='viewDean.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -1269,8 +1269,8 @@ public function viewHoldTableDepartmentTransfer(){
   }
 
   echo "<td>
-          <a href='deanApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewDean.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='deanApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewDean.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
@@ -1348,8 +1348,8 @@ public function viewHoldTableDepartmentGraduate(){
   }
 
   echo "<td>
-          <a href='deanApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewDean.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='deanApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewDean.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
@@ -1425,9 +1425,9 @@ public function viewRequestTableLibraryTransfer(){
   }
 
   echo "<td>
-  <a href='libraryApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-  <a href='remarksLibrary.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-  <a href='viewLibrary.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+  <a href='libraryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+  <a href='remarksLibrary.php?hold=$data[id]' class='btn btn-sm d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+  <a href='viewLibrary.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -1501,9 +1501,9 @@ public function viewRequestTableLibraryGraduate(){
   }
 
   echo "<td class='content-center'>
-            <a href='libraryApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-            <a href='remarksLibrary.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-            <a href='viewLibrary.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+            <a href='libraryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+            <a href='remarksLibrary.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+            <a href='viewLibrary.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -1719,8 +1719,8 @@ public function viewHoldTableLibraryTransfer(){
   }
 
   echo "<td>
-          <a href='libraryApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewLibrary.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='libraryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewLibrary.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
@@ -1796,8 +1796,8 @@ public function viewHoldTableLibraryGraduate(){
   }
 
   echo "<td>
-          <a href='libraryApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewLibrary.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='libraryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewLibrary.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
@@ -1873,9 +1873,9 @@ public function viewRequestTableLaboratoryTransfer(){
   }
 
   echo "<td>
-          <a href='laboratoryApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='remarksLaboratory.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-          <a href='viewLaboratory.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='remarksLaboratory.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+          <a href='viewLaboratory.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -1949,9 +1949,9 @@ public function viewRequestTableLaboratoryGraduate(){
   }
 
   echo "<td>
-            <a href='laboratoryApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-            <a href='remarksLaboratory.php?hold=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
-            <a href='viewLaboratory.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+            <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+            <a href='remarksLaboratory.php?hold=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Hold'><i class='fa-solid fa-pencil'></i></a>
+            <a href='viewLaboratory.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
   }
@@ -2166,8 +2166,8 @@ public function viewHoldTableLaboratoryTransfer(){
   }
 
   echo "<td>
-          <a href='laboratoryApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewLaboratory.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewLaboratory.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
@@ -2243,8 +2243,8 @@ public function viewHoldTableLaboratoryGraduate(){
   }
 
   echo "<td>
-          <a href='laboratoryApprove.php?edit=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
-          <a href='viewLaboratory.php?id=$data[id]' class='btn d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
+          <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='viewLaboratory.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
 
