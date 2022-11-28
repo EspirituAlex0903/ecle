@@ -59,7 +59,7 @@ class graduate extends config{
                         echo "<br>";
                         echo "<p> <strong>First Name:</strong> $data[fname] &emsp;&emsp; <strong>Last Name:</strong> $data[lname] &emsp;&emsp; <strong>Course:</strong> $data[course]</p>";
                         echo "<p> <strong>Email:</strong> $data[email]</p>";
-                        echo "<tr>";
+                        echo "<tr class='text-white'>";
                         echo "<td style='font-size: x-large'>$data[departmentclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[libraryclearance] </td>";
                         echo "<td style='font-size: x-large'>$data[laboratoryclearance]</td>";

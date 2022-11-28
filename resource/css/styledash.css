@@ -152,7 +152,27 @@ table{
 .logo{
   height: 50px;
 }
+.button-submit{
+  width: 50%;
+  height: 50px;
+  border:none;
+  color: #fff;
+  border-radius: 5px;
+}
 
+.button-back {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #000;
+  text-decoration: underline;
+}
+.button-back:hover {
+  background-color: transparent;
+}
 
 @media(min-width: 768px){
   #sidebar-wrapper{

@@ -24,10 +24,9 @@ $reference = new reference();
             ?>
           </div>
         </div>
-        
-    </div>
-    <div class="col-md px-5">
-      <button class="button-back" onClick="location.href='transferCheck.php'">Back</button>
+        <div>
+          <a href="transferCheck.php"><input type="submit" class="button-back text-white pt-5" value="Back"/></a>
+        </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

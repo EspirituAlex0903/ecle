@@ -78,20 +78,20 @@ $import = new import();
             </script>
 
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalTransfers().")". '</span>';  ?>
+            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalTransfers(). '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalGraduates().")". '</span>';  ?>
+            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalGraduates(). '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-flask me-2"></i>Science <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalScience().")". '</span>';  ?>
+            <i class="fa-solid fa-flask me-2"></i>Science <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalScience(). '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalNonScience().")". '</span>';  ?>
+            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalNonScience(). '</span>';  ?>
             </a>
 
           </div>
@@ -129,6 +129,7 @@ $import = new import();
           <div class="container-fluid p-5">
             <div class="row">
               <div class="col-md p-5 content">
+                <div id="chart_div"></div>
                 <?php
                 if(empty($_POST)){
                   $viewtable->viewRequestTableRegistrarTransfer();

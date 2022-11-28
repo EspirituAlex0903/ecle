@@ -108,7 +108,7 @@ $view = new view();
               <?php $import->insertGraduate(); ?>
                 <form action="" method="post" enctype="multipart/form-data">
                   <input type="file" name="file">
-                  <input type="submit" class="btn btn-primary" name="importSubmit" value="Import ">
+                  <input type="submit" class="btn btn-primary" name="importSubmit" value="Import">
                   <a href="ecle.csv" download="ecle template" class="btn btn-primary">Download Template</a>
                 </form>
               </div>

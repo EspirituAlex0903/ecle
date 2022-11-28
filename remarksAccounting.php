@@ -18,6 +18,7 @@ isAccounting($user->data()->groups);
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
   </head>
   <body>
     <header>
@@ -69,20 +70,20 @@ isAccounting($user->data()->groups);
             </script>
 
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalTransfers().")". '</span>';  ?>
+            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalTransfers(). '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalGraduates().")". '</span>';  ?>
+            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalGraduates(). '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-flask me-2"></i>Science <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalScience().")". '</span>';  ?>
+            <i class="fa-solid fa-flask me-2"></i>Science <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalScience(). '</span>';  ?>
             </a>
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalNonScience().")". '</span>';  ?>
+            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalNonScience(). '</span>';  ?>
             </a>
 
           </div>
@@ -125,12 +126,16 @@ isAccounting($user->data()->groups);
                     holdAccounting();
                   }
                   ?>
-                    <label for="remarks">Remarks</label>
-                    <textarea name="remarks" id="remarks" rows="5" cols="20"></textarea>
+                    <div class="form-group">
+                      <label for="remarks">Remarks</label>
+                      <textarea class="form-control" id="remarks" rows="10" name="remarks"></textarea>
+                    </div>
 
-                    <div class="button">
-                      <a href='accounting.php' class='btn btn-primary'>Back</a>
-                      <button type="submit" name="submit" value="submit" class="btn btn-primary my-5">Submit</button>
+                    <div class="text-center">
+                      <button type="submit" class="button-submit bg-success" value="submit" name="submit">Submit</button>
+                    </div>
+                    <div class="text-center">
+                      <a href="accounting.php" class="button-back">Back</a>
                     </div>
                 </form>
               </div>

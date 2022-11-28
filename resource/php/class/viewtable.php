@@ -6,7 +6,7 @@ class viewtable extends config{
 
 public function viewRequestTableRegistrarTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='PENDING' AND `libraryclearance`='APPROVED' AND `laboratoryclearance`='APPROVED' OR `laboratoryclearance`='NOT REQUIRED' AND `departmentclearance`='APPROVED' AND `accountingclearance`='APPROVED' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='PENDING' AND `libraryclearance`='APPROVED' AND `laboratoryclearance`='APPROVED' OR `laboratoryclearance`='NOT REQUIRED' AND `departmentclearance`='APPROVED' AND `accountingclearance`='APPROVED' AND `registrarclearance` = 'PENDING' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -82,7 +82,7 @@ public function viewRequestTableRegistrarTransfer(){
 
 public function viewRequestTableRegistrarGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='PENDING' AND `libraryclearance`='APPROVED' AND `laboratoryclearance`='APPROVED' AND `departmentclearance`='APPROVED' AND `accountingclearance`='APPROVED' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='PENDING' AND `libraryclearance`='APPROVED' AND `laboratoryclearance`='APPROVED' AND `departmentclearance`='APPROVED' AND `accountingclearance`='APPROVED' AND `registrarclearance` = 'PENDING' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
