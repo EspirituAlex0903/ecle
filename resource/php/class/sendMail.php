@@ -72,7 +72,7 @@ class sendMail extends config{
             $email = $row2['email'];
             $username = $row2['colleges'];
         }
-        //sendmailAccounts($email, $username, $arr);
+        //sendmailAccounts($email, $username, $arr); ADD ADDRESS FUNCTION
     }
 
     public function sendAccounting(){

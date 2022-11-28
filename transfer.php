@@ -87,18 +87,10 @@ $view = new view;
               </div>
 
               <!---Course/Degree--->
-              <div class="col-md-4">
+              <div class="col-md-12">
                 <label form="course" class="form-label">Course/Degree</label>
                 <select id="course" name="course" class="form-select form-control" data-live-search="true" required>
                 <?php $view->courseSP2();?>
-                </select>
-              </div>
-
-              <!---Campus--->
-              <div class="col-md-4">
-                <label for="campus" class="form-label">Campus</label>
-                <select id="campus" name="campus" class="form-select form-control" data-live-search="true" required>
-                <?php $view->campusChoose();?>
                 </select>
               </div>
 
@@ -122,9 +114,6 @@ $view = new view;
                 <select id="reason" name="reason" class="form-select form-control" data-live-search="true" required>
                 <?php $view->reason();?>
                 </select>
-              </div>
-              <!---Year Level--->
-              <div class="col-md-4">
               </div>
 
               <div class="col-md my-4 text-center">
