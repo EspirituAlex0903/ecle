@@ -51,6 +51,7 @@ class view extends config{
       }
 
         public function reason(){
+          echo '<option data-tokens="Continuation of Study" value="Continuation of Study">Continuation of Study</option>';
           echo '<option data-tokens="Financial Problem" value="Financial Problem">Financial Problem</option>';
           echo '<option data-tokens="Change of Major" value="Change of Major">Change of Major</option>';
           echo '<option data-tokens="Family Issues" value="Family Issues">Family Issues</option>';
