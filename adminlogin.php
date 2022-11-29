@@ -41,7 +41,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
             <div class="row">
               <div class="col-md-7 ml-5 text-white text">
                 <div class="content mt-5">
-                  <p class="line anim-typewriter1 font-weight-bold">CIENCIA <i class="px-3">y  </i> VIRTUD</p>
+                  <p class="line anim-typewriter1 font-weight-bold"><span class="ecle">E</span>XIT <span class="ecle">CLE</span>ARANCE</p>
                   <p class="line anim-typewriter2">CEU<span> EMPOWERS.</span> </p>
                   <p class="line anim-typewriter3">CEU <span>INSPIRES.</span></p>
               </div>
@@ -55,7 +55,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/ecle/resource/php/class/core/init.php';
                             <div class="content">
                               <h1 class="text-center">ECLE
                               </h1>
-                              <h5 class="text-center">Exit Clearance Portal for <br>CEU Office of the Registrar</h5>
+                              <h5 class="text-center"><span class="ecle">E</span>xit <span class="ecle">Cle</span>arance Portal for <br><span class="ceu">CEU Office of the Registrar</span></h5>
 
                             <form action="" method="post">
                               <div class="inputs">

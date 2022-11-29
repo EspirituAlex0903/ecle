@@ -46,7 +46,7 @@ header{
   color: white;
   border-radius: 4px;
   border: none;
-  width: 100%;
+  width: 70%;
   height: 38px;
   font-size: 15px;
   text-decoration: none;
@@ -96,7 +96,7 @@ header{
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 20px;
-  width: 100%;
+  width: 70%;
   height: 40px;
   text-align: center;
 }
@@ -136,8 +136,11 @@ header{
   animation: typewriter3 3s steps(50) 9s 1 normal both,
   blinkTextCursor 500ms steps(40) infinite normal;
 }
-.y{
-  color: #fff;
+.content .ecle{
+  color: #f04e98;
+}
+.content .ceu{
+  color: #f08bb9;
 }
 span{
   color:#f04e98;
@@ -161,6 +164,7 @@ footer{
   to{
     width: 10em;
     background: rgba(0,0,0, 0.5);
+    padding: 0 50px;
   }
 }
  @keyframes typewriter2{
@@ -170,6 +174,7 @@ footer{
   to{
     width: 10em;
     background: rgba(0,0,0, 0.5);
+    padding: 0 50px;
   }
 }
  @keyframes typewriter3{
@@ -179,6 +184,7 @@ footer{
   to{
     width: 10em;
     background: rgba(0,0,0, 0.5);
+    padding: 0 50px;
   }
 }
 

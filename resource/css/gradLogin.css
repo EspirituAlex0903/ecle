@@ -46,7 +46,7 @@ header{
   color: white;
   border-radius: 4px;
   border: none;
-  width: 100%;
+  width: 70%;
   height: 38px;
   font-size: 20px;
   text-decoration: none;
@@ -85,7 +85,7 @@ header{
 }
 .login-fields{
   height: 100%;
-  width: 90%;
+  width: 100%;
   background: rgba(33,29,41, .8);
   border-radius: 30px;
   -webkit-box-shadow:0px 0.5px 15px #000;
@@ -109,7 +109,7 @@ header{
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 20px;
-  width: 100%;
+  width: 70%;
   height: 40px;
   text-align: center;
 }
@@ -152,6 +152,12 @@ header{
 .y{
   color: #fff;
 }
+.content .ecle{
+  color: #f04e98;
+}
+.content .ceu{
+  color: #f08bb9;
+}
 span{
   color:#f04e98;
   font-weight: 900;
@@ -174,6 +180,7 @@ footer{
   to{
     width: 10em;
     background: rgba(0,0,0, 0.5);
+    padding: 0 50px;
   }
 }
  @keyframes typewriter2{
@@ -183,6 +190,7 @@ footer{
   to{
     width: 10em;
     background: rgba(0,0,0, 0.5);
+    padding: 0 50px;
   }
 }
  @keyframes typewriter3{
@@ -192,6 +200,7 @@ footer{
   to{
     width: 10em;
     background: rgba(0,0,0, 0.5);
+    padding: 0 50px;
   }
 }
 

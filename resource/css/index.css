@@ -63,7 +63,8 @@ header{
   font-size: 15px;
   padding: 20px;
 }
-.content .seo p:hover{
+.below:hover{
+  margin-top: 20px;
   font-size: 16px;
   transition: 0.5s;
   animation: seo-load 3s;
@@ -74,9 +75,14 @@ header{
 .subTitle{
   width: 80%;
   margin: auto;
-  color: #f04e98;
   font-weight: bolder;
   font-size: 30px;
+}
+.subTitle .ecle{
+  color: #f04e98;
+}
+.subTitle .ceu{
+  color: #f08bb9;
 }
 .content-box{
   height: 500px;
