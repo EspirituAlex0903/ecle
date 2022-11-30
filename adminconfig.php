@@ -96,10 +96,10 @@ $view = new view();
             </div>
           </nav>
 
-          <div class="container p-5">
+          <div class="container pt-5">
             <div class="row">
               <div class="cold-md-12 head">
-                <div class="float-right">
+                <div class="float-left">
                   <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm')"><i class="fa-solid fa-plus mr-2"></i>Import</a>
                 </div>
               </div>
@@ -110,6 +110,7 @@ $view = new view();
                   <input type="file" name="file">
                   <input type="submit" class="btn btn-primary" name="importSubmit" value="Import">
                   <a href="ecle.csv" download="ecle template" class="btn btn-primary">Download Template</a>
+                  <a href="courses.csv" download="courses template" class="btn btn-primary">Instructions</a>
                 </form>
               </div>
 

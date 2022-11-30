@@ -2270,7 +2270,7 @@ public function viewTotalGraduates(){
   $data->execute();
   $result = $data->fetchColumn();
   return $result;
-}
+  }
 
 public function viewTotalScience(){
   $con = $this->con();
@@ -2279,7 +2279,7 @@ public function viewTotalScience(){
   $data->execute();
   $result = $data->fetchColumn();
   return $result;
-}
+  }
 
 public function viewTotalNonScience(){
   $con = $this->con();
@@ -2288,34 +2288,62 @@ public function viewTotalNonScience(){
   $data->execute();
   $result = $data->fetchColumn();
   return $result;
-}
+  }
 
-public function viewTransferredSchool() {
+public function viewTransferredSchoolNames() {
   $con = $this->con();
-  $sql = "SELECT 
-  COUNT(CASE WHEN transferredSchool = 'Abroad' then 1 ELSE NULL END) as 'Abroad',
-  COUNT(CASE WHEN transferredSchool = 'Undecided' then 1 ELSE NULL END) as 'Undecided',
-  COUNT(CASE WHEN transferredSchool = 'Ateneo de Manila University' then 1 ELSE NULL END) as 'Ateneo de Manila University',
-  COUNT(CASE WHEN transferredSchool = 'De La Salle University' then 1 ELSE NULL END) as 'De La Salle University',
-  COUNT(CASE WHEN transferredSchool = 'University of the Philippines' then 1 ELSE NULL END) as 'University of the Philippines',
-  COUNT(CASE WHEN transferredSchool = 'University of Santo Tomas' then 1 ELSE NULL END) as 'University of Santo Tomas',
-  COUNT(CASE WHEN transferredSchool = 'Adamson University' then 1 ELSE NULL END) as 'Adamson University',
-  COUNT(CASE WHEN transferredSchool = 'University of the East' then 1 ELSE NULL END) as 'University of the East',
-  COUNT(CASE WHEN transferredSchool = 'Far Eastern University' then 1 ELSE NULL END) as 'Far Eastern University',
-  COUNT(CASE WHEN transferredSchool = 'National University Philippines' then 1 ELSE NULL END) as 'National University Philippines',
-  COUNT(CASE WHEN transferredSchool = 'Bulacan State University' then 1 ELSE NULL END) as 'Bulacan State University',
-  COUNT(CASE WHEN transferredSchool = 'Others' then 1 ELSE NULL END) as 'Others'
-  from `ecle_forms`";
+  $sql = "SELECT transferredSchool, COUNT(transferredSchool) AS quantity FROM ecle_forms WHERE semester = '1' AND sy = '2022-2023' AND transferredSchool != 'NULL' GROUP BY transferredSchool";
   $data= $con->prepare($sql);
   $data->execute();
-  $result[] = array();
+  $names[] = array();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
-  $row = json_encode($data);
-  return $row;
-}
+  foreach($result as $row){
+    $names[] = $row['transferredSchool'];
+  }
+  unset($names[0]);
+  return $names;
+  }
 
-public function viewReason(){
+public function viewTransferredSchoolTotal() {
+  $con = $this->con();
+  $sql = "SELECT transferredSchool, COUNT(transferredSchool) AS quantity FROM ecle_forms WHERE semester = '1' AND sy = '2022-2023' AND transferredSchool != '' GROUP BY transferredSchool";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $numbers[] = array();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  foreach($result as $row){
+    $numbers[] = $row['quantity'];
+  }
+  unset($numbers[0]);
+  return $numbers;
+  }
 
-}
+public function viewReasonNames(){
+  $con = $this->con();
+  $sql = "SELECT reason, COUNT(reason) AS quantity FROM ecle_forms WHERE semester = '1' AND sy = '2022-2023' AND reason != 'NULL' GROUP BY reason";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $reasons[] = array();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  foreach($result as $row){
+    $reasons[] = $row['reason'];
+  }
+  unset($reasons[0]);
+  return $reasons;
+  }
+
+public function viewReasonTotal(){
+  $con = $this->con();
+  $sql = "SELECT reason, COUNT(reason) AS quantity FROM ecle_forms WHERE semester = '1' AND sy = '2022-2023' AND reason != 'NULL' GROUP BY reason";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $total[] = array();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+  foreach($result as $row){
+    $total[] = $row['quantity'];
+  }
+  unset($total[0]);
+  return $total;
+  }
 }
 ?>

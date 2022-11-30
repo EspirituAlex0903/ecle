@@ -23,7 +23,7 @@ $import = new import();
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <title>Dashboard</title>
     <link rel="icon" type="image/x-icon" href="resource/img/icon.ico" />
@@ -38,7 +38,7 @@ $import = new import();
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
             <!-- dashboard -->
-            <div class="item"><p><i class="fa-solid fa-gauge-high"></i>Dashboard</p>
+            <div class="item"><a href="registrar.php"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
             </div>
 
             <!-- requests -->
@@ -128,11 +128,17 @@ $import = new import();
 
           <div class="container-fluid p-5">
             <div class="row">
+
               <div class="col-md p-5 content">
-                <div id="chart_div"></div>
+
                 <?php
-                if(empty($_POST)){
-                  $viewtable->viewRequestTableRegistrarTransfer();
+                if(empty($_POST)){ ?>
+                <div class="col-md p-5 mb-5">
+                  <h3 class="col-md pb-5" style="text-align:center; font-weight:bold;">Summary of transferring Students' School of choice and their Reasons</h3>
+                  <canvas id="chart_schools" style="width:100%;max-width:650px; display:inline"></canvas>
+                  <canvas id="chart_reasons" style="width:100%;max-width:650px; float: right; display:inline"></canvas>
+                </div>
+                <?php $viewtable->viewRequestTableRegistrarTransfer();
                 }
                 else if(array_key_exists('Rtransfer', $_POST)) {
                   $viewtable->viewRequestTableRegistrarTransfer();
@@ -169,6 +175,56 @@ $import = new import();
         </div>
       </div>
     </header>
+
+    <script>
+      const schoolspie = document.getElementById('chart_schools');
+
+      new Chart(schoolspie, {
+        type: 'doughnut',
+        data: {
+          labels: <?php echo'["' . implode('", "', $viewtable->viewTransferredSchoolNames()) . '"]' ?>,
+          datasets: [{
+            label: 'Total Students',
+            data: <?php echo '[' . implode(', ', $viewtable->viewTransferredSchoolTotal()) . ']' ?>,
+            backgroundColor: [
+              'rgb(255,0,0)',
+              'rgb(255,165,0)',
+              'rgb(0,128,0)',
+              'rgb(0,255,255)',
+              'rgb(0,0,255)',
+              'rgb(255,192,203)',
+              'rgb(176,196,222)',
+              
+            ],
+          }]
+        }
+      });
+    </script>
+
+    <script>
+      const reasonspie = document.getElementById('chart_reasons');
+
+      new Chart(reasonspie, {
+        type: 'doughnut',
+        data: {
+          labels: <?php echo'["' . implode('", "', $viewtable->viewReasonNames()) . '"]' ?>,
+          datasets: [{
+            label: 'Reasons',
+            data: <?php echo '[' . implode(', ', $viewtable->viewReasonTotal()) . ']' ?>,
+            backgroundColor: [
+              'rgb(255,0,0)',
+              'rgb(255,165,0)',
+              'rgb(0,128,0)',
+              'rgb(0,255,255)',
+              'rgb(0,0,255)',
+              'rgb(255,192,203)',
+              'rgb(176,196,222)',
+              
+            ],
+          }]
+        }
+      });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

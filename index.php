@@ -87,7 +87,7 @@
               <div class="row mt-3 justify-content-center">
                 <h1 class="pb-3 transHead">Transfer</h1>
                 <p class="transText px-md-5">
-                  For transferring students, please complete the requirements for the exit clearance form. All form requirements will be reviewd by all departments. You may check the status of your exit clearance by entering the reference number provided after initial submission of the form.
+                  For transferring, graduate and continuing students please complete the requirements for the exit clearance form. All form requirements will be reviewd by all departments. You may check the status of your exit clearance by entering the reference number provided after initial submission of the form.
                 </p>
                 <div class="row align-items-center">
                   <div class="col-md">
