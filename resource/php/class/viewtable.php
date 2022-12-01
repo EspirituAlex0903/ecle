@@ -6,7 +6,7 @@ class viewtable extends config{
 
 public function viewRequestTableRegistrarTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='PENDING' AND `libraryclearance`='APPROVED' AND `laboratoryclearance`='APPROVED' OR `laboratoryclearance`='NOT REQUIRED' AND `departmentclearance`='APPROVED' AND `accountingclearance`='APPROVED' AND `registrarclearance` = 'PENDING' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='PENDING' AND `libraryclearance`='APPROVED' AND `laboratoryclearance`='APPROVED' OR `laboratoryclearance`='NOT REQUIRED' AND `departmentclearance`='APPROVED' AND `accountingclearance`='APPROVED' AND `registrarclearance` = 'PENDING' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -82,7 +82,7 @@ public function viewRequestTableRegistrarTransfer(){
 
 public function viewRequestTableRegistrarGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='PENDING' AND `libraryclearance`='APPROVED' AND `laboratoryclearance`='APPROVED' AND `departmentclearance`='APPROVED' AND `accountingclearance`='APPROVED' AND `registrarclearance` = 'PENDING' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='PENDING' AND `libraryclearance`='APPROVED' AND `laboratoryclearance`='APPROVED' AND `departmentclearance`='APPROVED' AND `accountingclearance`='APPROVED' AND `registrarclearance` = 'PENDING' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -158,7 +158,7 @@ public function viewRequestTableRegistrarGraduate(){
 
 public function viewApproveTableRegistrarTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='APPROVED' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='APPROVED' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -229,7 +229,7 @@ public function viewApproveTableRegistrarTransfer(){
 
 public function viewApproveTableRegistrarGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='APPROVED' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='APPROVED' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -300,7 +300,7 @@ public function viewApproveTableRegistrarGraduate(){
 
 public function viewHoldTableRegistrarTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='ON HOLD' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='ON HOLD' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -365,6 +365,7 @@ public function viewHoldTableRegistrarTransfer(){
 
   echo "<td>
           <a href='registrarApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredRegistrar.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Expired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewRegistrar.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
@@ -377,7 +378,7 @@ public function viewHoldTableRegistrarTransfer(){
 
 public function viewHoldTableRegistrarGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='ON HOLD' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `registrarclearance`='ON HOLD' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -442,6 +443,7 @@ public function viewHoldTableRegistrarGraduate(){
 
   echo "<td>
           <a href='registrarApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredRegistrar.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Expired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewRegistrar.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
@@ -454,7 +456,7 @@ public function viewHoldTableRegistrarGraduate(){
 
 public function viewRequestTableAccountingTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='PENDING' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='PENDING' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -530,7 +532,7 @@ public function viewRequestTableAccountingTransfer(){
 
 public function viewRequestTableAccountingGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='PENDING' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='PENDING' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -605,7 +607,7 @@ public function viewRequestTableAccountingGraduate(){
 
 public function viewApproveTableAccountingTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='APPROVED' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='APPROVED' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -676,7 +678,7 @@ public function viewApproveTableAccountingTransfer(){
 
 public function viewApproveTableAccountingGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='APPROVED' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='APPROVED' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -747,7 +749,7 @@ public function viewApproveTableAccountingGraduate(){
 
 public function viewHoldTableAccountingTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='ON HOLD' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='ON HOLD' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -812,6 +814,7 @@ public function viewHoldTableAccountingTransfer(){
 
   echo "<td>
           <a href='accountingApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredAccounting.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Expired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewAccounting.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
@@ -824,7 +827,7 @@ public function viewHoldTableAccountingTransfer(){
 
 public function viewHoldTableAccountingGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='ON HOLD' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `accountingclearance`='ON HOLD' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -889,6 +892,7 @@ public function viewHoldTableAccountingGraduate(){
 
   echo "<td>
           <a href='accountingApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredAccounting.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Expired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewAccounting.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
@@ -903,7 +907,7 @@ public function viewRequestTableDepartmentTransfer(){
   $user = new user();
   $department = $user->data()->colleges;
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='PENDING' AND `school` = '$department' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='PENDING' AND `school` = '$department' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -981,7 +985,7 @@ public function viewRequestTableDepartmentGraduate(){
   $user = new user();
   $department = $user->data()->colleges;
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='PENDING' AND `school` = '$department' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='PENDING' AND `school` = '$department' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1059,7 +1063,7 @@ public function viewApproveTableDepartmentTransfer(){
   $user = new user();
   $department = $user->data()->colleges;
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='APPROVED' AND `school` = '$department' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='APPROVED' AND `school` = '$department' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1132,7 +1136,7 @@ public function viewApproveTableDepartmentGraduate(){
   $user = new user();
   $department = $user->data()->colleges;
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='APPROVED' AND `school` = '$department' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='APPROVED' AND `school` = '$department' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1205,7 +1209,7 @@ public function viewHoldTableDepartmentTransfer(){
   $user = new user();
   $department = $user->data()->colleges;
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='ON HOLD' AND `school` = '$department' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='ON HOLD' AND `school` = '$department' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1270,6 +1274,7 @@ public function viewHoldTableDepartmentTransfer(){
 
   echo "<td>
           <a href='deanApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredDepartment.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Expired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewDean.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
@@ -1284,7 +1289,7 @@ public function viewHoldTableDepartmentGraduate(){
   $user = new user();
   $department = $user->data()->colleges;
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='ON HOLD' AND `school` = '$department' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `departmentclearance`='ON HOLD' AND `school` = '$department' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1349,6 +1354,7 @@ public function viewHoldTableDepartmentGraduate(){
 
   echo "<td>
           <a href='deanApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredDepartment.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Expired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewDean.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
@@ -1361,7 +1367,7 @@ public function viewHoldTableDepartmentGraduate(){
 
 public function viewRequestTableLibraryTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='PENDING' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='PENDING' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1437,7 +1443,7 @@ public function viewRequestTableLibraryTransfer(){
 
 public function viewRequestTableLibraryGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='PENDING' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='PENDING' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1513,7 +1519,7 @@ public function viewRequestTableLibraryGraduate(){
 
 public function viewApproveTableLibraryTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='APPROVED' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='APPROVED' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1584,7 +1590,7 @@ public function viewApproveTableLibraryTransfer(){
 
 public function viewApproveTableLibraryGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='APPROVED' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='APPROVED' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1655,7 +1661,7 @@ public function viewApproveTableLibraryGraduate(){
 
 public function viewHoldTableLibraryTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='ON HOLD' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='ON HOLD' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1720,6 +1726,7 @@ public function viewHoldTableLibraryTransfer(){
 
   echo "<td>
           <a href='libraryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredLibrary.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Expired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewLibrary.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
@@ -1732,7 +1739,7 @@ public function viewHoldTableLibraryTransfer(){
 
 public function viewHoldTableLibraryGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='ON HOLD' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `libraryclearance`='ON HOLD' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1797,6 +1804,7 @@ public function viewHoldTableLibraryGraduate(){
 
   echo "<td>
           <a href='libraryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredLibrary.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Expired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewLibrary.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
@@ -1809,7 +1817,7 @@ public function viewHoldTableLibraryGraduate(){
 
 public function viewRequestTableLaboratoryTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `Laboratoryclearance`='PENDING' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `Laboratoryclearance`='PENDING' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1885,7 +1893,7 @@ public function viewRequestTableLaboratoryTransfer(){
 
 public function viewRequestTableLaboratoryGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `Laboratoryclearance`='PENDING' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `Laboratoryclearance`='PENDING' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -1961,7 +1969,7 @@ public function viewRequestTableLaboratoryGraduate(){
 
 public function viewApproveTableLaboratoryTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='APPROVED' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='APPROVED' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -2032,7 +2040,7 @@ public function viewApproveTableLaboratoryTransfer(){
 
 public function viewApproveTableLaboratoryGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='APPROVED' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='APPROVED' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -2102,7 +2110,7 @@ public function viewApproveTableLaboratoryGraduate(){
 
 public function viewHoldTableLaboratoryTransfer(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='ON HOLD' AND `studentType` = 'Transfer' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='ON HOLD' AND `studentType` = 'Transfer' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -2167,6 +2175,7 @@ public function viewHoldTableLaboratoryTransfer(){
 
   echo "<td>
           <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredLaboratory.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Exired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewLaboratory.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";
@@ -2179,7 +2188,7 @@ public function viewHoldTableLaboratoryTransfer(){
 
 public function viewHoldTableLaboratoryGraduate(){
   $con = $this->con();
-  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='ON HOLD' AND `studentType` = 'Graduate' ORDER BY `dateReq` ASC";
+  $sql = "SELECT * FROM `ecle_forms` WHERE `laboratoryclearance`='ON HOLD' AND `studentType` = 'Graduate' AND `expiry` = 'NO' ORDER BY `dateReq` ASC";
   $data= $con->prepare($sql);
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -2244,6 +2253,7 @@ public function viewHoldTableLaboratoryGraduate(){
 
   echo "<td>
           <a href='laboratoryApprove.php?edit=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Approve'><i class='fa-solid fa-check'></i></a>
+          <a href='expiredLaboratory.php?expire=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='Expired'><i class='fa-sharp fa-solid fa-trash'></i></a>
           <a href='viewLaboratory.php?id=$data[id]' class='btn btn-sm my-1 d-block btn-outline-secondary' data-toggle='tooltip' data-placement='top' title='View info'><i class='fa-solid fa-info'></i></a>
         </td>";
   echo "</tr>";

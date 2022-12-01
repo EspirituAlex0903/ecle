@@ -6,7 +6,7 @@ class insert extends config{
 
     public $fname,$lname,$mname,$studID,$email,$contact,$course,$year;
     
-    function __construct($fname=null,$lname=null,$mname=null,$studID=null,$email=null,$contact=null,$course=null,$year=null, $campus=null, $university=null, $reason=null){
+    function __construct($fname=null,$lname=null,$mname=null,$studID=null,$email=null,$contact=null,$course=null,$bday=null,$year=null, $university=null, $reason=null){
 
     $this->fname =$fname;
     $this->lname =$lname;
@@ -16,7 +16,7 @@ class insert extends config{
     $this->contact =$contact;
     $this->course =$course;
     $this->year =$year;
-    $this->campus = $campus;
+    $this->bday =$bday;
     $this->university = $university;
     $this->reason = $reason;
     }
@@ -39,6 +39,18 @@ class insert extends config{
         $school = $data3->fetchColumn();
 
         $con = $config->con();
+        $sql6 = "SELECT `departmentABBR` FROM `courseschool` WHERE `course` = '$this->course'";
+        $data6 = $con->prepare($sql6);
+        $data6 ->execute();
+        $schoolABBR = $data6->fetchColumn();
+
+        $con = $config->con();
+        $sql7 = "SELECT `courseABBR` FROM `courseschool` WHERE `course` = '$this->course'";
+        $data7 = $con->prepare($sql7);
+        $data7 ->execute();
+        $courseABBR = $data7->fetchColumn();
+
+        $con = $config->con();
         $sql4 = "SELECT `semester` FROM `config`";
         $data4 = $con->prepare($sql4);
         $data4 ->execute();
@@ -51,21 +63,38 @@ class insert extends config{
         $schoolYear = $data5->fetchColumn();
 
         if ($schoolType === "Science"){
-            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`,`campus`, `transferredSchool`, `reason`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year','$this->campus', '$this->university', '$this->reason', '$studentType', '$schoolType', '$transnumber')";
+            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `schoolABBR`, `studentID`, `email`, `contact`, `bday`, `course`, `courseABBR`, `year`, `transferredSchool`, `reason`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$schoolABBR', '$this->studID', '$this->email', '$this->contact', '$this->bday', '$this->course', '$courseABBR', '$this->year', '$this->university', '$this->reason', '$studentType', '$schoolType', '$transnumber')";
             $data1 = $con->prepare($sql1);
-            $data1 ->execute();
+            if($data1 ->execute()){
+                sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
+                header('Location:transfer.php');
+            } else {
+                echo '<div class="alert alert-danger alert-dismissible fade show col-12" role="alert">
+                <b>Error!</b> Your request could not be submitted due to wrong information or repeated input!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>';
+            }
         } else {
-            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`,`campus`, `transferredSchool`, `reason`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$this->studID', '$this->email', '$this->contact', '$this->course', '$this->year','$this->campus', '$this->university', '$this->reason', '$studentType', '$schoolType', '$transnumber', 'NOT REQUIRED', CURRENT_TIMESTAMP)";
+            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `schoolABBR`, `studentID`, `email`, `contact`, `bday`, `course`, `courseABBR`, `year`, `transferredSchool`, `reason`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$schoolABBR', '$this->studID', '$this->email', '$this->contact', '$this->bday', '$this->course', '$courseABBR', '$this->year', '$this->university', '$this->reason', '$studentType', '$schoolType', '$transnumber', 'NOT REQUIRED', CURRENT_TIMESTAMP)";
             $data1 = $con->prepare($sql1);
-            $data1 ->execute();
+            if($data1 ->execute()){
+                sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
+                header('Location:transfer.php');
+            } else {
+                echo '<div class="alert alert-danger alert-dismissible fade show col-12" role="alert">
+                <b>Error!</b> Your request could not be submitted due to wrong information or repeated input!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>';
+            }
         }
 
-        sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
-        header('Location:transfer.php');
+        
 
     }
-
-    
 
 }
 ?>

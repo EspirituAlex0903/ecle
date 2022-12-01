@@ -532,4 +532,55 @@ function sendmailAccounting(){
     $send = new sendMail();
     $send->sendAccounting();
 }
+
+function expireLaboratory(){
+    if(!empty($_GET['expire'])){
+        $expire = new expire($_GET['expire']);
+        if($expire->expiredLaboratory()){
+        } else{
+            echo "Error in expiring";
+        }
+    }
+}
+
+function expireLibrary(){
+    if(!empty($_GET['expire'])){
+        $expire = new expire($_GET['expire']);
+        if($expire->expiredLibrary()){
+        } else{
+            echo "Error in expiring";
+        }
+    }
+}
+
+function expireDean(){
+    if(!empty($_GET['expire'])){
+        $expire = new expire($_GET['expire']);
+        if($expire->expiredDean()){
+        } else{
+            echo "Error in expiring";
+        }
+    }
+}
+
+function expireAccounting(){
+    if(!empty($_GET['expire'])){
+        $expire = new expire($_GET['expire']);
+        if($expire->expiredAccounting()){
+        } else{
+            echo "Error in expiring";
+        }
+    }
+}
+
+function expireRegistrar(){
+    if(!empty($_GET['expire'])){
+        $expire = new expire($_GET['expire']);
+        if($expire->expiredRegistrar()){
+        } else{
+            echo "Error in expiring";
+        }
+    }
+}
+
  ?>

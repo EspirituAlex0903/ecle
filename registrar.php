@@ -94,6 +94,9 @@ $import = new import();
             .$viewtable->viewTotalNonScience(). '</span>';  ?>
             </a>
 
+            <a href="reportsDownload.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="font-size: 19px; color:blue">
+            <i class="fa-solid fa-file-arrow-down me-2"></i>Download Reports</a>
+
           </div>
           </form>
 
@@ -137,6 +140,7 @@ $import = new import();
                   <h3 class="col-md pb-5" style="text-align:center; font-weight:bold;">Summary of transferring Students' School of choice and their Reasons</h3>
                   <canvas id="chart_schools" style="width:100%;max-width:650px; display:inline"></canvas>
                   <canvas id="chart_reasons" style="width:100%;max-width:650px; float: right; display:inline"></canvas>
+                  
                 </div>
                 <?php $viewtable->viewRequestTableRegistrarTransfer();
                 }
@@ -177,10 +181,10 @@ $import = new import();
     </header>
 
     <script>
-      const schoolspie = document.getElementById('chart_schools');
+      const schoolbar = document.getElementById('chart_schools');
 
-      new Chart(schoolspie, {
-        type: 'doughnut',
+      new Chart(schoolbar, {
+        type: 'bar',
         data: {
           labels: <?php echo'["' . implode('", "', $viewtable->viewTransferredSchoolNames()) . '"]' ?>,
           datasets: [{
@@ -193,8 +197,7 @@ $import = new import();
               'rgb(0,255,255)',
               'rgb(0,0,255)',
               'rgb(255,192,203)',
-              'rgb(176,196,222)',
-              
+              'rgb(176,196,222)'              
             ],
           }]
         }
@@ -202,10 +205,10 @@ $import = new import();
     </script>
 
     <script>
-      const reasonspie = document.getElementById('chart_reasons');
+      const reasonbar = document.getElementById('chart_reasons');
 
-      new Chart(reasonspie, {
-        type: 'doughnut',
+      new Chart(reasonbar, {
+        type: 'bar',
         data: {
           labels: <?php echo'["' . implode('", "', $viewtable->viewReasonNames()) . '"]' ?>,
           datasets: [{

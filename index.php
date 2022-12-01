@@ -38,7 +38,7 @@
                 <div class="elogo">
                   <div class="content">
                     <div>
-                      <img class="eclelogo"src="resource/img/logo7.png">
+                      <img class="eclelogo"src="resource/img/ecle-logo-new.png">
                     </div>
                     <div class="below">
                       <div class="subTitle mt-4 text-white">

@@ -22,7 +22,7 @@ function sendmailApproved($email, $lname, $fname, $mname){
   <p>Greetings of Peace!</p>
   <p>Your request for an Exit Clearance has been Approved by the Registrar!</p>
   <p>You may now download your copy of the Exit Clearance.</p>
-  <p>Please visit the Exit Clearance status checker to download your copy or click <a href='https://port-seventeen.com/ecle/transferCheck.php'>here</a>.</p>
+  <p>Please visit the Exit Clearance status checker to download your copy.</p>
   <p><b>This is an auto generated email please do not reply.</b></p>
   <p>Thank you and stay safe.</p>";
   try {

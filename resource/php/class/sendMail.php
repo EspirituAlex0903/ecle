@@ -26,7 +26,7 @@ class sendMail extends config{
             $email = $row2['email'];
             $username = $row2['username'];
         }
-        sendmailAccounts($email, $username, $arr);
+        //sendmailAccounts($email, $username, $arr);
     }
 
     public function sendLaboratory(){
@@ -49,7 +49,7 @@ class sendMail extends config{
             $email = $row2['email'];
             $username = $row2['username'];
         }
-        sendmailAccounts($email, $username, $arr);
+        //sendmailAccounts($email, $username, $arr);
     }
 
     public function sendDean(){
@@ -67,12 +67,13 @@ class sendMail extends config{
         $sql2 = "SELECT * FROM `tbl_accounts` WHERE `groups` = 3";
         $data2 = $con->prepare($sql2);
         $data2->execute();
+        $usernames = array();
         $result2 = $data2->fetchAll(PDO::FETCH_ASSOC);
         foreach($result2 as $row2){
-            $email = $row2['email'];
-            $username = $row2['colleges'];
+            $emails = $row2['email'];
+            $usernames[] = $row2['colleges'];
         }
-        //sendmailAccounts($email, $username, $arr); ADD ADDRESS FUNCTION
+        sendmailAccountsDean($emails, $usernames, $arr);
     }
 
     public function sendAccounting(){
@@ -95,7 +96,7 @@ class sendMail extends config{
             $email = $row2['email'];
             $username = $row2['username'];
         }
-        sendmailAccounts($email, $username, $arr);
+        //sendmailAccounts($email, $username, $arr);
     }
 }
 

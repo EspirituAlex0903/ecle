@@ -17,11 +17,12 @@ class import extends config{
                         $lname = $line[0];
                         $fname = $line[1];
                         $mname = $line[2];
-                        $studentID = $line[3];
-                        $email = $line[4];
-                        $contact = "0".$line[5];
-                        $course = $line[6];
-                        $year = $line[7];
+                        $bday = $line[3];
+                        $studentID = $line[4];
+                        $email = $line[5];
+                        $contact = "0".$line[6];
+                        $course = $line[7];
+                        $year = $line[8];
                         $studentType = "Graduate";
                         $transnumber = uniqid('Graduate');
 
@@ -40,6 +41,18 @@ class import extends config{
                         $school = $data5->fetchColumn();
 
                         $con = $config->con();
+                        $sql6 = "SELECT `departmentABBR` FROM `courseschool` WHERE `course` = '$course'";
+                        $data6 = $con->prepare($sql6);
+                        $data6 ->execute();
+                        $schoolABBR = $data6->fetchColumn();
+
+                        $con = $config->con();
+                        $sql7 = "SELECT `courseABBR` FROM `courseschool` WHERE `course` = '$course'";
+                        $data7 = $con->prepare($sql7);
+                        $data7 ->execute();
+                        $courseABBR = $data7->fetchColumn();
+
+                        $con = $config->con();
                         $sql3 = "SELECT `semester` FROM `config`";
                         $data3 = $con->prepare($sql3);
                         $data3 ->execute();
@@ -52,11 +65,11 @@ class import extends config{
                         $schoolYear = $data4->fetchColumn();
 
                         if($schoolType === "Science"){
-                            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`) VALUES ('$lname', '$fname', '$mname', '$semester', '$schoolYear', '$school', '$studentID', '$email', '$contact', '$course', '$year', '$studentType', '$schoolType', '$transnumber')";
+                            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `schoolABBR`, `studentID`, `email`, `contact`, `bday`, `course`, `courseABBR`, `year`, `studentType`, `schoolType`, `referenceID`) VALUES ('$lname', '$fname', '$mname', '$semester', '$schoolYear', '$school', '$schoolABBR', '$studentID', '$email', '$contact', '$bday' '$course', '$courseABBR', '$year', '$studentType', '$schoolType', '$transnumber')";
                             $data1 = $con->prepare($sql1);
                             $data1 ->execute();
                         } else {
-                            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `studentID`, `email`, `contact`, `course`, `year`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$lname', '$fname', '$mname', '$semester', '$schoolYear', '$school', '$studentID', '$email', '$contact', '$course', '$year', '$studentType', '$schoolType', '$transnumber', 'NOT REQUIRED', CURRENT_TIMESTAMP)";
+                            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `schoolABBR`, `studentID`, `email`, `contact`, `bday`, `course`, `courseABBR`, `year`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$lname', '$fname', '$mname', '$semester', '$schoolYear', '$school', '$schoolABBR', '$studentID', '$email', '$contact', '$bday', '$course', '$courseABBR', '$year', '$studentType', '$schoolType', '$transnumber', 'NOT REQUIRED', CURRENT_TIMESTAMP)";
                             $data1 = $con->prepare($sql1);
                             $data1 ->execute();
                         }

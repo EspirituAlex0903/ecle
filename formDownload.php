@@ -18,10 +18,29 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM `ecle_forms` WHERE `referenceID` = '$referenceID'";
 $result = $conn->query($sql);
 
+$sql2 = "SELECT `signature` FROM `tbl_accounts` WHERE `username` = 'REGISTRAR'";
+$result2 = $conn->query($sql2);
+
+$sql3 = "SELECT `signature` FROM `tbl_accounts` WHERE `username` = 'ACCOUNTING'";
+$result3 = $conn->query($sql3);
+
+
 while($data = $result->fetch_assoc()) {
+    $registrar = "";
     $filename="EXIT_CLEARANCE.pdf";
     $college = $data['school'];
     $course = $data['course'];
+
+    $data2 = $result2->fetch_assoc();
+    $registrar = $data2['signature'];
+
+    $data3 = $result3->fetch_assoc();
+    $accounting = $data3['signature'];
+
+    $sql4 = "SELECT * FROM `tbl_accounts` WHERE `colleges` = '$college'";
+    $result4 = $conn->query($sql4);
+    $data4 = $result4->fetch_assoc();
+    $dean = $data4['name'];
 
     $pdf = new FPDI();
     $pdf->AddPage();
@@ -57,14 +76,15 @@ while($data = $result->fetch_assoc()) {
     $pdf->SetXY(88, 63);
     $pdf->Write(0, $data['year']);
 
-    $pdf->Image('pdfprototype/signature/signature.png', "135","70", "50","14");
+    $pdf->SetXY(145, 80);
+    $pdf->Write(0, $dean."(SGD)");
 
     // Signature accounting
-    $pdf->Image('pdfprototype/signature/signature.png', "135","84", "50","14");
+    $pdf->Image('signatures/'.$accounting, "135","84", "50","14");
 
     // Signature Registrar
-    $pdf->Image('pdfprototype/signature/signature.png', "135","97", "50","14");
-    $pdf->Output('I', "EXIT_CLEARANCE_$data[lname] $data[fname].pdf");
+    $pdf->Image('signatures/'.$registrar, "135","97", "50","14");
+    $pdf->Output('D', "EXIT_CLEARANCE_$data[lname] $data[fname].pdf");
 }
 
 ?>

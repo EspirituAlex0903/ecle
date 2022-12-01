@@ -43,7 +43,7 @@ $view = new view;
 
           <?php
           if(!empty($_POST)){
-            $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['year'], $_POST['campus'], $_POST['university'], $_POST['reason']);
+            $insert= new insert($_POST['fname'], $_POST['lname'], $_POST['mname'], $_POST['studID'], $_POST['email'], $_POST['contact'], $_POST['course'], $_POST['bday'], $_POST['year'], $_POST['university'], $_POST['reason']);
             $insert->insertApplication();
           }
           ?>
@@ -87,11 +87,16 @@ $view = new view;
               </div>
 
               <!---Course/Degree--->
-              <div class="col-md-12">
+              <div class="col-md-8">
                 <label form="course" class="form-label">Course/Degree</label>
                 <select id="course" name="course" class="form-select form-control" data-live-search="true" required>
                 <?php $view->courseSP2();?>
                 </select>
+              </div>
+
+              <div class="col-md-4">
+                <label for="bday" class="form-label">Birthday</label>
+                <input type="date" name="bday" class="form-control" id="bday" required>
               </div>
 
               <!---Year Level--->

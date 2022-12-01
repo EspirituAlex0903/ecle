@@ -29,6 +29,23 @@ isAccounting($user->data()->groups);
          </nav>
 
          <div class="container mt-5  pt-5 puff-in-center">
+            <div class="col-12" style="align-items:center">
+                    <h1 class="text-center">Change Signature</h1>
+                    <?php
+                    if(!empty($_FILES["signature"])){
+                        $sign = new signature($_FILES['signature'], $user->data()->username);
+                        $sign->insertSignature();
+                    }
+                    ?>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                    <div class="row justify-content-center mb-5">
+                        <label for = "signature"> Enter New Signature:</label>
+                        <input type="file" name="signature" class="form-control">
+                        <input type="submit" value="Update Signature" class="mt-5 form-control btn btn-primary">
+                    </div>
+                    
+                    </form>
+                </div>
              <div class="row">
                  <div class="col-12">
                    <?php changeP(); ?>
