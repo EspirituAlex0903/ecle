@@ -78,20 +78,8 @@ $import = new import();
             </script>
 
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo '<span class="badge badge-danger">'
-            .$viewtable->viewTotalTransfers(). '</span>';  ?>
-            </a>
-            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo '<span class="badge badge-danger">'
-            .$viewtable->viewTotalGraduates(). '</span>';  ?>
-            </a>
-            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-flask me-2"></i>Science <?php echo '<span class="badge badge-danger">'
-            .$viewtable->viewTotalScience(). '</span>';  ?>
-            </a>
-            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo '<span class="badge badge-danger">'
-            .$viewtable->viewTotalNonScience(). '</span>';  ?>
+            <i class="fas fa-question-circle me-2"></i>Pendings <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalRegistrar(). '</span>';  ?>
             </a>
 
             <a href="reportsDownload.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="font-size: 19px; color:blue">
@@ -184,7 +172,7 @@ $import = new import();
       const schoolbar = document.getElementById('chart_schools');
 
       new Chart(schoolbar, {
-        type: 'bar',
+        type: 'horizontalBar',
         data: {
           labels: <?php echo'["' . implode('", "', $viewtable->viewTransferredSchoolNames()) . '"]' ?>,
           datasets: [{
@@ -200,6 +188,15 @@ $import = new import();
               'rgb(176,196,222)'              
             ],
           }]
+        },
+        options: {
+          scales: {
+              xAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
         }
       });
     </script>
@@ -208,7 +205,7 @@ $import = new import();
       const reasonbar = document.getElementById('chart_reasons');
 
       new Chart(reasonbar, {
-        type: 'bar',
+        type: 'horizontalBar',
         data: {
           labels: <?php echo'["' . implode('", "', $viewtable->viewReasonNames()) . '"]' ?>,
           datasets: [{
@@ -225,6 +222,15 @@ $import = new import();
               
             ],
           }]
+        },
+        options: {
+          scales: {
+              xAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
         }
       });
     </script>

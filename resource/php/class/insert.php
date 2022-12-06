@@ -65,9 +65,14 @@ class insert extends config{
         if ($schoolType === "Science"){
             $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `schoolABBR`, `studentID`, `email`, `contact`, `bday`, `course`, `courseABBR`, `year`, `transferredSchool`, `reason`, `studentType`, `schoolType`, `referenceID`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$schoolABBR', '$this->studID', '$this->email', '$this->contact', '$this->bday', '$this->course', '$courseABBR', '$this->year', '$this->university', '$this->reason', '$studentType', '$schoolType', '$transnumber')";
             $data1 = $con->prepare($sql1);
-            if($data1 ->execute()){
+            if($data1->execute()){
                 sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
-                header('Location:transfer.php');
+                echo '<div class="alert alert-success alert-dismissible fade show col-12" role="alert">
+                <b>Congratulations!</b> Your clearance request has been successfully submitted!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>';
             } else {
                 echo '<div class="alert alert-danger alert-dismissible fade show col-12" role="alert">
                 <b>Error!</b> Your request could not be submitted due to wrong information or repeated input!
@@ -79,9 +84,14 @@ class insert extends config{
         } else {
             $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `schoolABBR`, `studentID`, `email`, `contact`, `bday`, `course`, `courseABBR`, `year`, `transferredSchool`, `reason`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$this->lname', '$this->fname', '$this->mname', '$semester', '$schoolYear', '$school', '$schoolABBR', '$this->studID', '$this->email', '$this->contact', '$this->bday', '$this->course', '$courseABBR', '$this->year', '$this->university', '$this->reason', '$studentType', '$schoolType', '$transnumber', 'NOT REQUIRED', CURRENT_TIMESTAMP)";
             $data1 = $con->prepare($sql1);
-            if($data1 ->execute()){
+            if($data1->execute()){
                 sendReferenceMail($this->lname, $this->fname, $this->mname, $transnumber, $this->email);
-                header('Location:transfer.php');
+                echo '<div class="alert alert-success alert-dismissible fade show col-12" role="alert">
+                <b>Congratulations!</b> Your clearance request has been successfully submitted!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>';
             } else {
                 echo '<div class="alert alert-danger alert-dismissible fade show col-12" role="alert">
                 <b>Error!</b> Your request could not be submitted due to wrong information or repeated input!
@@ -91,9 +101,6 @@ class insert extends config{
             </div>';
             }
         }
-
-        
-
     }
 
 }

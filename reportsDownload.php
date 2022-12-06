@@ -15,35 +15,26 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-//$display_heading = array('id'=>'ID', 'lname'=> 'Last Name', 'fname'=> 'First Name','mname'=> 'Middle Name','semester'=> 'Semester','sy'=> 'School Year','dateReq'=> 'Date Requested','schoolABBR'=> 'Department Abbreviation','studentID'=> 'Student ID','email'=> 'Email Address','contact'=> 'Contact Number', 'bday'=> 'Birthday','courseABBR'=> 'Course Abbreviation','year'=> 'Last Year Enrolled');
+header('Content-Type: text/csv; charset=utf-8');
+header('Content-Disposition: attachment; filename=Reports.csv');
 
-$display_heading = array('Student ID','Last Name', 'First Name','Middle Name', 'Semester','School Year', 'Date Requested', 'Department','Contact Number','Birthday','Course','Last Year Enrolled', 'Email Address');
-
-$sql = "SELECT `studentID`,`lname`,`fname`,`mname`,`semester`,`sy`,`dateReq`,`schoolABBR`,`contact`,`bday`,`courseABBR`,`year`,`email` FROM `ecle_forms`";
+$sql = "SELECT * FROM `ecle_forms`";
 $result = $conn->query($sql);
 
-//$sql2 = "SHOW columns FROM `ecle_forms`";
-//$header = $conn->query($sql2);
+$sql2 = "SHOW columns FROM `ecle_forms`";
+$header = $conn->query($sql2);
+$heads[] = array();
 
-$pdf = new FPDF('L', 'mm', 'Legal');
-$pdf->AddPage();
-$pdf->AliasNbPages();
-$pdf->SetFont('Arial','',6.5);
+$output = fopen('php://output', 'w');
+foreach($header as $head){
+    $heads[] = $head['Field'];
+}
+unset($heads[0]);
+fputcsv($output, $heads);
 
-foreach($display_heading as $heading) {
-    $pdf->Cell(25,10,$heading,1,'L');
+foreach($result as $row){
+    fputcsv($output, $row);
 }
 
-foreach($result as $row) {
-    if($row['studentID'] === NULL){
-    }
-    else{
-        $pdf->Ln();
-        foreach($row as $column){
-            $pdf->Cell(25,10,$column,1);
-        }
-    }
-    
-}
-$pdf->Output('D', "ALL REPORTS.pdf");
+
 ?>
