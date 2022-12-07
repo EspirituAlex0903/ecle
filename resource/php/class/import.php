@@ -69,7 +69,7 @@ class import extends config{
                             $data1 = $con->prepare($sql1);
                             $data1 ->execute();
                         } else {
-                            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `schoolABBR`, `studentID`, `email`, `contact`, `bday`, `course`, `courseABBR`, `year`, `studentType`, `schoolType`, `referenceID`, `laboratoryclearance`, `laboratorydate`) VALUES ('$lname', '$fname', '$mname', '$semester', '$schoolYear', '$school', '$schoolABBR', '$studentID', '$email', '$contact', '$bday', '$course', '$courseABBR', '$year', '$studentType', '$schoolType', '$transnumber', 'NOT REQUIRED', CURRENT_TIMESTAMP)";
+                            $sql1 = "INSERT INTO `ecle_forms`(`lname`, `fname`, `mname`, `semester`, `sy`, `school`, `schoolABBR`, `studentID`, `email`, `contact`, `bday`, `course`, `courseABBR`, `year`, `studentType`, `schoolType`, `referenceID`) VALUES ('$lname', '$fname', '$mname', '$semester', '$schoolYear', '$school', '$schoolABBR', '$studentID', '$email', '$contact', '$bday', '$course', '$courseABBR', '$year', '$studentType', '$schoolType', '$transnumber')";
                             $data1 = $con->prepare($sql1);
                             $data1 ->execute();
                         }

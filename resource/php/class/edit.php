@@ -42,17 +42,6 @@ class edit extends config{
         }
     }
 
-    public function approveClearanceLaboratory(){
-        $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `laboratoryclearance` = 'APPROVED', `laboratoryremarks` = '', `laboratorydate` = CURRENT_TIMESTAMP WHERE `id` = '$this->id'";
-        $data = $con->prepare($sql);
-        if($data->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     public function approveClearanceRegistrar(){
         $con = $this->con();
 

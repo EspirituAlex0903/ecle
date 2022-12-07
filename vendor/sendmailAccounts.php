@@ -20,7 +20,7 @@ function sendmailAccounts($email, $username, array $arr){
 
   $string;
   $list;
-  $arrlength = count($arr);
+  $arrlength = 5;
   for($i = 0; $i < $arrlength; $i++){
     $string = $arr[$i]."<br>";
     $list .= $string;

@@ -69,20 +69,8 @@ isRegistrar($user->data()->groups);
             </script>
 
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-share me-2"></i>Transfers <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalTransfers().")". '</span>';  ?>
-            </a>
-            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-graduation-cap me-2"></i>Graduate <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalGraduates().")". '</span>';  ?>
-            </a>
-            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-flask me-2"></i>Science <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalScience().")". '</span>';  ?>
-            </a>
-            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fa-solid fa-book me-2"></i>Non-Science <?php echo '<span style="color:red;">'
-            ."(".$viewtable->viewTotalNonScience().")". '</span>';  ?>
+            <i class="fas fa-question-circle me-2"></i>Pendings <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalRegistrar(). '</span>';  ?>
             </a>
 
           </div>

@@ -34,7 +34,6 @@ class graduate extends config{
                         echo "<thead class='thead-dark' style='font-size: large'>";
                         echo "<th>Department</th>";
                         echo "<th>Library</th>";
-                        echo "<th>Laboratory</th>";
                         echo "<th>Accounting</th>";
                         echo "<th>Registrar</th>";
                         echo "</thead>";
@@ -44,7 +43,6 @@ class graduate extends config{
                         echo "<tr class='text-white'>";
                         echo "<td style='font-size: x-large'>$data[departmentclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[libraryclearance] </td>";
-                        echo "<td style='font-size: x-large'>$data[laboratoryclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[accountingclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[registrarclearance]</td>";
                         echo "<h5><a href='formDownload.php?referenceID=$data[referenceID]'>DOWNLOAD</a> your copy</h5>";
@@ -66,7 +64,6 @@ class graduate extends config{
                         echo "<thead class='thead-dark'>";
                         echo "<th>Department</th>";
                         echo "<th>Library</th>";
-                        echo "<th>Laboratory</th>";
                         echo "<th>Accounting</th>";
                         echo "<th>Registrar</th>";
                         echo "</thead>";
@@ -76,7 +73,6 @@ class graduate extends config{
                         echo "<tr class='text-white'>";
                         echo "<td style='font-size: x-large'>$data[departmentclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[libraryclearance] </td>";
-                        echo "<td style='font-size: x-large'>$data[laboratoryclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[accountingclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[registrarclearance]</td>";
                         echo "</table>";

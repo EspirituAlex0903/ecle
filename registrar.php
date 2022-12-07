@@ -41,6 +41,11 @@ $import = new import();
             <div class="item"><a href="registrar.php"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
             </div>
 
+            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-question-circle me-2"></i>Pendings <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalRegistrar(). '</span>';  ?>
+            </a>
+
             <!-- requests -->
             <div class="item">
               <a class="sub-btn"><i class="fa-solid fa-tag"></i>Requests<i class="fas fa-chevron-right dropdown"></i></a>
@@ -77,10 +82,7 @@ $import = new import();
               });
             </script>
 
-            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fas fa-question-circle me-2"></i>Pendings <?php echo '<span class="badge badge-danger">'
-            .$viewtable->viewTotalRegistrar(). '</span>';  ?>
-            </a>
+            
 
             <a href="reportsDownload.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="font-size: 19px; color:blue">
             <i class="fa-solid fa-file-arrow-down me-2"></i>Download Reports</a>
@@ -230,6 +232,11 @@ $import = new import();
                       beginAtZero: true
                   }
               }]
+          },
+          plugins: {
+            legend: {
+              display: false
+            }
           }
         }
       });

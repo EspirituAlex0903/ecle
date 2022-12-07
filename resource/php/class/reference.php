@@ -27,9 +27,9 @@ class reference extends config{
         else {
             foreach ($result as $data) {
                 if($data['studentType'] === "Transfer"){
-                    if($data['libraryclearance'] === 'PENDING' && $data['laboratoryclearance'] === 'PENDING' && $data['departmentclearance'] === 'PENDING' && $data['accountingclearance'] === 'PENDING' && $data['registrarclearance'] === 'PENDING' && $data['expiry'] === 'NO'){
+                    if($data['libraryclearance'] === 'PENDING' && $data['departmentclearance'] === 'PENDING' && $data['accountingclearance'] === 'PENDING' && $data['registrarclearance'] === 'PENDING' && $data['expiry'] === 'NO'){
                         echo "<h5>The current status for <h5 class='data'>$data[fname] $data[mname] $data[lname]</h5> <h5>with transaction number <h5 class='data'>$data[referenceID]</h5>, <h5>is still being reviewed.</h5>";
-                    }else if($data['libraryclearance'] === 'APPROVED' && $data['laboratoryclearance'] === 'APPROVED' || $data['laboratoryclearance'] === 'NOT REQUIRED' && $data['departmentclearance'] === 'APPROVED' && $data['accountingclearance'] === 'APPROVED' && $data['registrarclearance'] === 'APPROVED' && $data['expiry'] === 'NO'){
+                    }else if($data['libraryclearance'] === 'APPROVED' && $data['departmentclearance'] === 'APPROVED' && $data['accountingclearance'] === 'APPROVED' && $data['registrarclearance'] === 'APPROVED' && $data['expiry'] === 'NO'){
                         echo "<h5>The current status for <h5 class='data'>$data[fname] $data[mname] $data[lname]</h5> <h5>with transaction number <h5 class='data'>$data[referenceID]</h5>, <h5>has been finished reviewing, <a href='formDownload.php?referenceID=$data[referenceID]'>download</a> your copy.</h5>";
                     }
                     else if($data['expiry'] === 'YES'){
@@ -42,7 +42,6 @@ class reference extends config{
                         echo "<thead class='thead-dark'>";
                         echo "<th>Department</th>";
                         echo "<th>Library</th>";
-                        echo "<th>Laboratory</th>";
                         echo "<th>Accounting</th>";
                         echo "<th>Registrar</th>";
                         echo "</thead>";
@@ -52,7 +51,6 @@ class reference extends config{
                         echo "<tr class='text-white'>";
                         echo "<td style='font-size: x-large'>$data[departmentclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[libraryclearance] </td>";
-                        echo "<td style='font-size: x-large'>$data[laboratoryclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[accountingclearance]</td>";
                         echo "<td style='font-size: x-large'>$data[registrarclearance]</td>";
                         echo "</table>";

@@ -31,17 +31,6 @@ class expire extends config{
         }
     }
 
-    public function expiredLaboratory(){
-        $con = $this->con();
-        $sql = "UPDATE `ecle_forms` SET `expiry` = 'YES', `studentID` = NULL WHERE `id` = '$this->id'";
-        $data = $con->prepare($sql);
-        if($data->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     public function expiredDean(){
         $con = $this->con();
         $sql = "UPDATE `ecle_forms` SET `expiry` = 'YES', `studentID` = NULL WHERE `id` = '$this->id'";

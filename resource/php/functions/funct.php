@@ -148,9 +148,6 @@ function vald(){
                             }else if($user->data()->groups == 4){
                             Redirect::to('accounting.php');
                            echo $user->data()->groups;
-                            }else if($user->data()->groups == 5){
-                                Redirect::to('laboratory.php');
-                               echo $user->data()->groups;
                             }else if($user->data()->groups == 6){
                                 Redirect::to('library.php');
                                echo $user->data()->groups;
@@ -280,9 +277,6 @@ function changeP(){
                     }else if($user->data()->groups == 4){
                         Redirect::to('accounting.php');
                         echo $user->data()->groups;
-                    }else if($user->data()->groups == 5){
-                        Redirect::to('laboratory.php');
-                        echo $user->data()->groups;
                     }else if($user->data()->groups == 6){
                         Redirect::to('library.php');
                         echo $user->data()->groups;
@@ -321,16 +315,6 @@ function approveLibrary(){
     if(!empty($_GET['edit'])){
         $edit = new edit($_GET['edit']);
         if($edit->approveClearanceLibrary()){
-        } else{
-            echo "Error in approving";
-        }
-    }
-}
-
-function approveLaboratory(){
-    if(!empty($_GET['edit'])){
-        $edit = new edit($_GET['edit']);
-        if($edit->approveClearanceLaboratory()){
         } else{
             echo "Error in approving";
         }
@@ -391,17 +375,6 @@ function holdLibrary(){
     }
 }
 
-function holdLaboratory(){
-    if(!empty($_GET['hold']) && !empty($_POST['remarks'])){
-        $hold = new hold($_GET['hold'],$_POST['remarks']);
-        if($hold->holdClearanceLaboratory()){
-            echo '<script>alert("Successfully updated, please click back.")</script>';
-        } else{
-            echo "Error in holding";
-        }
-    }
-}
-
 function isAdmin($user){
     if($user === "1"){
 
@@ -442,16 +415,6 @@ function isAccounting($user){
     }
 }
 
-function isLaboratory($user){
-    if($user === "5"){
-
-    }
-    else{
-        header("HTTP/1.1 403 Forbidden");
-        exit;
-    }
-}
-
 function isLibrary($user){
     if($user === "6"){
 
@@ -476,13 +439,7 @@ function viewLibrary(){
         }
     }
 }
-function viewLaboratory(){
-    if(!empty($_GET['id'])){
-        $info = new info($_GET['id']);
-        if($info->infoLaboratory()){
-        }
-    }
-}
+
 function viewRegistrar(){
     if(!empty($_GET['id'])){
         $info = new info($_GET['id']);
@@ -520,10 +477,7 @@ function sendmailLibrary(){
     $send = new sendMail();
     $send->sendLibrary();
 }
-function sendmailLaboratory(){
-    $send = new sendMail();
-    $send->sendLaboratory();
-}
+
 function sendmailDean(){
     $send = new sendMail();
     $send->sendDean();
@@ -533,15 +487,6 @@ function sendmailAccounting(){
     $send->sendAccounting();
 }
 
-function expireLaboratory(){
-    if(!empty($_GET['expire'])){
-        $expire = new expire($_GET['expire']);
-        if($expire->expiredLaboratory()){
-        } else{
-            echo "Error in expiring";
-        }
-    }
-}
 
 function expireLibrary(){
     if(!empty($_GET['expire'])){

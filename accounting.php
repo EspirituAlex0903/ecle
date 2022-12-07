@@ -42,6 +42,11 @@ isAccounting($user->data()->groups);
             <div class="item"><p><i class="fa-solid fa-gauge-high"></i>Dashboard</p>
             </div>
 
+            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+            <i class="fas fa-question-circle me-2"></i>Pendings <?php echo '<span class="badge badge-danger">'
+            .$viewtable->viewTotalAccounting(). '</span>';  ?>
+            </a>
+
             <!-- requests -->
             <div class="item">
               <a class="sub-btn"><i class="fa-solid fa-tag"></i>Requests<i class="fas fa-chevron-right dropdown"></i></a>
@@ -77,11 +82,6 @@ isAccounting($user->data()->groups);
                   });
               });
             </script>
-
-            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-            <i class="fas fa-question-circle me-2"></i>Pendings <?php echo '<span class="badge badge-danger">'
-            .$viewtable->viewTotalAccounting(). '</span>';  ?>
-            </a>
 
           </div>
           </form>
