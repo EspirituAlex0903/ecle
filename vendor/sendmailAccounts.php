@@ -25,8 +25,7 @@ function sendmailAccounts($email, $username, array $arr){
     $string = $arr[$i]."<br>";
     $list .= $string;
   }
-
-
+  $list .= 'etc.';
 
   $body ="<p>Dear head of $username,</p>
   <p>Greetings of Peace!</p>
@@ -63,17 +62,18 @@ function sendmailAccounts($email, $username, array $arr){
 
 }
 
-function sendmailAccountsDean($email, array $username, array $arr){
+function sendmailAccountsDean(array $email, array $username, array $arr){
 
   $mail = new PHPMailer(true);
 
   $string;
   $list = "";
-  $arrlength = count($arr);
+  $arrlength = 5;
   for($i = 0; $i < $arrlength; $i++){
     $string = $arr[$i]."<br>";
     $list .= $string;
   }
+  $list .= 'etc.';
 
   foreach($username as $user){
     $body ="<p>Dear head of $user,</p>
@@ -93,22 +93,23 @@ function sendmailAccountsDean($email, array $username, array $arr){
       $mail->Password   = 'afjrtcvmtfbbpzhp';                                //password
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
       $mail->Port       = 587;
-
+  
       //Recipients
       $mail->setFrom('ceumlsecle@gmail.com');       //sender
-      $mail->addAddress($email);
-
+      foreach($email as $mails){
+        $mail->addAddress($mails);
+      }
+  
       //Content
       $mail->isHTML(true);
       $mail->Subject = 'Pending Exit Clearances';
       $mail->Body    = $body;             //content
-
+  
       $mail->SMTPDebug  = SMTP::DEBUG_OFF;
       $mail->send();
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-
   }
 }
 

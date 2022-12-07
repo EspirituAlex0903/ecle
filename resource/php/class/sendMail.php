@@ -44,10 +44,11 @@ class sendMail extends config{
         $sql2 = "SELECT * FROM `tbl_accounts` WHERE `groups` = 3";
         $data2 = $con->prepare($sql2);
         $data2->execute();
+        $emails = array();
         $usernames = array();
         $result2 = $data2->fetchAll(PDO::FETCH_ASSOC);
         foreach($result2 as $row2){
-            $emails = $row2['email'];
+            $emails[] = $row2['email'];
             $usernames[] = $row2['colleges'];
         }
         sendmailAccountsDean($emails, $usernames, $arr);
