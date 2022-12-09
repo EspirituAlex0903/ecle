@@ -65,11 +65,18 @@ $import = new import();
             </div>
 
             <!-- hold -->
-            <div class="item pb-3 border-bottom">
+            <div class="item">
               <a class="sub-btn"><i class="fa-sharp fa-solid fa-pause"></i>On Hold<i class="fas fa-chevron-right dropdown"></i></a>
               <div class="sub-menu">
                 <input type="submit" name="Htransfer" class="sub-item" value="Transfer">
                 <input type="submit" name="Hgraduate" class="sub-item" value="Graduate">
+              </div>
+            </div>
+
+            <div class="item pb-3 border-bottom">
+              <a class="sub-btn"><i class="fa-solid fa-list"></i>Others<i class="fas fa-chevron-right dropdown"></i></a>
+              <div class="sub-menu">
+                <input type="submit" name="Reports" class="sub-item" value="Reports">
               </div>
             </div>
 
@@ -152,6 +159,10 @@ $import = new import();
                 else if(array_key_exists('Hgraduate', $_POST)) {
                   $viewtable->viewHoldTableRegistrarGraduate();
                 }
+                else if(array_key_exists('Reports', $_POST)) {
+                  $viewtable->viewReports();
+                  
+                }
               ?>
               <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
               <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
@@ -163,6 +174,21 @@ $import = new import();
                   });
                 });
               </script>
+              
+              <script type="text/javascript">
+                $(document).ready( function () {
+                  $('#reports').DataTable({
+                    "ordering": false,
+                    "columnDefs": [
+                        { "searchable": false, "targets": [0,1,2,3,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33]}
+                    ],
+                    "search": {
+                      "search": "1"
+                    }
+                  });
+                });
+              </script>
+
               </div>
             </div>
           </div>

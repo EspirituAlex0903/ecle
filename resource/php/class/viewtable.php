@@ -1671,6 +1671,71 @@ public function viewHoldTableLibraryGraduate(){
 
 }
 
+public function viewReports(){
+
+  $con = $this->con();
+  $sql = "SELECT * FROM `ecle_forms`";
+  $data= $con->prepare($sql);
+  $data->execute();
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
+
+  $sql2 = "SHOW columns FROM `ecle_forms`";
+  $data2 = $con->prepare($sql2);
+  $data2->execute();
+  $header = $data2->fetchAll(PDO::FETCH_ASSOC);
+
+  echo "<h3 class='text-center'>Reports of all Students</h3>";
+  echo "<div class='table-responsive'>";
+  echo "<table id='reports' class='table table-bordered table-sm table-bordered table-hover shadow display' width='100%' style='font-size: 16px'>";
+  echo "<thead class='thead-dark'>";
+  echo "<a href='reportsDownload.php' style='font-size: 19px; color:blue'>Export table</a>";
+  
+  foreach($header as $head){
+    echo "<th>$head[Field]</th>";
+  }
+  echo "</thead>";
+
+  foreach($result as $data){
+    echo "<tr style='font-size: 12px'>";
+    echo "<td>$data[id]</td>";
+    echo "<td>$data[lname]</td>";
+    echo "<td>$data[fname]</td>";
+    echo "<td>$data[mname]</td>";
+    echo "<td>$data[semester]</td>";
+    echo "<td>$data[sy]</td>";
+    echo "<td>$data[dateReq]</td>";
+    echo "<td>$data[school]</td>";
+    echo "<td>$data[schoolABBR]</td>";
+    echo "<td>$data[studentID]</td>";
+    echo "<td>$data[email]</td>";
+    echo "<td>$data[contact]</td>";
+    echo "<td>$data[bday]</td>";
+    echo "<td>$data[course]</td>";
+    echo "<td>$data[courseABBR]</td>";
+    echo "<td>$data[year]</td>";
+    echo "<td>$data[transferredSchool]</td>";
+    echo "<td>$data[reason]</td>";
+    echo "<td>$data[studentType]</td>";
+    echo "<td>$data[schoolType]</td>";
+    echo "<td>$data[referenceID]</td>";
+    echo "<td>$data[libraryclearance]</td>";
+    echo "<td>$data[libraryremarks]</td>";
+    echo "<td>$data[librarydate]</td>";
+    echo "<td>$data[departmentclearance]</td>";
+    echo "<td>$data[departmentremarks]</td>";
+    echo "<td>$data[departmentdate]</td>";
+    echo "<td>$data[accountingclearance]</td>";
+    echo "<td>$data[accountingremarks]</td>";
+    echo "<td>$data[accountingdate]</td>";
+    echo "<td>$data[registrarclearance]</td>";
+    echo "<td>$data[registrarremarks]</td>";
+    echo "<td>$data[registrardate]</td>";
+    echo "<td>$data[expiry]</td>";
+    echo "</tr>";
+  }
+  echo "</table>";
+}
+
 public function viewTotalRegistrar(){
   $con = $this->con();
   $sql = "SELECT COUNT(*) FROM `ecle_forms` WHERE `registrarclearance` = 'PENDING' AND `accountingclearance` = 'APPROVED' AND `libraryclearance` = 'APPROVED' AND `departmentclearance` = 'APPROVED' AND `expiry` = 'NO'";
