@@ -207,13 +207,14 @@ $import = new import();
             label: 'Total Students',
             data: <?php echo '[' . implode(', ', $viewtable->viewTransferredSchoolTotal()) . ']' ?>,
             backgroundColor: [
-              'rgb(255,0,0)',
-              'rgb(255,165,0)',
-              'rgb(0,128,0)',
-              'rgb(0,255,255)',
-              'rgb(0,0,255)',
-              'rgb(255,192,203)',
-              'rgb(176,196,222)'              
+              'rgb(43, 58, 85)',
+              'rgb(206, 119, 119)',
+              'rgb(232, 196, 196)',
+              'rgb(242, 229, 229)',  
+              'rgb(255, 115, 29)',
+              'rgb(95, 157, 247)',
+              'rgb(232, 196, 196)',
+              'rgb(242, 229, 229)'           
             ],
           }]
         },

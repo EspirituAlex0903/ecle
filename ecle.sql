@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 09, 2022 at 01:08 AM
+-- Generation Time: Dec 10, 2022 at 02:56 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.1.33
 
@@ -182,7 +182,7 @@ INSERT INTO `ecle_forms` (`id`, `lname`, `fname`, `mname`, `semester`, `sy`, `da
 (69, 'Maria', 'Jose', 'Carlito', '1', '2022-2023', '2022-11-16 13:42:06', 'College of Accountancy Management and Technology', 'CAMT', '2020-01234', 'carlito@gmail.com', '09123456789', NULL, 'Bachelor of Special Needs Education with Specialization in Early Childhood Education', 'BSNEd-SECE', 2022, NULL, NULL, 'Graduate', 'Non-Science', 'Graduate6374782e6d94c', 'PENDING', NULL, NULL, 'APPROVED', '', '2022-11-26', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'NO'),
 (68, 'Santos', 'Hiro', 'Mendoza', '1', '2022-2023', '2022-11-16 13:40:35', 'Department of Dentistry', 'DENT', '2019-30621', 'espiritu0903@gmail.com', '09116668888', NULL, 'Doctor of Dental Medicine', 'DMD', 2022, NULL, NULL, 'Graduate', 'Science', 'Graduate637477d30f09d', 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', NULL, NULL, 'APPROVED', '', '2022-12-07', 'NO'),
 (59, 'Guzman', 'JM', 'Lugue', '1', '2022-2023', '2022-10-22 10:11:08', 'Department of Nursing', 'NURSING', '2019-30162', 'espiritu0903@gmail.com', '0654321654', NULL, 'Bachelor of Science in Nursing', 'BSN', 2022, 'Bulacan State University', 'Financial Problem', 'Transfer', 'Science', 'Transfer6353513cb085d', 'APPROVED', NULL, '2022-10-22', 'APPROVED', NULL, '2022-10-22', 'APPROVED', NULL, '2022-10-22', 'PENDING', '', '2022-12-07', 'NO'),
-(83, 'DEL ROSARIO', 'HAPPY', 'BANTIGUE', '1', '2022-2023', '2022-11-30 17:58:59', 'College of Accountancy Management and Technology', 'CAMT', '2019-30541', 'drhappy@gmail.com', '09260276265', '2016-03-05', 'Bachelor of Science in Information Technology', 'BSIT', 2022, NULL, NULL, 'Graduate', 'Non-Science', 'Graduate63872963d499a', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'NO'),
+(83, 'DEL ROSARIO', 'HAPPY', 'BANTIGUE', '1', '2022-2023', '2022-11-30 17:58:59', 'College of Accountancy Management and Technology', 'CAMT', '2019-30541', 'drhappy@gmail.com', '09260276265', '2016-03-05', 'Bachelor of Science in Information Technology', 'BSIT', 2022, 'Access Computer College', NULL, 'Graduate', 'Non-Science', 'Graduate63872963d499a', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'NO'),
 (86, 'Park', 'Monique', 'San Jose', '1', '2022-2023', '2022-12-01 10:49:12', 'College of Accountancy Management and Technology', 'CAMT', NULL, 'espiritu0903@gmail.com', '09568928738', '2001-03-09', 'Bachelor of Science in Accountancy', 'BSA', 2022, 'Abroad', 'Continuation of Study', 'Transfer', 'Non-Science', 'Transfer638816280f7e1', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'YES'),
 (87, 'ASD', 'ASD', 'ASD', '2', '2022-2023', '2022-12-07 00:06:56', 'College of Accountancy Management and Technology', 'CAMT', '0000-12345', 'espiritu0903@gmail.com', '09568928738', '2001-09-03', 'Bachelor of Science in Accountancy', 'BSA', 2022, 'Abroad', 'Continuation of Study', 'Transfer', 'Non-Science', 'Transfer638f68a08f622', 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'PENDING', NULL, NULL, 'NO');
 
