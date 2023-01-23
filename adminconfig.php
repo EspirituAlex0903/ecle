@@ -35,8 +35,6 @@ $view = new view();
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
             <!-- dashboard -->
-            <div class="item"><a href="registrar.php"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
-            </div>
 
             <script type="text/javascript">
               $(document).ready(function(){

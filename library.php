@@ -36,8 +36,6 @@ isLibrary($user->data()->groups);
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
             <!-- dashboard -->
-            <div class="item"><p><i class="fa-solid fa-gauge-high"></i>Dashboard</p>
-            </div>
 
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-question-circle me-2"></i>Pendings <?php echo '<span class="badge badge-danger">'

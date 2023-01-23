@@ -123,7 +123,7 @@ $view = new view;
 
               <div class="col-md my-4 text-center">
                 <div>
-                  <button type="submit" class="button-submit btn-dark">Submit</button>
+                  <button type="submit" class="button-submit btn-info">Submit</button>
                 </div>
                 <div>
                   <button onclick="location.href='index.php'" class="button-back">Back</button>

@@ -38,8 +38,6 @@ $import = new import();
           <form action="" method="POST">
           <div class="list-group list-group-flush my-3">
             <!-- dashboard -->
-            <div class="item"><a href="registrar.php"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
-            </div>
 
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
             <i class="fas fa-question-circle me-2"></i>Pendings <?php echo '<span class="badge badge-danger">'
@@ -89,7 +87,7 @@ $import = new import();
               });
             </script>
 
-            
+
 
             <a href="reportsDownload.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" style="font-size: 19px; color:blue">
             <i class="fa-solid fa-file-arrow-down me-2"></i>Download Reports</a>
@@ -137,7 +135,7 @@ $import = new import();
                   <h3 class="col-md pb-5" style="text-align:center; font-weight:bold;">Summary of transferring Students' School of choice and their Reasons</h3>
                   <canvas id="chart_schools" style="width:100%;max-width:650px; display:inline"></canvas>
                   <canvas id="chart_reasons" style="width:100%;max-width:650px; float: right; display:inline"></canvas>
-                  
+
                 </div>
                 <?php $viewtable->viewRequestTableRegistrarTransfer();
                 }
@@ -161,7 +159,7 @@ $import = new import();
                 }
                 else if(array_key_exists('Reports', $_POST)) {
                   $viewtable->viewReports();
-                  
+
                 }
               ?>
               <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -174,7 +172,7 @@ $import = new import();
                   });
                 });
               </script>
-              
+
               <script type="text/javascript">
                 $(document).ready( function () {
                   $('#reports').DataTable({
@@ -210,11 +208,11 @@ $import = new import();
               'rgb(43, 58, 85)',
               'rgb(206, 119, 119)',
               'rgb(232, 196, 196)',
-              'rgb(242, 229, 229)',  
+              'rgb(242, 229, 229)',
               'rgb(255, 115, 29)',
               'rgb(95, 157, 247)',
               'rgb(232, 196, 196)',
-              'rgb(242, 229, 229)'           
+              'rgb(242, 229, 229)'
             ],
           }]
         },
@@ -248,7 +246,7 @@ $import = new import();
               'rgb(0,0,255)',
               'rgb(255,192,203)',
               'rgb(176,196,222)',
-              
+
             ],
           }]
         },
